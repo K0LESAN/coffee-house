@@ -60,26 +60,37 @@
           <span class="favorite-coffee__title_taupe">favorite</span> coffee
         </h2>
         <div class="slider">
-          <button class="slider__left">
-            <img
-              src="../assets/images/favourite_coffee/left_arrow.svg"
-              alt=""
-              class="slider__arrow"
-            />
+          <button class="slider__arrow">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M18.5 12H6M6 12L12 6M6 12L12 18"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="slider__arrow_left"
+              />
+            </svg>
           </button>
-          <div class="favorite-coffee-info favorite-coffee__info slider">
+          <div class="favorite-coffee-info">
             <div class="favorite-coffee-info__item">
               <img
                 src="../assets/images/favourite_coffee/smores_frappuccino.jpg"
                 alt=""
                 class="favorite-coffee-info__image"
               />
-              <h3 class="favorite-coffee-info__title">S’mores Frappuccino</h3>
-              <p class="favorite-coffee-info__description">
-                This new drink takes an espresso and mixes it with brown sugar
-                and cinnamon before being topped with oat milk.
-              </p>
-              <p class="favorite-coffee-info__price">$5.50</p>
+              <div class="favorite-coffee-info__text">
+                <h3 class="favorite-coffee-info__title">S’mores Frappuccino</h3>
+                <p class="favorite-coffee-info__description">
+                  This new drink takes an espresso and mixes it with brown sugar
+                  and cinnamon before being topped with oat milk.
+                </p>
+                <p class="favorite-coffee-info__price">$5.50</p>
+              </div>
             </div>
             <div class="favorite-coffee-info__item">
               <img
@@ -87,12 +98,14 @@
                 alt=""
                 class="favorite-coffee-info__image"
               />
-              <h3 class="favorite-coffee-info__title">Caramel Macchiato</h3>
-              <p class="favorite-coffee-info__description">
-                Fragrant and unique classic espresso with rich caramel-peanut
-                syrup, with cream under whipped thick foam.
-              </p>
-              <p class="favorite-coffee-info__price">$5.00</p>
+              <div class="favorite-coffee-info__text">
+                <h3 class="favorite-coffee-info__title">Caramel Macchiato</h3>
+                <p class="favorite-coffee-info__description">
+                  Fragrant and unique classic espresso with rich caramel-peanut
+                  syrup, with cream under whipped thick foam.
+                </p>
+                <p class="favorite-coffee-info__price">$5.00</p>
+              </div>
             </div>
             <div class="favorite-coffee-info__item">
               <img
@@ -100,26 +113,37 @@
                 alt=""
                 class="favorite-coffee-info__image"
               />
-              <h3 class="favorite-coffee-info__title">Ice coffee</h3>
-              <p class="favorite-coffee-info__description">
-                A popular summer drink that tones and invigorates. Prepared from
-                coffee, milk and ice.
-              </p>
-              <p class="favorite-coffee-info__price">$4.50</p>
+              <div class="favorite-coffee-info__text">
+                <h3 class="favorite-coffee-info__title">Ice coffee</h3>
+                <p class="favorite-coffee-info__description">
+                  A popular summer drink that tones and invigorates. Prepared
+                  from coffee, milk and ice.
+                </p>
+                <p class="favorite-coffee-info__price">$4.50</p>
+              </div>
             </div>
           </div>
-          <button class="slider__right">
-            <img
-              src="../assets/images/favourite_coffee/right_arrow.svg"
-              alt=""
-              class="slider__arrow"
-            />
+          <button class="slider__arrow">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                class="slider__arrow_right"
+                d="M6 12H18.5M18.5 12L12.5 6M18.5 12L12.5 18"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </button>
-          <div class="slider-lines">
-            <hr class="slider-lines__item" />
-            <hr class="slider-lines__item" />
-            <hr class="slider-lines__item" />
-          </div>
+        </div>
+        <div class="slider-controls">
+          <hr class="slider-controls__item" />
+          <hr class="slider-controls__item" />
+          <hr class="slider-controls__item" />
         </div>
       </div>
       <div class="about container" id="about">
