@@ -790,6 +790,9 @@ html {
   align-items: flex-start;
   gap: 2px;
 }
+.footer {
+  margin-bottom: 40px;
+}
 .footer__inner {
   display: flex;
   align-items: center;
