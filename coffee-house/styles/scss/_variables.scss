@@ -1,0 +1,72 @@
+$colors: (
+	text: (
+		dark: #403f3d,
+		light: #e1d4c9,
+		accent: #b0907a
+	),
+	background: (
+		body: #e1d4c9,
+		container: #665f55,
+		backdrop: rgba(64, 63, 61, 0.8)
+	),
+	border: (
+		light: #c1b6ad,
+		dark: #665f55
+	)
+);
+
+%heading-1 {
+	font: {
+		size: 72px;
+		weight: 600;
+	}
+	line-height: 105%;
+}
+
+%heading-2 {
+	font: {
+		size: 60px;
+		weight: 600;
+	}
+	line-height: 125%;
+}
+
+%heading-3 {
+	font: {
+		size: 24px;
+		weight: 600;
+	}
+	line-height: 125%;
+}
+
+%medium {
+	font: {
+		size: 16px;
+		weight: 400;
+	}
+	line-height: 150%;
+}
+
+%caption {
+	font: {
+		size: 10px;
+		weight: 600;
+	}
+	line-height: 140%;
+}
+
+%link-and-button {
+	font: {
+		size: 16px;
+		weight: 600;
+	}
+	line-height: 150%;
+}
+
+%burger {
+	font: {
+		size: 32px;
+		weight: 600;
+	}
+	line-height: 125%;
+}
