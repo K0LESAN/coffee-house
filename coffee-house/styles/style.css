@@ -270,6 +270,7 @@ button,
 input,
 select,
 textarea {
+  color: inherit;
   font-size: 100%; /* 1 */
   margin: 0; /* 2 */
   padding: 0;
@@ -452,7 +453,7 @@ textarea {
   line-height: 105%;
 }
 
-.about__title, .favorite-coffee__title {
+.mobile-app__title, .about__title, .favorite-coffee__title {
   font-family: "Inter", sans-serif;
   font-size: 60px;
   font-weight: 600;
@@ -466,14 +467,21 @@ textarea {
   line-height: 125%;
 }
 
-.favorite-coffee-info__description, .enjoy__description {
+.mobile-app__description, .favorite-coffee-info__description, .enjoy__description {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
 }
 
-.enjoy__link, .menu__text, .nav__link {
+.mobile-app-links__avaliable {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.mobile-app-links__app-shop, .enjoy__link, .menu__text, .nav__link {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -714,6 +722,64 @@ textarea {
   height: inherit;
   transition: transform 0.5s ease-out;
   transform: scale(1.1);
+}
+
+.mobile-app {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mobile-app__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 630px;
+  gap: 40px;
+  color: #403f3d;
+}
+.mobile-app__title_taupe {
+  font-style: italic;
+  color: #b0907a;
+}
+.mobile-app__image {
+  width: 630px;
+  height: 630px;
+}
+.mobile-app__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.mobile-app-links__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 200px;
+  height: 64px;
+  padding: 12px 20px;
+  border: 1px solid #665f55;
+  border-radius: 100px;
+  background-color: transparent;
+  transition: background-color ease-in 0.5s;
+}
+.mobile-app-links__item:hover {
+  background-color: #665f55;
+}
+.mobile-app-links__item:hover .mobile-app-links__icon {
+  fill: #e1d4c9;
+}
+.mobile-app-links__icon {
+  width: 36px;
+  height: 36px;
+  transition: fill ease-in 0.5s;
+}
+.mobile-app-links__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
 }
 
 /*# sourceMappingURL=style.css.map */
