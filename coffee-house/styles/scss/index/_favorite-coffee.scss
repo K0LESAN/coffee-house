@@ -14,10 +14,8 @@
 		}
 	}
 
-	&__inner {
-	}
-
 	&-info {
+		scroll-behavior: smooth;
 		position: relative;
 		display: flex;
 		align-items: center;
@@ -49,14 +47,8 @@
 			margin-bottom: 20px;
 		}
 
-		&__title {
-		}
-
 		&__description {
 			@extend %medium;
-		}
-
-		&__price {
 		}
 	}
 }

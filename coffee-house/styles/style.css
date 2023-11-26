@@ -511,7 +511,9 @@ textarea {
 .header__link {
   width: 100px;
   height: 60px;
+  scroll-behavior: smooth;
 }
+
 .nav {
   flex: 1 0 0;
 }
@@ -597,6 +599,7 @@ textarea {
   color: #b0907a;
 }
 .favorite-coffee-info {
+  scroll-behavior: smooth;
   position: relative;
   display: flex;
   align-items: center;
