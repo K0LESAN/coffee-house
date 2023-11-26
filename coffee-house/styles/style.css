@@ -364,8 +364,23 @@ template {
   font-weight: 600;
   src: local("Inter SemiBold Italic"), local("Inter-SemiBold-Italic"), url("../../assets/fonts/inter/inter_regular.ttf") format("ttf");
 }
+.menu__text, .nav__link {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
 * {
   box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
@@ -374,6 +389,51 @@ template {
   margin-right: auto;
   padding-left: 40px;
   padding-right: 40px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.header__link {
+  width: 100px;
+  height: 60px;
+}
+.nav {
+  flex: 1 0 0;
+}
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 456px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 40px;
+  padding: 0;
+}
+.nav__item {
+  height: 28px;
+}
+.nav__link {
+  color: #403f3d;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 72px;
+  height: 28px;
+}
+.menu__text {
+  color: #403f3d;
+}
+.menu__icon {
+  width: 20px;
+  height: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

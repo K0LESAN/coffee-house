@@ -1,0 +1,59 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+
+	&__link {
+		width: 100px;
+		height: 60px;
+	}
+
+	&__logo {
+	}
+
+	&__menu {
+	}
+}
+
+.nav {
+	flex: 1 0 0;
+
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 456px;
+		margin-left: auto;
+		margin-right: auto;
+		gap: 40px;
+		padding: 0;
+	}
+
+	&__item {
+		height: 28px;
+	}
+
+	&__link {
+		@extend %link-and-button;
+		color: map-get($colors, text, dark);
+	}
+}
+
+.menu {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 72px;
+	height: 28px;
+
+	&__text {
+		@extend %link-and-button;
+		color: map-get($colors, text, dark);
+	}
+
+	&__icon {
+		width: 20px;
+		height: 20px;
+	}
+}
