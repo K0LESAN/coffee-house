@@ -29,12 +29,28 @@
 		}
 	}
 
+	&__text-menu {
+		position: relative;
+		right: 0px;
+		transition: right ease-in 0.3s;
+	}
+
+	&__hidden-icon {
+		position: relative;
+		right: 6px;
+		opacity: 0;
+		transition: opacity ease-in 0.3s;
+	}
+
 	&__description {
 		@extend %medium;
 		color: map-get($colors, text, light);
 	}
 
 	&__link {
+		position: relative;
+		display: flex;
+		align-items: center;
 		width: 200px;
 		height: 64px;
 		border-radius: 100px;
@@ -42,5 +58,15 @@
 		@extend %link-and-button;
 		color: map-get($colors, text, dark);
 		background-color: map-get($colors, background, body);
+
+		&:hover {
+			& .enjoy__text-menu {
+				right: 14px;
+			}
+
+			& .enjoy__hidden-icon {
+				opacity: 1;
+			}
+		}
 	}
 }
