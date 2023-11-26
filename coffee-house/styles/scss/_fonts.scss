@@ -8,7 +8,7 @@
 	src:
 		local("Inter Regular"),
 		local("Inter-Regular"),
-		url("../../assets/fonts/inter/inter_regular.ttf") format("ttf");
+		url("/coffee-house/assets/fonts/inter/inter_regular.ttf") format("ttf");
 }
 
 @font-face {
@@ -21,7 +21,7 @@
 	src:
 		local("Inter SemiBold"),
 		local("Inter-SemiBold"),
-		url("../../assets/fonts/inter/inter_regular.ttf") format("ttf");
+		url("/coffee-house/assets/fonts/inter/inter_semi_bold.ttf") format("ttf");
 }
 
 @font-face {
@@ -34,5 +34,5 @@
 	src:
 		local("Inter SemiBold Italic"),
 		local("Inter-SemiBold-Italic"),
-		url("../../assets/fonts/inter/inter_regular.ttf") format("ttf");
+		url("/coffee-house/assets/fonts/inter/inter_semi_bold_italic.ttf") format("ttf");
 }

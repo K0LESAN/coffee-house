@@ -431,21 +431,21 @@ textarea {
   font-display: fallback;
   font-style: normal;
   font-weight: 400;
-  src: local("Inter Regular"), local("Inter-Regular"), url("../../assets/fonts/inter/inter_regular.ttf") format("ttf");
+  src: local("Inter Regular"), local("Inter-Regular"), url("/coffee-house/assets/fonts/inter/inter_regular.ttf") format("ttf");
 }
 @font-face {
   font-family: "Inter";
   font-display: swap;
   font-style: normal;
   font-weight: 600;
-  src: local("Inter SemiBold"), local("Inter-SemiBold"), url("../../assets/fonts/inter/inter_regular.ttf") format("ttf");
+  src: local("Inter SemiBold"), local("Inter-SemiBold"), url("/coffee-house/assets/fonts/inter/inter_semi_bold.ttf") format("ttf");
 }
 @font-face {
   font-family: "Inter";
   font-display: swap;
   font-style: italic;
   font-weight: 600;
-  src: local("Inter SemiBold Italic"), local("Inter-SemiBold-Italic"), url("../../assets/fonts/inter/inter_regular.ttf") format("ttf");
+  src: local("Inter SemiBold Italic"), local("Inter-SemiBold-Italic"), url("/coffee-house/assets/fonts/inter/inter_semi_bold_italic.ttf") format("ttf");
 }
 .enjoy__title {
   font-family: "Inter", sans-serif;
