@@ -461,14 +461,14 @@ textarea {
   line-height: 125%;
 }
 
-.contacts__title, .favorite-coffee-info {
+.contacts__title, .grid-menu__price, .grid-menu__title, .favorite-coffee-info {
   font-family: "Inter", sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 125%;
 }
 
-.mobile-app__description, .favorite-coffee-info__description, .enjoy__description {
+.grid-menu__description, .mobile-app__description, .favorite-coffee-info__description, .enjoy__description {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -912,6 +912,46 @@ body {
   color: #e1d4c9;
 }
 
+.grid-menu {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 100px;
+}
+.grid-menu__item {
+  width: 310px;
+  height: 506px;
+  border: 1px solid #c1b6ad;
+  border-radius: 40px;
+  color: #403f3d;
+}
+.grid-menu__item:hover .grid-menu__image {
+  width: 310px;
+  height: 310px;
+}
+.grid-menu__image {
+  width: 340px;
+  height: 340px;
+  transition: width, height ease-out, 0.5s;
+}
+.grid-menu__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 196px;
+  padding: 20px;
+}
+.grid-menu__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 310px;
+  border-radius: 40px;
+  overflow: hidden;
+}
+.grid-menu__title {
+  margin-bottom: 12px;
+}
 .footer {
   margin-bottom: 40px;
 }
