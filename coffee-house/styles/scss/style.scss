@@ -1,17 +1,9 @@
-@import "normalize/normalize";
+@import "reset";
 @import "fonts";
 @import "variables";
 
 * {
 	box-sizing: border-box;
-}
-
-ul {
-	list-style: none;
-}
-
-a {
-	text-decoration: none;
 }
 
 .container {
@@ -24,6 +16,6 @@ a {
 
 @import "header";
 
-@import "index/index";
+@import "index/main";
 
 @import "footer";
