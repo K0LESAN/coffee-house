@@ -505,6 +505,10 @@ html {
   padding-right: 40px;
 }
 
+body {
+  background-color: #e1d4c9;
+}
+
 .header {
   display: flex;
   justify-content: space-between;

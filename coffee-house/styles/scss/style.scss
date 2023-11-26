@@ -18,6 +18,10 @@ html {
 	padding-right: 40px;
 }
 
+body {
+	background-color: map-get($colors, background, body);
+}
+
 @import "header";
 
 @import "index/main";
