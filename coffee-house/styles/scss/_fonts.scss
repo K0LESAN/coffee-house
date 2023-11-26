@@ -5,10 +5,15 @@
 		style: normal;
 		weight: 400;
 	}
+
+	src: url("/coffee-house/assets/fonts/inter/Inter-Regular.eot");
 	src:
 		local("Inter Regular"),
 		local("Inter-Regular"),
-		url("/coffee-house/assets/fonts/inter/inter_regular.ttf") format("ttf");
+		url("/coffee-house/assets/fonts/inter/Inter-Regular.eot?#iefix") format("embedded-opentype"),
+		url("/coffee-house/assets/fonts/inter/Inter-Regular.woff2") format("woff2"),
+		url("/coffee-house/assets/fonts/inter/Inter-Regular.woff") format("woff"),
+		url("/coffee-house/assets/fonts/inter/Inter-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -18,10 +23,15 @@
 		style: normal;
 		weight: 600;
 	}
+
+	src: url("/coffee-house/assets/fonts/inter/Inter-SemiBold.eot");
 	src:
-		local("Inter SemiBold"),
+		local("Inter Semi Bold"),
 		local("Inter-SemiBold"),
-		url("/coffee-house/assets/fonts/inter/inter_semi_bold.ttf") format("ttf");
+		url("/coffee-house/assets/fonts/inter/Inter-SemiBold.eot?#iefix") format("embedded-opentype"),
+		url("/coffee-house/assets/fonts/inter/Inter-SemiBold.woff2") format("woff2"),
+		url("/coffee-house/assets/fonts/inter/Inter-SemiBold.woff") format("woff"),
+		url("/coffee-house/assets/fonts/inter/Inter-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
@@ -31,8 +41,13 @@
 		style: italic;
 		weight: 600;
 	}
+
+	src: url("/coffee-house/assets/fonts/inter/Inter-SemiBoldItalic.eot");
 	src:
-		local("Inter SemiBold Italic"),
-		local("Inter-SemiBold-Italic"),
-		url("/coffee-house/assets/fonts/inter/inter_semi_bold_italic.ttf") format("ttf");
+		local("Inter Semi Bold Italic"),
+		local("Inter-SemiBoldItalic"),
+		url("/coffee-house/assets/fonts/inter/Inter-SemiBoldItalic.eot?#iefix") format("embedded-opentype"),
+		url("/coffee-house/assets/fonts/inter/Inter-SemiBoldItalic.woff2") format("woff2"),
+		url("/coffee-house/assets/fonts/inter/Inter-SemiBoldItalic.woff") format("woff"),
+		url("/coffee-house/assets/fonts/inter/Inter-SemiBoldItalic.truetype") format("truetype");
 }
