@@ -364,5 +364,12 @@ template {
   font-weight: 600;
   src: local("Inter SemiBold Italic"), local("Inter-SemiBold-Italic"), url("../../assets/fonts/inter/inter_regular.ttf") format("ttf");
 }
+.container {
+  width: 1380px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 /*# sourceMappingURL=style.css.map */
