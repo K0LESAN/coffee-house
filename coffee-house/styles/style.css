@@ -454,7 +454,7 @@ textarea {
   line-height: 105%;
 }
 
-.social-networks__title, .mobile-app__title, .about__title, .favorite-coffee__title {
+.social-networks__title, .offer__title, .mobile-app__title, .about__title, .favorite-coffee__title {
   font-family: "Inter", sans-serif;
   font-size: 60px;
   font-weight: 600;
@@ -482,7 +482,7 @@ textarea {
   line-height: 140%;
 }
 
-.contacts__info, .mobile-app-links__app-shop, .enjoy__link, .menu__text, .nav__link {
+.contacts__info, .offer__button-text, .offer__button-icon, .mobile-app-links__app-shop, .enjoy__link, .menu__text, .nav__link {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -849,6 +849,69 @@ body {
   gap: 2px;
   transition: color ease-in 0.5s;
 }
+.offer {
+  margin-bottom: 40px;
+}
+.offer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.offer__title {
+  text-align: center;
+  color: #403f3d;
+}
+.offer__title_taupe {
+  color: #b0907a;
+  font-style: italic;
+}
+.offer__buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.offer__button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 46px;
+  padding: 8px 16px 8px 8px;
+  border: 1px solid #c1b6ad;
+  border-radius: 100px;
+  background-color: transparent;
+  transition: background-color, color, border, ease-out, 0.5s;
+}
+.offer__button-icon {
+  width: 16px;
+  height: 24px;
+}
+.offer__button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 3px 7px;
+  border-radius: 100px;
+  background-color: #c1b6ad;
+}
+.offer__button-text {
+  color: #403f3d;
+}
+.offer__button:active {
+  border: 0;
+  background-color: #665f55;
+}
+.offer__button:hover {
+  border: 0;
+  background-color: #665f55;
+  color: #e1d4c9;
+}
+
 .footer {
   margin-bottom: 40px;
 }

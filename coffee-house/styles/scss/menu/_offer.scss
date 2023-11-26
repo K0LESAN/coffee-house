@@ -1,0 +1,75 @@
+.offer {
+	margin-bottom: 40px;
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 40px;
+		width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&__title {
+		text-align: center;
+		@extend %heading-2;
+		color: map-get($colors, text, dark);
+
+		&_taupe {
+			color: map-get($colors, text, accent);
+			font-style: italic;
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+
+	&__button {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		height: 46px;
+		padding: 8px 16px 8px 8px;
+		border: 1px solid map-get($colors, border, light);
+		border-radius: 100px;
+		background-color: transparent;
+		transition: background-color, color, border, ease-out, 0.5s;
+
+		&-icon {
+			width: 16px;
+			height: 24px;
+			@extend %link-and-button;
+		}
+
+		&-wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 30px;
+			height: 30px;
+			padding: 3px 7px;
+			border-radius: 100px;
+			background-color: map-get($colors, border, light);
+		}
+
+		&-text {
+			@extend %link-and-button;
+			color: map-get($colors, text, dark);
+		}
+
+		&:active {
+			border: 0;
+			background-color: map-get($colors, background, container);
+		}
+
+		&:hover {
+			border: 0;
+			background-color: map-get($colors, background, container);
+			color: map-get($colors, text, light);
+		}
+	}
+}
