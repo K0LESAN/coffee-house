@@ -600,6 +600,7 @@ body {
   background-image: url("/coffee-house/assets/images/index/enjoy/hero_image.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position-y: -30px;
 }
 .enjoy__info {
   display: flex;
