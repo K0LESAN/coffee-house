@@ -343,4 +343,26 @@ template {
   display: none;
 }
 
+@font-face {
+  font-family: "Inter";
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Inter Regular"), local("Inter-Regular"), url("../../assets/fonts/inter/inter_regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+  src: local("Inter SemiBold"), local("Inter-SemiBold"), url("../../assets/fonts/inter/inter_regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  font-style: italic;
+  font-weight: 600;
+  src: local("Inter SemiBold Italic"), local("Inter-SemiBold-Italic"), url("../../assets/fonts/inter/inter_regular.ttf") format("ttf");
+}
+
 /*# sourceMappingURL=style.css.map */
