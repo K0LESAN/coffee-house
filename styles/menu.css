@@ -413,6 +413,9 @@ body {
   width: 100px;
   height: 60px;
 }
+.header__link_unselect {
+  pointer-events: none;
+}
 
 .nav {
   flex: 1 0 0;
@@ -482,6 +485,13 @@ body {
   transform: scaleX(1);
   opacity: 1;
 }
+.menu_select {
+  pointer-events: none;
+}
+.menu_select::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
 
 .offer {
   margin-bottom: 40px;
@@ -517,7 +527,7 @@ body {
   border: 1px solid #c1b6ad;
   border-radius: 100px;
   background-color: transparent;
-  transition: background-color, color, border, ease-out, 0.5s;
+  transition: color ease-out 0.5s;
 }
 .offer__button-icon {
   width: 16px;
@@ -535,13 +545,19 @@ body {
 }
 .offer__button-text {
   color: #403f3d;
+  color: inherit;
+}
+.offer__button_select {
+  border-color: transparent;
+  background-color: #665f55;
+  color: #e1d4c9;
 }
 .offer__button:active {
-  border: 0;
+  border-color: transparent;
   background-color: #665f55;
 }
 .offer__button:hover {
-  border: 0;
+  border-color: transparent;
   background-color: #665f55;
   color: #e1d4c9;
 }

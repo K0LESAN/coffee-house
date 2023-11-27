@@ -427,6 +427,9 @@ body {
   width: 100px;
   height: 60px;
 }
+.header__link_unselect {
+  pointer-events: none;
+}
 
 .nav {
   flex: 1 0 0;
@@ -493,6 +496,13 @@ body {
   transition: transform, opacity, ease-out, 0.5s;
 }
 .menu:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+.menu_select {
+  pointer-events: none;
+}
+.menu_select::after {
   transform: scaleX(1);
   opacity: 1;
 }

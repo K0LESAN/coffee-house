@@ -37,7 +37,7 @@
 		border: 1px solid map-get($colors, border, light);
 		border-radius: 100px;
 		background-color: transparent;
-		transition: background-color, color, border, ease-out, 0.5s;
+		transition: color ease-out 0.5s;
 
 		&-icon {
 			width: 16px;
@@ -59,15 +59,22 @@
 		&-text {
 			@extend %link-and-button;
 			color: map-get($colors, text, dark);
+			color: inherit;
+		}
+
+		&_select {
+			border-color: transparent;
+			background-color: map-get($colors, background, container);
+			color: map-get($colors, text, light);
 		}
 
 		&:active {
-			border: 0;
+			border-color: transparent;
 			background-color: map-get($colors, background, container);
 		}
 
 		&:hover {
-			border: 0;
+			border-color: transparent;
 			background-color: map-get($colors, background, container);
 			color: map-get($colors, text, light);
 		}

@@ -8,6 +8,10 @@
 	&__link {
 		width: 100px;
 		height: 60px;
+
+		&_unselect {
+			pointer-events: none;
+		}
 	}
 }
 
@@ -88,5 +92,14 @@
 	&:hover::after {
 		transform: scaleX(1);
 		opacity: 1;
+	}
+
+	&_select {
+		pointer-events: none;
+
+		&::after {
+			transform: scaleX(1);
+			opacity: 1;
+		}
 	}
 }
