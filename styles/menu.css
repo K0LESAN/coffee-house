@@ -433,34 +433,43 @@ body {
   display: block;
   position: relative;
   height: 28px;
+  overflow: hidden;
 }
 .nav__item::after {
   position: absolute;
-  display: block;
   width: 100%;
+  bottom: 0;
   height: 2px;
-  bottom: -2px;
   background-color: #403f3d;
-  transform: scaleX(0);
   opacity: 0;
-  content: "";
+  transform: scaleX(0);
   transition: transform, opacity, ease-out, 0.5s;
+  content: "";
 }
 .nav__item:hover::after {
   transform: scaleX(1);
   opacity: 1;
 }
 .nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  height: 24px;
   color: #403f3d;
 }
 
 .burger-menu {
   position: relative;
+  height: 28px;
+  overflow: hidden;
+}
+.burger-menu__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 72px;
-  height: 28px;
+  height: 24px;
 }
 .burger-menu__text {
   color: #403f3d;
@@ -469,26 +478,25 @@ body {
   width: 20px;
   height: 20px;
 }
-.burger-menu::after {
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 1.9px;
-  background-color: #403f3d;
-  bottom: 0;
-  transform: scaleX(0);
-  opacity: 0;
-  content: "";
-  transition: transform, opacity, ease-out, 0.5s;
-}
-.burger-menu:hover::after {
-  transform: scaleX(1);
-  opacity: 1;
-}
 .burger-menu_select {
   pointer-events: none;
 }
 .burger-menu_select::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+.burger-menu::after {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 2px;
+  background-color: #403f3d;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: transform, opacity, ease-out, 0.5s;
+  content: "";
+}
+.burger-menu:hover::after {
   transform: scaleX(1);
   opacity: 1;
 }
@@ -682,15 +690,14 @@ body {
 }
 .contacts__link:nth-child(1)::after, .contacts__link:nth-child(2)::after {
   position: absolute;
-  display: block;
   width: 100%;
-  height: 1.9px;
-  bottom: -2px;
+  bottom: -4px;
+  height: 2px;
   background-color: #e1d4c9;
-  transform: scaleX(0);
   opacity: 0;
-  content: "";
+  transform: scaleX(0);
   transition: transform, opacity, ease-out, 0.5s;
+  content: "";
 }
 .contacts__link:hover::after {
   transform: scaleX(1);
@@ -701,6 +708,7 @@ body {
   align-items: flex-start;
   height: 28px;
   gap: 8px;
+  overflow: hidden;
 }
 .contacts__icon {
   width: 20px;

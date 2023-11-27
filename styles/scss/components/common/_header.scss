@@ -32,18 +32,18 @@
 		display: block;
 		position: relative;
 		height: 28px;
+		overflow: hidden;
 
 		&::after {
 			position: absolute;
-			display: block;
 			width: 100%;
+			bottom: 0;
 			height: 2px;
-			bottom: -2px;
 			background-color: map-get($colors, text, dark);
-			transform: scaleX(0);
 			opacity: 0;
-			content: "";
+			transform: scaleX(0);
 			transition: transform, opacity, ease-out, 0.5s;
+			content: "";
 		}
 
 		&:hover::after {
@@ -53,6 +53,11 @@
 	}
 
 	&__link {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2px;
+		height: 24px;
 		@extend %link-and-button;
 		color: map-get($colors, text, dark);
 	}
@@ -60,11 +65,16 @@
 
 .burger-menu {
 	position: relative;
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	width: 72px;
 	height: 28px;
+	overflow: hidden;
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		width: 72px;
+		height: 24px;
+	}
 
 	&__text {
 		@extend %link-and-button;
@@ -76,24 +86,6 @@
 		height: 20px;
 	}
 
-	&::after {
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 1.9px;
-		background-color: map-get($colors, text, dark);
-		bottom: 0;
-		transform: scaleX(0);
-		opacity: 0;
-		content: "";
-		transition: transform, opacity, ease-out, 0.5s;
-	}
-
-	&:hover::after {
-		transform: scaleX(1);
-		opacity: 1;
-	}
-
 	&_select {
 		pointer-events: none;
 
@@ -101,5 +93,22 @@
 			transform: scaleX(1);
 			opacity: 1;
 		}
+	}
+
+	&::after {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		height: 2px;
+		background-color: map-get($colors, text, dark);
+		opacity: 0;
+		transform: scaleX(0);
+		transition: transform, opacity, ease-out, 0.5s;
+		content: "";
+	}
+
+	&:hover::after {
+		transform: scaleX(1);
+		opacity: 1;
 	}
 }
