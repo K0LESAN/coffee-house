@@ -530,11 +530,10 @@ body {
   transition: border-color, background-color, color, ease-out 0.5s;
 }
 .offer__button-icon {
-  width: 16px;
-  height: 24px;
+  display: inline;
 }
 .offer__button-wrapper {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   width: 30px;
