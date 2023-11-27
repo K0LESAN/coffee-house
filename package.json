@@ -1,1 +1,5 @@
-
+{
+  "scripts": {
+    "scss": "sass -s compressed -w --no-source-map  styles\\scss\\pages:styles"
+  }
+}
