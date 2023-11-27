@@ -6,14 +6,14 @@
 		weight: 400;
 	}
 
-	src: url("/assets/fonts/Inter/Regular/Inter-Regular.eot");
+	src: url("../assets/fonts/Inter/Regular/Inter-Regular.eot");
 	src:
 		local("Inter Regular"),
 		local("Inter-Regular"),
-		url("/assets/fonts/Inter/Regular/Inter-Regular.eot?#iefix") format("embedded-opentype"),
-		url("/assets/fonts/Inter/Regular/Inter-Regular.woff2") format("woff2"),
-		url("/assets/fonts/Inter/Regular/Inter-Regular.woff") format("woff"),
-		url("/assets/fonts/Inter/Regular/Inter-Regular.ttf") format("truetype");
+		url("../assets/fonts/Inter/Regular/Inter-Regular.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Inter/Regular/Inter-Regular.woff2") format("woff2"),
+		url("../assets/fonts/Inter/Regular/Inter-Regular.woff") format("woff"),
+		url("../assets/fonts/Inter/Regular/Inter-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -24,14 +24,14 @@
 		weight: 600;
 	}
 
-	src: url("/assets/fonts/Inter/SemiBold/Inter-SemiBold.eot");
+	src: url("../assets/fonts/Inter/SemiBold/Inter-SemiBold.eot");
 	src:
 		local("Inter Semi Bold"),
 		local("Inter-SemiBold"),
-		url("/assets/fonts/Inter/SemiBold/Inter-SemiBold.eot?#iefix") format("embedded-opentype"),
-		url("/assets/fonts/Inter/SemiBold/Inter-SemiBold.woff2") format("woff2"),
-		url("/assets/fonts/Inter/SemiBold/Inter-SemiBold.woff") format("woff"),
-		url("/assets/fonts/Inter/SemiBold/Inter-SemiBold.ttf") format("truetype");
+		url("../assets/fonts/Inter/SemiBold/Inter-SemiBold.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Inter/SemiBold/Inter-SemiBold.woff2") format("woff2"),
+		url("../assets/fonts/Inter/SemiBold/Inter-SemiBold.woff") format("woff"),
+		url("../assets/fonts/Inter/SemiBold/Inter-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
@@ -42,12 +42,12 @@
 		weight: 600;
 	}
 
-	src: url("/assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot");
+	src: url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot");
 	src:
 		local("Inter Semi Bold Italic"),
 		local("Inter-SemiBoldItalic"),
-		url("/assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot?#iefix") format("embedded-opentype"),
-		url("/assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff2") format("woff2"),
-		url("/assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff") format("woff"),
-		url("/assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.truetype") format("truetype");
+		url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff2") format("woff2"),
+		url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff") format("woff"),
+		url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.truetype") format("truetype");
 }
