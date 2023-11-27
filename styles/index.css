@@ -335,47 +335,61 @@ textarea {
   font-display: fallback;
   font-style: normal;
   font-weight: 400;
-  src: url("/coffee-house/assets/fonts/Inter/Regular/Inter-Regular.eot");
-  src: local("Inter Regular"), local("Inter-Regular"), url("/coffee-house/assets/fonts/Inter/Regular/Inter-Regular.eot?#iefix") format("embedded-opentype"), url("/coffee-house/assets/fonts/Inter/Regular/Inter-Regular.woff2") format("woff2"), url("/coffee-house/assets/fonts/Inter/Regular/Inter-Regular.woff") format("woff"), url("/coffee-house/assets/fonts/Inter/Regular/Inter-Regular.ttf") format("truetype");
+  src: url("/assets/fonts/Inter/Regular/Inter-Regular.eot");
+  src: local("Inter Regular"), local("Inter-Regular"), url("/assets/fonts/Inter/Regular/Inter-Regular.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Inter/Regular/Inter-Regular.woff2") format("woff2"), url("/assets/fonts/Inter/Regular/Inter-Regular.woff") format("woff"), url("/assets/fonts/Inter/Regular/Inter-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Inter";
   font-display: swap;
   font-style: normal;
   font-weight: 600;
-  src: url("/coffee-house/assets/fonts/Inter/SemiBold/Inter-SemiBold.eot");
-  src: local("Inter Semi Bold"), local("Inter-SemiBold"), url("/coffee-house/assets/fonts/Inter/SemiBold/Inter-SemiBold.eot?#iefix") format("embedded-opentype"), url("/coffee-house/assets/fonts/Inter/SemiBold/Inter-SemiBold.woff2") format("woff2"), url("/coffee-house/assets/fonts/Inter/SemiBold/Inter-SemiBold.woff") format("woff"), url("/coffee-house/assets/fonts/Inter/SemiBold/Inter-SemiBold.ttf") format("truetype");
+  src: url("/assets/fonts/Inter/SemiBold/Inter-SemiBold.eot");
+  src: local("Inter Semi Bold"), local("Inter-SemiBold"), url("/assets/fonts/Inter/SemiBold/Inter-SemiBold.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Inter/SemiBold/Inter-SemiBold.woff2") format("woff2"), url("/assets/fonts/Inter/SemiBold/Inter-SemiBold.woff") format("woff"), url("/assets/fonts/Inter/SemiBold/Inter-SemiBold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Inter";
   font-display: swap;
   font-style: italic;
   font-weight: 600;
-  src: url("/coffee-house/assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot");
-  src: local("Inter Semi Bold Italic"), local("Inter-SemiBoldItalic"), url("/coffee-house/assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("/coffee-house/assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff2") format("woff2"), url("/coffee-house/assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff") format("woff"), url("/coffee-house/assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.truetype") format("truetype");
+  src: url("/assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot");
+  src: local("Inter Semi Bold Italic"), local("Inter-SemiBoldItalic"), url("/assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff2") format("woff2"), url("/assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff") format("woff"), url("/assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.truetype") format("truetype");
 }
-.social-networks__title, .offer__title {
+.enjoy__title {
+  font-family: "Inter", sans-serif;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 105%;
+}
+
+.social-networks__title, .mobile-app__title, .about__title, .favorite-coffee__title {
   font-family: "Inter", sans-serif;
   font-size: 60px;
   font-weight: 600;
   line-height: 125%;
 }
 
-.contacts__title, .grid-menu__price, .grid-menu__title {
+.contacts__title, .favorite-coffee-info {
   font-family: "Inter", sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 125%;
 }
 
-.grid-menu__description {
+.mobile-app__description, .favorite-coffee-info__description, .enjoy__description {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
 }
 
-.contacts__info, .offer__button-text, .offer__button-icon, .menu__text, .nav__link {
+.mobile-app-links__avaliable {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.contacts__info, .mobile-app-links__app-shop, .enjoy__link, .menu__text, .nav__link {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -483,108 +497,265 @@ body {
   opacity: 1;
 }
 
-.offer {
-  margin-bottom: 40px;
+.enjoy {
+  height: 644px;
+  margin-bottom: 100px;
 }
-.offer__inner {
+.enjoy__inner {
+  padding: 100px;
+  border-radius: 40px;
+  background-image: url("/assets/images/index/enjoy/hero_image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -30px;
+}
+.enjoy__info {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 530px;
   gap: 40px;
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
-.offer__title {
-  text-align: center;
-  color: #403f3d;
+.enjoy__title {
+  color: #e1d4c9;
 }
-.offer__title_taupe {
+.enjoy__title_taupe {
   color: #b0907a;
   font-style: italic;
 }
-.offer__buttons {
+.enjoy__text-menu {
+  position: relative;
+  right: 0px;
+  transition: right ease-in 0.3s;
+}
+.enjoy__hidden-icon {
+  position: relative;
+  right: 6px;
+  opacity: 0;
+  transition: opacity ease-in 0.3s;
+}
+.enjoy__description {
+  color: #e1d4c9;
+}
+.enjoy__link {
+  position: relative;
   display: flex;
+  align-items: center;
+  width: 200px;
+  height: 64px;
+  border-radius: 100px;
+  padding: 20px 78px;
+  color: #403f3d;
+  background-color: #e1d4c9;
+}
+.enjoy__link:hover .enjoy__text-menu {
+  right: 14px;
+}
+.enjoy__link:hover .enjoy__hidden-icon {
+  opacity: 1;
+}
+
+.favorite-coffee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.favorite-coffee__title {
+  color: #403f3d;
+}
+.favorite-coffee__title_taupe {
+  font-style: italic;
+  color: #b0907a;
+}
+.favorite-coffee-info {
+  scroll-behavior: smooth;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 1152px;
+  height: 640px;
+  overflow: hidden;
+  color: #403f3d;
+}
+.favorite-coffee-info__text {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 16px;
 }
-.offer__button {
+.favorite-coffee-info__item {
+  width: 480px;
+  margin-right: 336px;
+  text-align: center;
+}
+.favorite-coffee-info__item:first-child {
+  margin-left: 336px;
+}
+.favorite-coffee-info__image {
+  height: 480px;
+  margin-bottom: 20px;
+}
+.slider {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.slider__arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #665f55;
+  border-radius: 100px;
+  background-color: transparent;
+  stroke: #403f3d;
+  transition: stroke, background-color, ease-out, 0.5s;
+}
+.slider__arrow:hover {
+  background-color: #665f55;
+  stroke: #e1d4c9;
+}
+.slider__arrow_left {
+  stroke: inherit;
+}
+.slider__arrow_right {
+  stroke: inherit;
+}
+.slider-controls {
+  display: flex;
+  align-items: center;
+  width: 144px;
+  gap: 12px;
+  margin-bottom: 100px;
+}
+.slider-controls__item {
+  width: 40px;
+  height: 4px;
+  border-radius: 100px;
+  background-color: #c1b6ad;
+  margin: 0;
+}
+.slider-controls__item:first-child {
+  background-color: #665f55;
+}
+
+.about {
+  margin-bottom: 100px;
+}
+.about__title {
+  margin-bottom: 40px;
+  color: #403f3d;
+}
+.about__title_taupe {
+  font-style: italic;
+  color: #b0907a;
+}
+.about__gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.about__wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+}
+.about__wrapper:hover .about__image {
+  transform: scale(1);
+}
+.about__first-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.about__first-column .about__wrapper:nth-child(1) {
+  height: 590px;
+}
+.about__first-column .about__wrapper:nth-child(2) {
+  height: 430px;
+}
+.about__second-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.about__second-column .about__wrapper:nth-child(1) {
+  height: 430px;
+}
+.about__second-column .about__wrapper:nth-child(2) {
+  height: 590px;
+}
+.about__image {
+  width: 660px;
+  height: inherit;
+  transition: transform 0.5s ease-out;
+  transform: scale(1.1);
+}
+
+.mobile-app {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.mobile-app__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 630px;
+  gap: 40px;
+  color: #403f3d;
+}
+.mobile-app__title_taupe {
+  font-style: italic;
+  color: #b0907a;
+}
+.mobile-app__image {
+  width: 630px;
+  height: 630px;
+}
+.mobile-app__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.mobile-app-links__item {
   display: flex;
   align-items: center;
   gap: 8px;
-  height: 46px;
-  padding: 8px 16px 8px 8px;
-  border: 1px solid #c1b6ad;
+  width: 200px;
+  height: 64px;
+  padding: 12px 20px;
+  border: 1px solid #665f55;
   border-radius: 100px;
   background-color: transparent;
-  transition: background-color, color, border, ease-out, 0.5s;
+  transition: background-color ease-in 0.5s;
 }
-.offer__button-icon {
-  width: 16px;
-  height: 24px;
-}
-.offer__button-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  padding: 3px 7px;
-  border-radius: 100px;
-  background-color: #c1b6ad;
-}
-.offer__button-text {
-  color: #403f3d;
-}
-.offer__button:active {
-  border: 0;
-  background-color: #665f55;
-}
-.offer__button:hover {
-  border: 0;
+.mobile-app-links__item:hover {
   background-color: #665f55;
   color: #e1d4c9;
 }
-
-.grid-menu {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  margin-bottom: 100px;
+.mobile-app-links__item:hover .mobile-app-links__icon {
+  fill: #e1d4c9;
 }
-.grid-menu__item {
-  width: 310px;
-  height: 506px;
-  border: 1px solid #c1b6ad;
-  border-radius: 40px;
-  color: #403f3d;
+.mobile-app-links__icon {
+  width: 36px;
+  height: 36px;
+  transition: fill ease-in 0.5s;
 }
-.grid-menu__item:hover .grid-menu__image {
-  width: 310px;
-  height: 310px;
-}
-.grid-menu__image {
-  width: 340px;
-  height: 340px;
-  transition: width, height ease-out, 0.5s;
-}
-.grid-menu__info {
+.mobile-app-links__text {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 196px;
-  padding: 20px;
-}
-.grid-menu__inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 310px;
-  border-radius: 40px;
-  overflow: hidden;
-}
-.grid-menu__title {
-  margin-bottom: 12px;
+  align-items: flex-start;
+  gap: 2px;
+  transition: color ease-in 0.5s;
 }
 .footer {
   margin-bottom: 40px;
