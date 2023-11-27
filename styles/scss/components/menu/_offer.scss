@@ -37,7 +37,11 @@
 		border: 1px solid map-get($colors, border, light);
 		border-radius: 100px;
 		background-color: transparent;
-		transition: color ease-out 0.5s;
+		transition:
+			border-color,
+			background-color,
+			color,
+			ease-out 0.5s;
 
 		&-icon {
 			width: 16px;
