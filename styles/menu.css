@@ -375,7 +375,7 @@ textarea {
   line-height: 150%;
 }
 
-.contacts__info, .menu__button-text, .menu__button-icon, .burger-menu__text, .nav__link {
+.contacts__wrapper, .menu__button-text, .menu__button-icon, .burger-menu__text, .nav__link {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -666,21 +666,21 @@ body {
   margin-bottom: 40px;
   color: #e1d4c9;
 }
-.contacts__info {
+.contacts__wrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
   gap: 16px;
   color: #e1d4c9;
 }
-.contacts__wrapper {
+.contacts__link {
   position: relative;
   display: flex;
   align-items: flex-start;
   height: 24px;
   gap: 8px;
 }
-.contacts__wrapper:nth-child(1)::after, .contacts__wrapper:nth-child(2)::after {
+.contacts__link:nth-child(1)::after, .contacts__link:nth-child(2)::after {
   position: absolute;
   display: block;
   width: 100%;
@@ -692,15 +692,15 @@ body {
   content: "";
   transition: transform, opacity, ease-out, 0.5s;
 }
-.contacts__text {
+.contacts__link:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+.contacts__item {
   display: flex;
   align-items: flex-start;
   height: 28px;
   gap: 8px;
-}
-.contacts__text:hover .contacts__wrapper::after {
-  transform: scaleX(1);
-  opacity: 1;
 }
 .contacts__icon {
   width: 20px;

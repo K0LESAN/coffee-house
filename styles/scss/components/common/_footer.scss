@@ -65,7 +65,7 @@
 		color: map-get($colors, text, light);
 	}
 
-	&__info {
+	&__wrapper {
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
@@ -74,7 +74,7 @@
 		color: map-get($colors, text, light);
 	}
 
-	&__wrapper {
+	&__link {
 		position: relative;
 		display: flex;
 		align-items: flex-start;
@@ -96,18 +96,18 @@
 				transition: transform, opacity, ease-out, 0.5s;
 			}
 		}
+
+		&:hover::after {
+			transform: scaleX(1);
+			opacity: 1;
+		}
 	}
 
-	&__text {
+	&__item {
 		display: flex;
 		align-items: flex-start;
 		height: 28px;
 		gap: 8px;
-
-		&:hover .contacts__wrapper::after {
-			transform: scaleX(1);
-			opacity: 1;
-		}
 	}
 
 	&__icon {
