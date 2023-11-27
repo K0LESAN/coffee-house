@@ -1,7 +1,3 @@
-@import "reset";
-@import "fonts";
-@import "variables";
-
 * {
 	box-sizing: border-box;
 }
@@ -21,8 +17,3 @@ html {
 body {
 	background-color: map-get($colors, background, body);
 }
-
-@import "header";
-@import "index/main";
-@import "menu/main";
-@import "footer";
