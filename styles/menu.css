@@ -354,28 +354,28 @@ textarea {
   src: url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot");
   src: local("Inter Semi Bold Italic"), local("Inter-SemiBoldItalic"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff2") format("woff2"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff") format("woff"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.truetype") format("truetype");
 }
-.social-networks__title, .offer__title {
+.social-networks__title, .hero__title {
   font-family: "Inter", sans-serif;
   font-size: 60px;
   font-weight: 600;
   line-height: 125%;
 }
 
-.contacts__title, .grid-menu__price, .grid-menu__title {
+.contacts__title, .menu__price, .menu__title {
   font-family: "Inter", sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 125%;
 }
 
-.grid-menu__description {
+.menu__description {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
 }
 
-.contacts__info, .offer__button-text, .offer__button-icon, .menu__text, .nav__link {
+.contacts__info, .menu__button-text, .menu__button-icon, .burger-menu__text, .nav__link {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -454,7 +454,7 @@ body {
   color: #403f3d;
 }
 
-.menu {
+.burger-menu {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -462,14 +462,14 @@ body {
   width: 72px;
   height: 28px;
 }
-.menu__text {
+.burger-menu__text {
   color: #403f3d;
 }
-.menu__icon {
+.burger-menu__icon {
   width: 20px;
   height: 20px;
 }
-.menu::after {
+.burger-menu::after {
   position: absolute;
   display: block;
   width: 100%;
@@ -481,22 +481,22 @@ body {
   content: "";
   transition: transform, opacity, ease-out, 0.5s;
 }
-.menu:hover::after {
+.burger-menu:hover::after {
   transform: scaleX(1);
   opacity: 1;
 }
-.menu_select {
+.burger-menu_select {
   pointer-events: none;
 }
-.menu_select::after {
+.burger-menu_select::after {
   transform: scaleX(1);
   opacity: 1;
 }
 
-.offer {
+.hero {
   margin-bottom: 40px;
 }
-.offer__inner {
+.hero__inner {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -505,20 +505,28 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.offer__title {
+.hero__title {
   text-align: center;
   color: #403f3d;
 }
-.offer__title_taupe {
+.hero__title_taupe {
   color: #b0907a;
   font-style: italic;
 }
-.offer__buttons {
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 100px;
+}
+.menu__buttons {
   display: flex;
   align-items: center;
   gap: 16px;
 }
-.offer__button {
+.menu__button {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -527,12 +535,12 @@ body {
   border: 1px solid #c1b6ad;
   border-radius: 100px;
   background-color: transparent;
-  transition: border-color, background-color, color, ease-out 0.5s;
+  transition: border-color, background-color, ease-out, 0.5s;
 }
-.offer__button-icon {
+.menu__button-icon {
   display: inline;
 }
-.offer__button-wrapper {
+.menu__button-wrapper {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -541,56 +549,58 @@ body {
   padding: 3px 7px;
   border-radius: 100px;
   background-color: #c1b6ad;
+  transition: background-color ease-out 0.5s;
 }
-.offer__button-text {
+.menu__button-text {
   color: #403f3d;
   color: inherit;
+  transition: color ease-out 0.5s;
 }
-.offer__button_select {
+.menu__button_select {
   border-color: transparent;
   background-color: #665f55;
   color: #e1d4c9;
 }
-.offer__button:active {
-  border-color: transparent;
-  background-color: #665f55;
+.menu__button_select > .menu__button-wrapper {
+  background-color: #e1d4c9;
 }
-.offer__button:hover {
+.menu__button:hover, .menu__button:active {
   border-color: transparent;
   background-color: #665f55;
   color: #e1d4c9;
 }
-
-.grid-menu {
+.menu__button:hover .menu__button-wrapper, .menu__button:active .menu__button-wrapper {
+  background-color: #e1d4c9;
+}
+.menu__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
-  margin-bottom: 100px;
 }
-.grid-menu__item {
+.menu__item {
   width: 310px;
   height: 506px;
   border: 1px solid #c1b6ad;
   border-radius: 40px;
   color: #403f3d;
 }
-.grid-menu__item:hover .grid-menu__image {
+.menu__item:hover .menu__image {
   width: 310px;
   height: 310px;
 }
-.grid-menu__image {
+.menu__image {
   width: 340px;
   height: 340px;
   transition: width, height ease-out, 0.5s;
 }
-.grid-menu__info {
+.menu__info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 196px;
   padding: 20px;
 }
-.grid-menu__inner {
+.menu__inner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -598,7 +608,7 @@ body {
   border-radius: 40px;
   overflow: hidden;
 }
-.grid-menu__title {
+.menu__title {
   margin-bottom: 12px;
 }
 .footer {

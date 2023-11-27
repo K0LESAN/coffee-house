@@ -1,0 +1,24 @@
+.hero {
+	margin-bottom: 40px;
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 40px;
+		width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&__title {
+		text-align: center;
+		@extend %heading-2;
+		color: map-get($colors, text, dark);
+
+		&_taupe {
+			color: map-get($colors, text, accent);
+			font-style: italic;
+		}
+	}
+}

@@ -389,7 +389,7 @@ textarea {
   line-height: 140%;
 }
 
-.contacts__info, .mobile-app-links__app-shop, .enjoy__link, .menu__text, .nav__link {
+.contacts__info, .mobile-app-links__app-shop, .enjoy__link, .burger-menu__text, .nav__link {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -468,7 +468,7 @@ body {
   color: #403f3d;
 }
 
-.menu {
+.burger-menu {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -476,14 +476,14 @@ body {
   width: 72px;
   height: 28px;
 }
-.menu__text {
+.burger-menu__text {
   color: #403f3d;
 }
-.menu__icon {
+.burger-menu__icon {
   width: 20px;
   height: 20px;
 }
-.menu::after {
+.burger-menu::after {
   position: absolute;
   display: block;
   width: 100%;
@@ -495,14 +495,14 @@ body {
   content: "";
   transition: transform, opacity, ease-out, 0.5s;
 }
-.menu:hover::after {
+.burger-menu:hover::after {
   transform: scaleX(1);
   opacity: 1;
 }
-.menu_select {
+.burger-menu_select {
   pointer-events: none;
 }
-.menu_select::after {
+.burger-menu_select::after {
   transform: scaleX(1);
   opacity: 1;
 }
