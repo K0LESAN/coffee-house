@@ -3,6 +3,7 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 40px;
+	margin-bottom: 100px;
 
 	&__title {
 		@extend %heading-2;
@@ -89,14 +90,12 @@
 		align-items: center;
 		width: 144px;
 		gap: 12px;
-		margin-bottom: 100px;
 
 		&__item {
 			width: 40px;
 			height: 4px;
 			border-radius: 100px;
 			background-color: map-get($colors, border, light);
-			margin: 0;
 
 			&:first-child {
 				background-color: map-get($colors, border, dark);
