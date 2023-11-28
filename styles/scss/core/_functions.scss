@@ -1,7 +1,9 @@
+@use "sass:math";
+
 @function rem($px) {
-	@return ($px / $root-element) + rem;
+	@return math.div($px, $root-element) + rem;
 }
 
 @function em($root, $px) {
-	@return ($px / $root) + em;
+	@return math.div($px, $root) + em;
 }

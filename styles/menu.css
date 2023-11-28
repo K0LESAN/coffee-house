@@ -1,3 +1,31 @@
+.social-networks__title, .hero__title {
+  font-family: "Inter", sans-serif;
+  font-size: 3.75rem;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.contacts__title, .menu__price, .menu__title {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.menu__description {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.contacts__wrapper, .menu__button-text, .menu__button-icon, .burger-menu__text, .nav__link {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+
 *,
 *::before,
 *::after {
@@ -117,7 +145,7 @@ section {
 }
 
 body {
-  line-height: 1;
+  line-height: 0.0625rem;
 }
 
 ol,
@@ -160,7 +188,7 @@ canvas,
 video {
   display: inline-block;
   *display: inline;
-  *zoom: 1;
+  *zoom: 0.0625rem;
   max-width: 100%;
 }
 
@@ -203,7 +231,7 @@ form {
 
 fieldset {
   border: 1px solid #c0c0c0;
-  margin: 0 2px;
+  margin: 0 0.125rem;
   padding: 0.35em 0.625em 0.75em;
 }
 
@@ -211,7 +239,7 @@ legend {
   border: 0;
   padding: 0;
   white-space: normal;
-  *margin-left: -7px;
+  *margin-left: -rem(7);
 }
 
 button,
@@ -253,8 +281,8 @@ input[type=checkbox],
 input[type=radio] {
   box-sizing: border-box;
   padding: 0;
-  *height: 13px;
-  *width: 13px;
+  *height: 0.8125rem;
+  *width: 0.8125rem;
 }
 
 input[type=search] {
@@ -348,47 +376,19 @@ textarea {
   src: url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot");
   src: local("Inter Semi Bold Italic"), local("Inter-SemiBoldItalic"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff2") format("woff2"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff") format("woff"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.truetype") format("truetype");
 }
-.social-networks__title, .hero__title {
-  font-family: "Inter", sans-serif;
-  font-size: 60px;
-  font-weight: 600;
-  line-height: 125%;
-}
-
-.contacts__title, .menu__price, .menu__title {
-  font-family: "Inter", sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 125%;
-}
-
-.menu__description {
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 150%;
-}
-
-.contacts__wrapper, .menu__button-text, .menu__button-icon, .burger-menu__text, .nav__link {
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 150%;
-}
-
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
 .container {
-  width: 1440px;
+  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 40px;
-  padding-right: 40px;
 }
 
 body {
+  padding: 20px 40px 40px;
   background-color: #e1d4c9;
 }
 
@@ -396,7 +396,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 .header__link {
@@ -610,9 +609,6 @@ body {
 }
 .menu__title {
   margin-bottom: 12px;
-}
-.footer {
-  margin-bottom: 40px;
 }
 .footer__inner {
   display: flex;

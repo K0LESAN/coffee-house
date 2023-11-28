@@ -1,5 +1,5 @@
 html {
-	font-size: $root-element;
+	font-size: $root-element + px;
 	scroll-behavior: smooth;
 }
 
@@ -7,8 +7,6 @@ html {
 	max-width: map-get($adaptive-sizes, container-width, desktop);
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 40px;
-	padding-right: 40px;
 }
 
 body {
