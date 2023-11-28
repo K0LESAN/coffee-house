@@ -2,11 +2,11 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 20px;
+	margin-bottom: rem(20);
 
 	&__link {
-		width: 100px;
-		height: 60px;
+		max-width: 100px;
+		max-height: 60px;
 
 		&_unselect {
 			pointer-events: none;
@@ -21,23 +21,23 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		width: 456px;
+		max-width: 456px;
 		margin-left: auto;
 		margin-right: auto;
-		gap: 40px;
+		gap: rem(40);
 	}
 
 	&__item {
 		display: block;
 		position: relative;
-		height: 28px;
+		max-height: 28px;
 		overflow: hidden;
 
 		&::after {
 			position: absolute;
-			width: 100%;
+			max-width: 100%;
 			bottom: 0;
-			height: 2px;
+			max-height: 2px;
 			background-color: map-get($colors, text, dark);
 			opacity: 0;
 			transform: scaleX(0);
@@ -55,8 +55,8 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 2px;
-		height: 24px;
+		gap: rem(2);
+		max-height: 24px;
 		@extend %link-and-button;
 		color: map-get($colors, text, dark);
 	}
@@ -64,15 +64,15 @@
 
 .burger-menu {
 	position: relative;
-	height: 28px;
+	max-height: 28px;
 	overflow: hidden;
 
 	&__wrapper {
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
-		width: 72px;
-		height: 24px;
+		max-width: 72px;
+		max-height: 24px;
 	}
 
 	&__text {
@@ -81,15 +81,15 @@
 	}
 
 	&__icon {
-		width: 20px;
-		height: 20px;
+		max-width: 20px;
+		max-height: 20px;
 	}
 
 	&::after {
 		position: absolute;
-		width: 100%;
+		max-width: 100%;
 		bottom: 0;
-		height: 2px;
+		max-height: 2px;
 		background-color: map-get($colors, text, dark);
 		opacity: 0;
 		transform: scaleX(0);

@@ -1,8 +1,8 @@
 .about {
-	margin-bottom: 100px;
+	margin-bottom: rem(100);
 
 	&__title {
-		margin-bottom: 40px;
+		margin-bottom: rem(40);
 		@extend %heading-2;
 		color: map-get($colors, text, dark);
 
@@ -20,7 +20,7 @@
 	}
 
 	&__wrapper {
-		border-radius: 20px;
+		border-radius: rem(20);
 		overflow: hidden;
 
 		&:hover .about__image {
@@ -33,14 +33,14 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 40px;
+		gap: rem(40);
 
 		.about__wrapper:nth-child(1) {
-			height: 590px;
+			max-height: 590px;
 		}
 
 		.about__wrapper:nth-child(2) {
-			height: 430px;
+			max-height: 430px;
 		}
 	}
 
@@ -49,20 +49,20 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 40px;
+		gap: rem(40);
 
 		.about__wrapper:nth-child(1) {
-			height: 430px;
+			max-height: 430px;
 		}
 
 		.about__wrapper:nth-child(2) {
-			height: 590px;
+			max-height: 590px;
 		}
 	}
 
 	&__image {
-		width: 660px;
-		height: inherit;
+		max-width: 660px;
+		max-height: inherit;
 		transition: transform 0.5s ease-out;
 		transform: scale(1.1);
 	}

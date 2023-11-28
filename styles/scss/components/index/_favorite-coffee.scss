@@ -2,8 +2,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 40px;
-	margin-bottom: 100px;
+	gap: rem(40);
+	margin-bottom: rem(100);
 
 	&__title {
 		@extend %heading-2;
@@ -16,12 +16,12 @@
 	}
 
 	&-info {
-		scroll-behavior: smooth;
 		position: relative;
 		display: flex;
 		align-items: center;
-		width: 1152px;
-		height: 640px;
+		max-width: 1152px;
+		max-height: 640px;
+		padding-left: rem(336);
 		overflow: hidden;
 		color: map-get($colors, text, dark);
 		@extend %heading-3;
@@ -30,22 +30,18 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			gap: 16px;
+			gap: rem(16);
 		}
 
 		&__item {
-			width: 480px;
+			max-width: 480px;
 			margin-right: 336px;
 			text-align: center;
-
-			&:first-child {
-				margin-left: 336px;
-			}
 		}
 
 		&__image {
-			height: 480px;
-			margin-bottom: 20px;
+			max-height: 480px;
+			margin-bottom: rem(20);
 		}
 
 		&__description {
@@ -57,15 +53,15 @@
 .slider {
 	display: flex;
 	align-items: center;
-	gap: 40px;
+	gap: rem(40);
 
 	&__arrow {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 60px;
-		height: 60px;
-		border: 1px solid map-get($colors, border, dark);
+		max-width: 60px;
+		max-height: 60px;
+		border: rem(1) solid map-get($colors, border, dark);
 		border-radius: 100px;
 		background-color: transparent;
 		stroke: map-get($colors, text, dark);
@@ -88,13 +84,13 @@
 	&-controls {
 		display: flex;
 		align-items: center;
-		width: 144px;
-		gap: 12px;
+		max-width: 144px;
+		gap: rem912;
 
 		&__item {
-			width: 40px;
-			height: 4px;
-			border-radius: 100px;
+			max-width: 40px;
+			max-height: 4px;
+			border-radius: rem(100);
 			background-color: map-get($colors, border, light);
 
 			&_select {

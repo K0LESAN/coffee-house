@@ -2,15 +2,15 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 100px;
+	margin-bottom: rem(100);
 
 	&__info {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: flex-start;
-		width: 630px;
-		gap: 40px;
+		max-width: 630px;
+		gap: rem(440);
 		color: map-get($colors, text, dark);
 	}
 
@@ -28,27 +28,27 @@
 	}
 
 	&__image {
-		width: 630px;
-		height: 630px;
+		max-width: 630px;
+		max-height: 630px;
 	}
 
 	&__buttons {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 20px;
+		gap: rem(20);
 	}
 
 	&-links {
 		&__item {
 			display: flex;
 			align-items: center;
-			gap: 8px;
-			width: 200px;
-			height: 64px;
+			gap: rem(8);
+			max-width: 200px;
+			max-height: 64px;
 			padding: 12px 20px;
 			border: 1px solid map-get($colors, border, dark);
-			border-radius: 100px;
+			border-radius: rem(100);
 			background-color: transparent;
 			transition: background-color ease-in 0.5s;
 
@@ -63,8 +63,8 @@
 		}
 
 		&__icon {
-			width: 36px;
-			height: 36px;
+			max-width: 36px;
+			max-height: 36px;
 			transition: fill ease-in 0.5s;
 		}
 
@@ -72,7 +72,7 @@
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
-			gap: 2px;
+			gap: rem(2);
 			transition: color ease-in 0.5s;
 		}
 

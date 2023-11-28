@@ -4,12 +4,12 @@ html {
 }
 
 .container {
-	max-width: map-get($adaptive-sizes, container-width, desktop);
+	max-width: 1440px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 body {
-	padding: map-get($adaptive-sizes, body-padding, desktop);
+	padding: map-get($adaptive, body-padding, desktop);
 	background-color: map-get($colors, background, body);
 }

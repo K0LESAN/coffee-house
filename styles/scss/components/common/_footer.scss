@@ -2,20 +2,20 @@
 	&__inner {
 		display: flex;
 		align-items: center;
-		gap: 100px;
-		border-radius: 40px;
-		padding: 100px;
+		gap: rem(100);
+		border-radius: rem(40);
+		padding: rem(100);
 		background-color: map-get($colors, background, container);
 	}
 }
 
 .social-networks {
-	width: 530px;
+	max-width: 530px;
 
 	&__title {
 		@extend %heading-2;
 		color: map-get($colors, text, light);
-		margin-bottom: 40px;
+		margin-bottom: rem(40);
 
 		&_taupe {
 			font-style: italic;
@@ -26,15 +26,15 @@
 	&__links {
 		display: flex;
 		align-items: center;
-		gap: 12px;
+		gap: rem(12);
 	}
 
 	&__link {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 60px;
-		height: 60px;
+		max-width: 60px;
+		max-height: 60px;
 		border-radius: 100px;
 		border: 1px solid map-get($colors, border, light);
 		background-color: transparent;
@@ -50,15 +50,15 @@
 	}
 
 	&__icon {
-		width: 24px;
-		height: 24px;
+		max-width: 24px;
+		max-height: 24px;
 		stroke: map-get($colors, text, light);
 	}
 }
 
 .contacts {
 	&__title {
-		margin-bottom: 40px;
+		margin-bottom: rem(40);
 		@extend %heading-3;
 		color: map-get($colors, text, light);
 	}
@@ -67,7 +67,7 @@
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
-		gap: 16px;
+		gap: rem(16);
 		@extend %link-and-button;
 		color: map-get($colors, text, light);
 	}
@@ -76,16 +76,16 @@
 		position: relative;
 		display: flex;
 		align-items: flex-start;
-		height: 24px;
-		gap: 8px;
+		max-height: 24px;
+		gap: rem(8);
 
 		&:nth-child(1),
 		&:nth-child(2) {
 			&::after {
 				position: absolute;
-				width: 100%;
+				max-width: 100%;
 				bottom: -4px;
-				height: 2px;
+				max-height: 2px;
 				background-color: map-get($colors, text, light);
 				opacity: 0;
 				transform: scaleX(0);
@@ -103,13 +103,13 @@
 	&__item {
 		display: flex;
 		align-items: flex-start;
-		height: 28px;
-		gap: 8px;
+		max-height: 28px;
+		gap: rem(8);
 		overflow: hidden;
 	}
 
 	&__icon {
-		width: 20px;
-		height: 20px;
+		max-width: 20px;
+		max-height: 20px;
 	}
 }
