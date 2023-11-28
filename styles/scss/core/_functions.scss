@@ -1,0 +1,7 @@
+@function rem($px) {
+	@return ($px / $root-element) + rem;
+}
+
+@function em($root, $px) {
+	@return ($px / $root) + em;
+}
