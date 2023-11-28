@@ -12,6 +12,56 @@
 			pointer-events: none;
 		}
 	}
+
+	&-menu {
+		position: relative;
+		max-height: 28px;
+		overflow: hidden;
+
+		&__wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			max-width: 72px;
+			max-height: 24px;
+		}
+
+		&__text {
+			@extend %link-and-button;
+			color: map-get($colors, text, dark);
+		}
+
+		&__icon {
+			max-width: 20px;
+			max-height: 20px;
+		}
+
+		&::after {
+			position: absolute;
+			max-width: 100%;
+			bottom: 0;
+			max-height: 2px;
+			background-color: map-get($colors, text, dark);
+			opacity: 0;
+			transform: scaleX(0);
+			transition: transform, opacity, ease-out, 0.5s;
+			content: "";
+		}
+
+		&:hover::after {
+			transform: scaleX(1);
+			opacity: 1;
+		}
+
+		&_select {
+			pointer-events: none;
+
+			&::after {
+				transform: scaleX(1);
+				opacity: 1;
+			}
+		}
+	}
 }
 
 .nav {
@@ -63,51 +113,34 @@
 }
 
 .burger-menu {
-	position: relative;
-	max-height: 28px;
-	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 44px;
+	height: 44px;
+	border: rem(1) solid map-get($colors, border, dark);
+	border-radius: 100px;
 
-	&__wrapper {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-		max-width: 72px;
-		max-height: 24px;
+	&__inner {
+		position: relative;
+		width: 16px;
+		height: 8px;
 	}
 
-	&__text {
-		@extend %link-and-button;
-		color: map-get($colors, text, dark);
-	}
-
-	&__icon {
-		max-width: 20px;
-		max-height: 20px;
-	}
-
-	&::after {
+	&__line {
 		position: absolute;
-		max-width: 100%;
-		bottom: 0;
-		max-height: 2px;
+		width: 18px;
+		height: 2px;
 		background-color: map-get($colors, text, dark);
-		opacity: 0;
-		transform: scaleX(0);
-		transition: transform, opacity, ease-out, 0.5s;
-		content: "";
-	}
 
-	&:hover::after {
-		transform: scaleX(1);
-		opacity: 1;
-	}
+		&:first-child {
+			top: 0;
+			left: -1px;
+		}
 
-	&_select {
-		pointer-events: none;
-
-		&::after {
-			transform: scaleX(1);
-			opacity: 1;
+		&:last-child {
+			left: -1px;
+			bottom: 0;
 		}
 	}
 }
