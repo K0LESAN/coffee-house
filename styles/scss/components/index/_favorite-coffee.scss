@@ -97,7 +97,7 @@
 			border-radius: 100px;
 			background-color: map-get($colors, border, light);
 
-			&:first-child {
+			&_select {
 				background-color: map-get($colors, border, dark);
 			}
 		}
