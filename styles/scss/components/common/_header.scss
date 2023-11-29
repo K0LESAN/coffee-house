@@ -61,6 +61,10 @@
 				opacity: 1;
 			}
 		}
+
+		@media screen and (max-width: map-get($adaptive, sizes, tablet)) {
+			display: none;
+		}
 	}
 }
 
@@ -110,10 +114,14 @@
 		@extend %link-and-button;
 		color: map-get($colors, text, dark);
 	}
+
+	@media screen and (max-width: map-get($adaptive, sizes, tablet)) {
+		display: none;
+	}
 }
 
 .burger-menu {
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
 	width: 44px;
@@ -122,25 +130,30 @@
 	border-radius: 100px;
 
 	&__inner {
-		position: relative;
-		width: 16px;
-		height: 8px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		width: 18px;
+		height: 10px;
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 2px;
 	}
 
 	&__line {
-		position: absolute;
 		width: 18px;
-		height: 2px;
-		background-color: map-get($colors, text, dark);
+		height: 0;
+		border: 0.75px solid map-get($colors, text, dark);
+		border-radius: 1.5px;
+	}
 
-		&:first-child {
-			top: 0;
-			left: -1px;
-		}
-
-		&:last-child {
-			left: -1px;
-			bottom: 0;
-		}
+	@media screen and (max-width: map-get($adaptive, sizes, tablet)) {
+		display: flex;
 	}
 }
