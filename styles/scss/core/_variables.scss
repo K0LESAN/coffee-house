@@ -30,7 +30,7 @@ $colors: (
 	line-height: 105%;
 }
 
-%heading-1-mobile {
+@mixin heading-1-mobile {
 	font: {
 		family: "Inter", sans-serif;
 		size: rem(42);
@@ -48,7 +48,7 @@ $colors: (
 	line-height: 125%;
 }
 
-%heading-2-mobile {
+@mixin heading-2-mobile {
 	font: {
 		family: "Inter", sans-serif;
 		size: rem(32);
