@@ -383,10 +383,16 @@ html {
 
 .container {
   max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
   padding-left: 40px;
   padding-right: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 380px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 body {
