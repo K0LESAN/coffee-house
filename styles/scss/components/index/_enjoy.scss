@@ -80,10 +80,6 @@
 	&__description {
 		@extend %medium;
 		color: map-get($colors, text, light);
-
-		@media screen and (max-width: map-get($adaptive, tablet)) {
-			//font-size: 9.375vw;
-		}
 	}
 
 	&__link {
