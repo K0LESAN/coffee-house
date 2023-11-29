@@ -495,7 +495,7 @@ body {
   max-height: 24px;
   color: #403f3d;
 }
-@media screen and (max-width: ) {
+@media screen and (max-width: 768px) {
   .nav {
     display: none;
   }
@@ -531,7 +531,7 @@ body {
   border: 0.75px solid #403f3d;
   border-radius: 1.5px;
 }
-@media screen and (max-width: ) {
+@media screen and (max-width: 768px) {
   .burger-menu {
     display: flex;
   }

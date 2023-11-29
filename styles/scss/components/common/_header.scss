@@ -116,7 +116,7 @@
 		color: map-get($colors, text, dark);
 	}
 
-	@media screen and (max-width: map-get($adaptive, sizes, tablet)) {
+	@media screen and (max-width: map-get($adaptive, tablet)) {
 		display: none;
 	}
 }
@@ -154,7 +154,7 @@
 		border-radius: 1.5px;
 	}
 
-	@media screen and (max-width: map-get($adaptive, table)) {
+	@media screen and (max-width: map-get($adaptive, tablet)) {
 		display: flex;
 	}
 }
