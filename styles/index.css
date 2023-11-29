@@ -568,12 +568,29 @@ body {
   background-image: url("../assets/images/index/enjoy/hero_image.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-y: -30px;
+  background-position: center;
+}
+@media screen and (max-width: 805px) {
+  .enjoy__inner {
+    padding-left: 11.044vw;
+    padding-right: 11.044vw;
+  }
 }
 @media screen and (max-width: 768px) {
   .enjoy__inner {
     padding-left: 3.75rem;
     padding-right: 3.75rem;
+  }
+}
+@media screen and (max-width: 610px) {
+  .enjoy__inner {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .enjoy__inner {
+    padding: 3.75rem 1rem;
   }
 }
 .enjoy__info {
@@ -588,6 +605,24 @@ body {
 .enjoy__title_taupe {
   color: #b0907a;
   font-style: italic;
+}
+@media screen and (max-width: 768px) {
+  .enjoy__title {
+    font-size: 9.375vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .enjoy__title {
+    font-family: "Inter", sans-serif;
+    font-size: 2.625rem;
+    font-weight: 600;
+    line-height: 115%;
+  }
+}
+@media screen and (max-width: 370px) {
+  .enjoy__title {
+    font-size: 11vw;
+  }
 }
 .enjoy__text-menu {
   position: relative;
@@ -614,11 +649,21 @@ body {
   color: #403f3d;
   background-color: #e1d4c9;
 }
-.enjoy__link:hover .enjoy__text-menu {
-  right: 14px;
+@media screen and (min-width: 769px) {
+  .enjoy__link:hover .enjoy__text-menu {
+    right: 14px;
+  }
+  .enjoy__link:hover .enjoy__hidden-icon {
+    opacity: 1;
+  }
 }
-.enjoy__link:hover .enjoy__hidden-icon {
-  opacity: 1;
+@media screen and (max-width: 768px) {
+  .enjoy__link .enjoy__text-menu {
+    right: 14px;
+  }
+  .enjoy__link .enjoy__hidden-icon {
+    opacity: 1;
+  }
 }
 
 .favorite-coffee {

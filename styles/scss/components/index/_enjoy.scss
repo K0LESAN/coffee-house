@@ -13,9 +13,23 @@
 			position: center;
 		}
 
+		@media screen and (max-width: 805px) {
+			padding-left: 11.044vw;
+			padding-right: 11.044vw;
+		}
+
 		@media screen and (max-width: map-get($adaptive, tablet)) {
 			padding-left: rem(60);
 			padding-right: rem(60);
+		}
+
+		@media screen and (max-width: 610px) {
+			padding-left: 6vw;
+			padding-right: 6vw;
+		}
+
+		@media screen and (max-width: map-get($adaptive, mobile)) {
+			padding: rem(60) rem(16);
 		}
 	}
 
@@ -35,10 +49,18 @@
 			font-style: italic;
 		}
 
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			font-size: 9.375vw;
+		}
+
 		@media screen and (max-width: map-get($adaptive, mobile)) {
 			& {
 				@include heading-1-mobile;
 			}
+		}
+
+		@media screen and (max-width: 370px) {
+			font-size: 11vw;
 		}
 	}
 
@@ -58,6 +80,10 @@
 	&__description {
 		@extend %medium;
 		color: map-get($colors, text, light);
+
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			//font-size: 9.375vw;
+		}
 	}
 
 	&__link {
