@@ -3,13 +3,20 @@
 	margin-bottom: rem(100);
 
 	&__inner {
+		max-width: 100%;
 		padding: rem(100);
-		border-radius: rem(40);
+		border-radius: 40px;
 		background: {
 			image: url("../assets/images/index/enjoy/hero_image.jpg");
 			size: cover;
 			repeat: no-repeat;
 			position-y: -30px;
+		}
+
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			padding-left: rem(60);
+			padding-right: rem(60);
+			//background-position: 30px 30px;
 		}
 	}
 
@@ -54,7 +61,7 @@
 		align-items: center;
 		max-width: 200px;
 		max-height: 64px;
-		border-radius: rem(100);
+		border-radius: 100px;
 		padding: rem(20) rem(78);
 		@extend %link-and-button;
 		color: map-get($colors, text, dark);

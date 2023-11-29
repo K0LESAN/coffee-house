@@ -385,10 +385,11 @@ html {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 body {
-  padding: 20px 40px 40px;
   background-color: #e1d4c9;
 }
 
@@ -396,6 +397,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 20px;
   margin-bottom: 1.25rem;
 }
 .header__link {
@@ -493,7 +495,7 @@ body {
   max-height: 24px;
   color: #403f3d;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: ) {
   .nav {
     display: none;
   }
@@ -529,7 +531,7 @@ body {
   border: 0.75px solid #403f3d;
   border-radius: 1.5px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: ) {
   .burger-menu {
     display: flex;
   }
@@ -654,6 +656,9 @@ body {
 }
 .menu__title {
   margin-bottom: 0.75rem;
+}
+.footer {
+  margin-bottom: 40px;
 }
 .footer__inner {
   display: flex;
