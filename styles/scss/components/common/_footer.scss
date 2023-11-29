@@ -1,4 +1,6 @@
 .footer {
+	margin-bottom: map-get($adaptive, body-padding, desktop);
+
 	&__inner {
 		display: flex;
 		align-items: center;
