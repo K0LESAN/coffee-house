@@ -10,13 +10,12 @@
 			image: url("../assets/images/index/enjoy/hero_image.jpg");
 			size: cover;
 			repeat: no-repeat;
-			position-y: -30px;
+			position: center;
 		}
 
 		@media screen and (max-width: map-get($adaptive, tablet)) {
 			padding-left: rem(60);
 			padding-right: rem(60);
-			//background-position: 30px 30px;
 		}
 	}
 
@@ -34,6 +33,12 @@
 		&_taupe {
 			color: map-get($colors, text, accent);
 			font-style: italic;
+		}
+
+		@media screen and (max-width: map-get($adaptive, mobile)) {
+			& {
+				@include heading-1-mobile;
+			}
 		}
 	}
 
@@ -67,7 +72,19 @@
 		color: map-get($colors, text, dark);
 		background-color: map-get($colors, background, body);
 
-		&:hover {
+		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+			&:hover {
+				& .enjoy__text-menu {
+					right: 14px;
+				}
+
+				& .enjoy__hidden-icon {
+					opacity: 1;
+				}
+			}
+		}
+
+		@media screen and (max-width: map-get($adaptive, tablet)) {
 			& .enjoy__text-menu {
 				right: 14px;
 			}
