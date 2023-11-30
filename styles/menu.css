@@ -668,8 +668,10 @@ body {
   }
 }
 .menu__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 2.5rem;
 }
 @media screen and (max-width: 1439.5px) {

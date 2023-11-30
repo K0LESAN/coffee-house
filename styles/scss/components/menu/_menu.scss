@@ -93,8 +93,10 @@
 	}
 
 	&__grid {
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
 		gap: rem(40);
 
 		@media screen and (max-width: (map-get($adaptive, desktop) - 0.5px)) {
