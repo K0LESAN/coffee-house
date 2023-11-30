@@ -10,7 +10,7 @@ html {
 	margin-left: auto;
 	margin-right: auto;
 
-	@media screen and (max-width: map-get($adaptive, mobile)) {
+	@media screen and (max-width: 640px) {
 		padding-left: 16px;
 		padding-right: 16px;
 	}
