@@ -88,11 +88,13 @@
 		background-color: transparent;
 		transition: background-color, stroke, ease-out, 0.5s;
 
-		&:hover {
-			background-color: map-get($colors, background, body);
+		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+			&:hover {
+				background-color: map-get($colors, background, body);
 
-			& .social-networks__icon {
-				stroke: map-get($colors, text, dark);
+				& .social-networks__icon {
+					stroke: map-get($colors, text, dark);
+				}
 			}
 		}
 	}
@@ -144,9 +146,11 @@
 			}
 		}
 
-		&:hover::after {
-			transform: scaleX(1);
-			opacity: 1;
+		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+			&:hover::after {
+				transform: scaleX(1);
+				opacity: 1;
+			}
 		}
 	}
 
