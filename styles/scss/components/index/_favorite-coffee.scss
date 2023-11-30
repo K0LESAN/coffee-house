@@ -10,20 +10,23 @@
 		@extend %heading-2;
 		color: map-get($colors, text, dark);
 
+		&_taupe {
+			font-style: italic;
+			color: map-get($colors, text, accent);
+		}
+
+		@media screen and (max-width: 510px) {
+			font-size: 11vw;
+		}
+
 		@media screen and (max-width: map-get($adaptive, mobile)) {
 			& {
 				@include heading-2-mobile;
 			}
 		}
-
-		&_taupe {
-			font-style: italic;
-			color: map-get($colors, text, accent);
-		}
 	}
 
 	&-info {
-		display: flex;
 		max-width: 1152px;
 		overflow: hidden;
 		color: map-get($colors, text, dark);
@@ -32,6 +35,7 @@
 		&__wrapper {
 			display: flex;
 			max-width: 480px;
+			max-height: 640px;
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -39,7 +43,6 @@
 		&__item {
 			flex: 0 0 100%;
 			max-width: 100%;
-			aspect-ratio: 1 / 1;
 			text-align: center;
 		}
 
@@ -52,12 +55,16 @@
 
 		&__image {
 			width: 100%;
-			height: 100%;
 			margin-bottom: rem(20);
 		}
 
 		&__description {
 			@extend %medium;
+		}
+
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 }
@@ -68,6 +75,8 @@
 	align-items: center;
 	gap: rem(40);
 	width: 100%;
+	padding-right: 4px;
+	padding-left: 4px;
 
 	&__arrow {
 		display: flex;
@@ -81,6 +90,11 @@
 		stroke: map-get($colors, text, dark);
 		transition: stroke, background-color, ease-out, 0.5s;
 
+		&_left,
+		&_right {
+			stroke: inherit;
+		}
+
 		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
 			&:hover {
 				background-color: map-get($colors, background, container);
@@ -88,12 +102,8 @@
 			}
 		}
 
-		&_left {
-			stroke: inherit;
-		}
-
-		&_right {
-			stroke: inherit;
+		@media screen and (max-width: 627px) {
+			display: none;
 		}
 	}
 
@@ -113,5 +123,10 @@
 				background-color: map-get($colors, border, dark);
 			}
 		}
+	}
+
+	@media screen and (max-width: map-get($adaptive, tablet)) {
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
