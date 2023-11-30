@@ -1,31 +1,3 @@
-.social-networks__title, .hero__title {
-  font-family: "Inter", sans-serif;
-  font-size: 3.75rem;
-  font-weight: 600;
-  line-height: 125%;
-}
-
-.contacts__title, .menu__price, .menu__title {
-  font-family: "Inter", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 125%;
-}
-
-.menu__description {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 150%;
-}
-
-.contacts__wrapper, .menu__button-text, .menu__button-icon, .nav__link, .header-menu__text {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 150%;
-}
-
 *,
 *::before,
 *::after {
@@ -376,6 +348,34 @@ textarea {
   src: url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot");
   src: local("Inter Semi Bold Italic"), local("Inter-SemiBoldItalic"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff2") format("woff2"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff") format("woff"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.truetype") format("truetype");
 }
+.social-networks__title, .hero__title {
+  font-family: "Inter", sans-serif;
+  font-size: 3.75rem;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.contacts__title, .menu__price, .menu__title {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.menu__description {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.contacts__wrapper, .menu__button-text, .menu__button-icon, .nav__link, .header-menu__text {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;
