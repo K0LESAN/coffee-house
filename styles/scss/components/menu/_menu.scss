@@ -120,6 +120,7 @@
 		border: rem(1) solid map-get($colors, border, light);
 		border-radius: 40px;
 		color: map-get($colors, text, dark);
+		cursor: pointer;
 
 		@media screen and (max-width: 1090px) {
 			grid-template-columns: repeat(2, 1fr);
