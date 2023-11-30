@@ -348,6 +348,29 @@ textarea {
   src: url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot");
   src: local("Inter Semi Bold Italic"), local("Inter-SemiBoldItalic"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff2") format("woff2"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff") format("woff"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.truetype") format("truetype");
 }
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1440px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 640px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+body {
+  background-color: #e1d4c9;
+}
+
 .enjoy__title {
   font-family: "Inter", sans-serif;
   font-size: 4.5rem;
@@ -388,29 +411,6 @@ textarea {
   font-size: 1rem;
   font-weight: 600;
   line-height: 150%;
-}
-
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-}
-
-.container {
-  max-width: 1440px;
-  padding-left: 40px;
-  padding-right: 40px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media screen and (max-width: 640px) {
-  .container {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-body {
-  background-color: #e1d4c9;
 }
 
 .header {
@@ -457,9 +457,11 @@ body {
   transition: transform, opacity, ease-out, 0.5s;
   content: "";
 }
-.header-menu:hover::after {
-  transform: scaleX(1);
-  opacity: 1;
+@media screen and (min-width: 769px) {
+  .header-menu:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
 .header-menu_select {
   pointer-events: none;
@@ -957,7 +959,7 @@ body {
   height: 64px;
   padding: 12px 20px;
   border: 1px solid #665f55;
-  border-radius: 6.25rem;
+  border-radius: 100px;
   background-color: transparent;
   transition: background-color ease-in 0.5s;
 }

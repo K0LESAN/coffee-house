@@ -68,7 +68,6 @@
 			}
 		}
 
-		&:hover,
 		&:active {
 			border-color: transparent;
 			background-color: map-get($colors, background, container);
@@ -99,20 +98,10 @@
 		flex-wrap: wrap;
 		gap: rem(40);
 
-		@media screen and (max-width: (map-get($adaptive, desktop) - 0.5px)) {
-			grid-template-columns: repeat(3, 1fr);
-		}
-
 		@media screen and (max-width: 1090px) {
-			grid-template-columns: repeat(2, 1fr);
-
 			&:nth-child(n + 5) {
 				display: none;
 			}
-		}
-
-		@media screen and (max-width: (740px - 0.5px)) {
-			grid-template-columns: repeat(1, 1fr);
 		}
 	}
 

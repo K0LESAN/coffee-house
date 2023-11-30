@@ -348,6 +348,29 @@ textarea {
   src: url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot");
   src: local("Inter Semi Bold Italic"), local("Inter-SemiBoldItalic"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff2") format("woff2"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff") format("woff"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.truetype") format("truetype");
 }
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1440px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 640px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+body {
+  background-color: #e1d4c9;
+}
+
 .social-networks__title, .hero__title {
   font-family: "Inter", sans-serif;
   font-size: 3.75rem;
@@ -374,29 +397,6 @@ textarea {
   font-size: 1rem;
   font-weight: 600;
   line-height: 150%;
-}
-
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-}
-
-.container {
-  max-width: 1440px;
-  padding-left: 40px;
-  padding-right: 40px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media screen and (max-width: 640px) {
-  .container {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-body {
-  background-color: #e1d4c9;
 }
 
 .header {
@@ -443,9 +443,11 @@ body {
   transition: transform, opacity, ease-out, 0.5s;
   content: "";
 }
-.header-menu:hover::after {
-  transform: scaleX(1);
-  opacity: 1;
+@media screen and (min-width: 769px) {
+  .header-menu:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
 .header-menu_select {
   pointer-events: none;
@@ -649,12 +651,12 @@ body {
 .menu__button_select > .menu__button-wrapper {
   background-color: #e1d4c9;
 }
-.menu__button:hover, .menu__button:active {
+.menu__button:active {
   border-color: transparent;
   background-color: #665f55;
   color: #e1d4c9;
 }
-.menu__button:hover .menu__button-wrapper, .menu__button:active .menu__button-wrapper {
+.menu__button:active .menu__button-wrapper {
   background-color: #e1d4c9;
 }
 @media screen and (min-width: 769px) {
@@ -674,22 +676,9 @@ body {
   flex-wrap: wrap;
   gap: 2.5rem;
 }
-@media screen and (max-width: 1439.5px) {
-  .menu__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 @media screen and (max-width: 1090px) {
-  .menu__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .menu__grid:nth-child(n+5) {
     display: none;
-  }
-}
-@media screen and (max-width: 739.5px) {
-  .menu__grid {
-    grid-template-columns: repeat(1, 1fr);
   }
 }
 .menu__item {

@@ -49,9 +49,11 @@
 			content: "";
 		}
 
-		&:hover::after {
-			transform: scaleX(1);
-			opacity: 1;
+		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+			&:hover::after {
+				transform: scaleX(1);
+				opacity: 1;
+			}
 		}
 
 		&_select {
