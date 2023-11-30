@@ -7,18 +7,28 @@
 
 	&__buttons {
 		display: flex;
+		justify-content: space-between;
 		align-items: center;
 		gap: rem(16);
+		max-width: 361px;
+
+		@media screen and (max-width: 700px) {
+			gap: 2.11vw;
+		}
+
+		@media screen and (max-width: map-get($adaptive, mobile)) {
+			gap: rem(8);
+		}
 	}
 
 	&__button {
 		display: flex;
 		align-items: center;
 		gap: rem(8);
-		max-height: 46px;
-		padding: rem(8) rem(16) rem(8) rem(8);
+		height: 46px;
 		border: 1px solid map-get($colors, border, light);
-		border-radius: rem(100);
+		border-radius: 100px;
+		padding: rem(8) rem(16) rem(8) rem(8);
 		background-color: transparent;
 		transition: border-color, background-color, ease-out, 0.5s;
 
@@ -28,11 +38,11 @@
 		}
 
 		&-wrapper {
-			display: inline-flex;
+			display: flex;
 			justify-content: center;
 			align-items: center;
-			max-width: 30px;
-			max-height: 30px;
+			width: 30px;
+			height: 30px;
 			padding: rem(3) rem(7);
 			border-radius: 100px;
 			background-color: map-get($colors, border, light);
@@ -40,6 +50,7 @@
 		}
 
 		&-text {
+			display: block;
 			@extend %link-and-button;
 			color: map-get($colors, text, dark);
 			color: inherit;
@@ -66,33 +77,71 @@
 				background-color: map-get($colors, background, body);
 			}
 		}
+
+		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+			&:hover {
+				border-color: transparent;
+				background-color: map-get($colors, background, container);
+				color: map-get($colors, text, light);
+
+				& .menu__button-wrapper {
+					background-color: map-get($colors, background, body);
+				}
+			}
+		}
 	}
 
 	&__grid {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: rem(40);
+
+		@media screen and (max-width: (map-get($adaptive, desktop) - 0.5px)) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@media screen and (max-width: 1090px) {
+			grid-template-columns: repeat(2, 1fr);
+
+			&:nth-child(n + 5) {
+				display: none;
+			}
+		}
+
+		@media screen and (max-width: (740px - 0.5px)) {
+			grid-template-columns: repeat(1, 1fr);
+		}
 	}
 
 	&__item {
-		max-width: 310px;
-		max-height: 506px;
+		width: 310px;
+		height: 506px;
 		border: rem(1) solid map-get($colors, border, light);
-		border-radius: rem(40);
+		border-radius: 40px;
 		color: map-get($colors, text, dark);
 
-		&:hover .menu__image {
-			max-width: 310px;
-			max-height: 310px;
+		@media screen and (max-width: 1090px) {
+			grid-template-columns: repeat(2, 1fr);
+
+			&:nth-child(n + 5) {
+				display: none;
+			}
+		}
+
+		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+			&:hover .menu__image {
+				width: 310px;
+				height: 310px;
+			}
 		}
 	}
 
 	&__image {
-		max-width: 340px;
-		max-height: 340px;
+		width: 340px;
+		height: 340px;
 		transition:
-			max-width,
-			max-height ease-out,
+			width,
+			height ease-out,
 			0.5s;
 	}
 
@@ -100,8 +149,8 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		max-width: 100%;
-		max-height: 196px;
+		width: 100%;
+		height: 196px;
 		padding: rem(20);
 	}
 
@@ -109,9 +158,9 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		max-width: 100%;
-		max-height: 310px;
-		border-radius: rem(40);
+		width: 100%;
+		height: 310px;
+		border-radius: 40px;
 		overflow: hidden;
 	}
 
@@ -126,5 +175,20 @@
 
 	&__price {
 		@extend %heading-3;
+	}
+
+	&__update {
+		display: none;
+		justify-content: center;
+		align-items: center;
+		width: 60px;
+		height: 60px;
+		border: 1px solid map-get($colors, border, dark);
+		border-radius: 100px;
+		background-color: transparent;
+
+		@media screen and (max-width: 1090px) {
+			display: flex;
+		}
 	}
 }
