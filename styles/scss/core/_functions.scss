@@ -3,7 +3,3 @@
 @function rem($px) {
 	@return math.div($px, $root-element) + rem;
 }
-
-@function em($root, $px) {
-	@return math.div($px, $root) + em;
-}
