@@ -1,5 +1,5 @@
 html {
-	font-size: $root-element + px;
+	font-size: 16px;
 	scroll-behavior: smooth;
 }
 
@@ -17,5 +17,5 @@ html {
 }
 
 body {
-	background-color: map-get($colors, background, body);
+	background-color: #e1d4c9;
 }
