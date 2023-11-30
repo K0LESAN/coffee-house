@@ -963,7 +963,7 @@ body {
   background-color: transparent;
   transition: background-color ease-in 0.5s;
 }
-@media screen and (min-width: 381px) {
+@media screen and (min-width: 769px) {
   .mobile-app-links__item:hover {
     background-color: #665f55;
     color: #e1d4c9;
