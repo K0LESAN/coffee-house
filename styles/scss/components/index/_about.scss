@@ -1,8 +1,8 @@
 .about {
-	margin-bottom: 100px;
+	margin-bottom: rem(100);
 
 	&__title {
-		margin-bottom: 40px;
+		margin-bottom: rem(40);
 		@extend %heading-2;
 		color: map-get($colors, text, dark);
 
@@ -10,47 +10,75 @@
 			font-style: italic;
 			color: map-get($colors, text, accent);
 		}
+
+		@media screen and (max-width: 762px) {
+			font-size: 8.39895vw;
+		}
+
+		@media screen and (max-width: map-get($adaptive, mobile)) {
+			& {
+				@include heading-2-mobile;
+			}
+		}
 	}
 
 	&__gallery {
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		gap: 40px;
+		width: 100%;
+		gap: rem(40);
+
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			flex-direction: column;
+		}
 	}
 
 	&__wrapper {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
 		border-radius: 20px;
 		overflow: hidden;
 
-		&:hover .about__image {
-			transform: scale(1);
+		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+			&:hover .about__image {
+				transform: scale(0.909);
+			}
 		}
 	}
 
-	&__first-column {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 40px;
-
-		.about__wrapper:nth-child(1) {
-			height: 590px;
-		}
-
-		.about__wrapper:nth-child(2) {
-			height: 430px;
-		}
-	}
-
+	&__first-column,
 	&__second-column {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
-		gap: 40px;
+		gap: rem(40);
+		width: 50%;
 
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			width: 100%;
+		}
+	}
+
+	&__first-column {
+		.about__wrapper:nth-child(1) {
+			height: 590px;
+		}
+
+		.about__wrapper:nth-child(2) {
+			height: 430px;
+		}
+
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			.about__wrapper:nth-child(2) {
+				display: none;
+			}
+		}
+	}
+
+	&__second-column {
 		.about__wrapper:nth-child(1) {
 			height: 430px;
 		}
@@ -58,12 +86,18 @@
 		.about__wrapper:nth-child(2) {
 			height: 590px;
 		}
+
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			.about__wrapper:nth-child(1) {
+				display: none;
+			}
+		}
 	}
 
 	&__image {
-		width: 660px;
-		height: inherit;
-		transition: transform 0.5s ease-out;
-		transform: scale(1.1);
+		position: absolute;
+		width: 726px;
+		aspect-ratio: 1 / 1;
+		transition: transform ease-out 0.5s;
 	}
 }

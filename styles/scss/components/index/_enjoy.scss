@@ -1,23 +1,52 @@
 .enjoy {
-	height: 644px;
-	margin-bottom: 100px;
+	margin-bottom: rem(100);
 
 	&__inner {
-		padding: 100px;
+		max-width: 100%;
+		padding: rem(100);
 		border-radius: 40px;
 		background: {
 			image: url("../assets/images/index/enjoy/hero_image.jpg");
 			size: cover;
 			repeat: no-repeat;
-			position-y: -30px;
+			position: center;
+		}
+
+		@media screen and (max-width: 850px) {
+			padding-left: 7.8125vw;
+			padding-right: 7.8125vw;
+		}
+
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			padding-left: rem(60);
+			padding-right: rem(60);
+		}
+
+		@media screen and (max-width: 767px) {
+			padding-left: 4.19947vw;
+			padding-right: 4.19947vw;
+		}
+
+		@media screen and (max-width: 640px) {
+			padding-top: 15.625vw;
+			padding-bottom: 15.625vw;
+		}
+
+		@media screen and (max-width: 384px) {
+			padding-top: 60px;
+			padding-bottom: 60px;
+		}
+
+		@media screen and (max-width: map-get($adaptive, mobile)) {
+			padding: rem(60) rem(16);
 		}
 	}
 
 	&__info {
+		max-width: 530px;
 		display: flex;
 		flex-direction: column;
-		width: 530px;
-		gap: 40px;
+		gap: rem(40);
 	}
 
 	&__title {
@@ -27,6 +56,24 @@
 		&_taupe {
 			color: map-get($colors, text, accent);
 			font-style: italic;
+		}
+
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			font-size: 9.375vw;
+		}
+
+		@media screen and (max-width: 448px) {
+			font-size: 42px;
+		}
+
+		@media screen and (max-width: map-get($adaptive, mobile)) {
+			& {
+				@include heading-1-mobile;
+			}
+		}
+
+		@media screen and (max-width: 370px) {
+			font-size: 11vw;
 		}
 	}
 
@@ -52,15 +99,27 @@
 		position: relative;
 		display: flex;
 		align-items: center;
-		width: 200px;
-		height: 64px;
+		max-width: 200px;
+		max-height: 64px;
 		border-radius: 100px;
-		padding: 20px 78px;
+		padding: rem(20) rem(78);
 		@extend %link-and-button;
 		color: map-get($colors, text, dark);
 		background-color: map-get($colors, background, body);
 
-		&:hover {
+		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+			&:hover {
+				& .enjoy__text-menu {
+					right: 14px;
+				}
+
+				& .enjoy__hidden-icon {
+					opacity: 1;
+				}
+			}
+		}
+
+		@media screen and (max-width: map-get($adaptive, tablet)) {
 			& .enjoy__text-menu {
 				right: 14px;
 			}

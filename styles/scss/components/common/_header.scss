@@ -3,7 +3,7 @@
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-bottom: rem(20);
 
 	&__link {
 		width: 100px;
@@ -11,6 +11,67 @@
 
 		&_unselect {
 			pointer-events: none;
+		}
+	}
+
+	&-menu {
+		position: relative;
+		height: 28px;
+		overflow: hidden;
+
+		&__wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			width: 72px;
+			height: 24px;
+		}
+
+		&__text {
+			@extend %link-and-button;
+			color: map-get($colors, text, dark);
+		}
+
+		&__icon {
+			width: 20px;
+			height: 20px;
+		}
+
+		&::after {
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			height: 2px;
+			background-color: map-get($colors, text, dark);
+			opacity: 0;
+			transform: scaleX(0);
+			transition: transform, opacity, ease-out, 0.5s;
+			content: "";
+		}
+
+		&:hover::after {
+			transform: scaleX(1);
+			opacity: 1;
+		}
+
+		&_select {
+			pointer-events: none;
+
+			&::after {
+				transform: scaleX(1);
+				opacity: 1;
+			}
+		}
+
+		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+			&:hover::after {
+				transform: scaleX(1);
+				opacity: 1;
+			}
+		}
+
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			display: none;
 		}
 	}
 }
@@ -25,7 +86,7 @@
 		width: 456px;
 		margin-left: auto;
 		margin-right: auto;
-		gap: 40px;
+		gap: rem(40);
 	}
 
 	&__item {
@@ -46,9 +107,11 @@
 			content: "";
 		}
 
-		&:hover::after {
-			transform: scaleX(1);
-			opacity: 1;
+		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+			&:hover::after {
+				transform: scaleX(1);
+				opacity: 1;
+			}
 		}
 	}
 
@@ -56,59 +119,51 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 2px;
+		gap: rem(2);
 		height: 24px;
 		@extend %link-and-button;
 		color: map-get($colors, text, dark);
+	}
+
+	@media screen and (max-width: map-get($adaptive, tablet)) {
+		display: none;
 	}
 }
 
 .burger-menu {
-	position: relative;
-	height: 28px;
-	overflow: hidden;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	width: 44px;
+	height: 44px;
+	border: rem(1) solid map-get($colors, border, dark);
+	border-radius: 100px;
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		width: 18px;
+		height: 10px;
+	}
 
 	&__wrapper {
 		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-		width: 72px;
-		height: 24px;
-	}
-
-	&__text {
-		@extend %link-and-button;
-		color: map-get($colors, text, dark);
-	}
-
-	&__icon {
-		width: 20px;
-		height: 20px;
-	}
-
-	&::after {
-		position: absolute;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
-		bottom: 0;
 		height: 2px;
-		background-color: map-get($colors, text, dark);
-		opacity: 0;
-		transform: scaleX(0);
-		transition: transform, opacity, ease-out, 0.5s;
-		content: "";
 	}
 
-	&:hover::after {
-		transform: scaleX(1);
-		opacity: 1;
+	&__line {
+		width: 18px;
+		height: 0;
+		border: 0.75px solid map-get($colors, text, dark);
+		border-radius: 1.5px;
 	}
 
-	&_select {
-		pointer-events: none;
-
-		&::after {
-			transform: scaleX(1);
-			opacity: 1;
-		}
+	@media screen and (max-width: map-get($adaptive, tablet)) {
+		display: flex;
 	}
 }

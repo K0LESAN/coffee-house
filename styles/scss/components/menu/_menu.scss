@@ -2,23 +2,33 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 40px;
-	margin-bottom: 100px;
+	gap: rem(40);
+	margin-bottom: rem(100);
 
 	&__buttons {
 		display: flex;
+		justify-content: space-between;
 		align-items: center;
-		gap: 16px;
+		gap: rem(16);
+		max-width: 361px;
+
+		@media screen and (max-width: 700px) {
+			gap: 2.11vw;
+		}
+
+		@media screen and (max-width: map-get($adaptive, mobile)) {
+			gap: rem(8);
+		}
 	}
 
 	&__button {
 		display: flex;
 		align-items: center;
-		gap: 8px;
+		gap: rem(8);
 		height: 46px;
-		padding: 8px 16px 8px 8px;
 		border: 1px solid map-get($colors, border, light);
 		border-radius: 100px;
+		padding: rem(8) rem(16) rem(8) rem(8);
 		background-color: transparent;
 		transition: border-color, background-color, ease-out, 0.5s;
 
@@ -28,18 +38,19 @@
 		}
 
 		&-wrapper {
-			display: inline-flex;
+			display: flex;
 			justify-content: center;
 			align-items: center;
 			width: 30px;
 			height: 30px;
-			padding: 3px 7px;
+			padding: rem(3) rem(7);
 			border-radius: 100px;
 			background-color: map-get($colors, border, light);
 			transition: background-color ease-out 0.5s;
 		}
 
 		&-text {
+			display: block;
 			@extend %link-and-button;
 			color: map-get($colors, text, dark);
 			color: inherit;
@@ -50,6 +61,7 @@
 			border-color: transparent;
 			background-color: map-get($colors, background, container);
 			color: map-get($colors, text, light);
+			pointer-events: none;
 
 			> .menu__button-wrapper {
 				background-color: map-get($colors, background, body);
@@ -66,24 +78,65 @@
 				background-color: map-get($colors, background, body);
 			}
 		}
+
+		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+			&:hover {
+				border-color: transparent;
+				background-color: map-get($colors, background, container);
+				color: map-get($colors, text, light);
+
+				& .menu__button-wrapper {
+					background-color: map-get($colors, background, body);
+				}
+			}
+		}
 	}
 
 	&__grid {
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		gap: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: rem(40);
+
+		@media screen and (max-width: (map-get($adaptive, desktop) - 0.5px)) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@media screen and (max-width: 1090px) {
+			grid-template-columns: repeat(2, 1fr);
+
+			&:nth-child(n + 5) {
+				display: none;
+			}
+		}
+
+		@media screen and (max-width: (740px - 0.5px)) {
+			grid-template-columns: repeat(1, 1fr);
+		}
 	}
 
 	&__item {
 		width: 310px;
 		height: 506px;
-		border: 1px solid map-get($colors, border, light);
+		border: rem(1) solid map-get($colors, border, light);
 		border-radius: 40px;
 		color: map-get($colors, text, dark);
+		cursor: pointer;
 
-		&:hover .menu__image {
-			width: 310px;
-			height: 310px;
+		@media screen and (max-width: 1090px) {
+			grid-template-columns: repeat(2, 1fr);
+
+			&:nth-child(n + 5) {
+				display: none;
+			}
+		}
+
+		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+			&:hover .menu__image {
+				width: 310px;
+				height: 310px;
+			}
 		}
 	}
 
@@ -102,7 +155,7 @@
 		justify-content: space-between;
 		width: 100%;
 		height: 196px;
-		padding: 20px;
+		padding: rem(20);
 	}
 
 	&__inner {
@@ -117,7 +170,7 @@
 
 	&__title {
 		@extend %heading-3;
-		margin-bottom: 12px;
+		margin-bottom: rem(12);
 	}
 
 	&__description {
@@ -126,5 +179,20 @@
 
 	&__price {
 		@extend %heading-3;
+	}
+
+	&__update {
+		display: none;
+		justify-content: center;
+		align-items: center;
+		width: 60px;
+		height: 60px;
+		border: 1px solid map-get($colors, border, dark);
+		border-radius: 100px;
+		background-color: transparent;
+
+		@media screen and (max-width: 1090px) {
+			display: flex;
+		}
 	}
 }

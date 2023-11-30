@@ -2,8 +2,9 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 40px;
-	margin-bottom: 100px;
+	gap: rem(40);
+	margin-bottom: rem(100);
+	text-align: center;
 
 	&__title {
 		@extend %heading-2;
@@ -13,75 +14,96 @@
 			font-style: italic;
 			color: map-get($colors, text, accent);
 		}
+
+		@media screen and (max-width: 510px) {
+			font-size: 11vw;
+		}
+
+		@media screen and (max-width: map-get($adaptive, mobile)) {
+			& {
+				@include heading-2-mobile;
+			}
+		}
 	}
 
 	&-info {
-		scroll-behavior: smooth;
-		position: relative;
-		display: flex;
-		align-items: center;
-		width: 1152px;
-		height: 640px;
+		max-width: 1152px;
 		overflow: hidden;
 		color: map-get($colors, text, dark);
 		@extend %heading-3;
+
+		&__wrapper {
+			display: flex;
+			max-width: 480px;
+			max-height: 640px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&__item {
+			flex: 0 0 100%;
+			max-width: 100%;
+			text-align: center;
+		}
 
 		&__text {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			gap: 16px;
-		}
-
-		&__item {
-			width: 480px;
-			margin-right: 336px;
-			text-align: center;
-
-			&:first-child {
-				margin-left: 336px;
-			}
+			gap: rem(16);
 		}
 
 		&__image {
-			height: 480px;
-			margin-bottom: 20px;
+			width: 100%;
+			margin-bottom: rem(20);
 		}
 
 		&__description {
 			@extend %medium;
+		}
+
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 }
 
 .slider {
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
-	gap: 40px;
+	gap: rem(40);
+	width: 100%;
+	padding-right: 4px;
+	padding-left: 4px;
 
 	&__arrow {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 60px;
-		height: 60px;
-		border: 1px solid map-get($colors, border, dark);
+		min-width: 60px;
+		min-height: 60px;
+		border: rem(1) solid map-get($colors, border, dark);
 		border-radius: 100px;
 		background-color: transparent;
 		stroke: map-get($colors, text, dark);
 		transition: stroke, background-color, ease-out, 0.5s;
 
-		&:hover {
-			background-color: map-get($colors, background, container);
-			stroke: map-get($colors, text, light);
-		}
-
-		&_left {
-			stroke: inherit;
-		}
-
+		&_left,
 		&_right {
 			stroke: inherit;
+		}
+
+		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+			&:hover {
+				background-color: map-get($colors, background, container);
+				stroke: map-get($colors, text, light);
+			}
+		}
+
+		@media screen and (max-width: (580px - 0.5px)) {
+			display: none;
 		}
 	}
 
@@ -89,7 +111,7 @@
 		display: flex;
 		align-items: center;
 		width: 144px;
-		gap: 12px;
+		gap: rem(12);
 
 		&__item {
 			width: 40px;
@@ -101,5 +123,10 @@
 				background-color: map-get($colors, border, dark);
 			}
 		}
+	}
+
+	@media screen and (max-width: map-get($adaptive, tablet)) {
+		padding-left: 0;
+		padding-right: 0;
 	}
 }

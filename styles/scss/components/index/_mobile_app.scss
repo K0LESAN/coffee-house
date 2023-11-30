@@ -1,16 +1,15 @@
 .mobile-app {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 100px;
+	gap: 100px;
+	margin-bottom: rem(100);
 
 	&__info {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: flex-start;
-		width: 630px;
-		gap: 40px;
+		gap: rem(40);
 		color: map-get($colors, text, dark);
 	}
 
@@ -21,6 +20,20 @@
 			font-style: italic;
 			color: map-get($colors, text, accent);
 		}
+
+		@media screen and (max-width: 600px) {
+			font-size: 8.39895vw;
+		}
+
+		@media screen and (max-width: map-get($adaptive, mobile)) {
+			& {
+				@include heading-2-mobile;
+			}
+		}
+
+		@media screen and (max-width: 330px) {
+			font-size: 30.5px;
+		}
 	}
 
 	&__description {
@@ -28,36 +41,41 @@
 	}
 
 	&__image {
-		width: 630px;
-		height: 630px;
+		max-width: 100%;
 	}
 
 	&__buttons {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 20px;
+		gap: rem(20);
+
+		@media screen and (max-width: 460px) {
+			flex-direction: column;
+		}
 	}
 
 	&-links {
 		&__item {
 			display: flex;
 			align-items: center;
-			gap: 8px;
+			gap: rem(8);
 			width: 200px;
 			height: 64px;
 			padding: 12px 20px;
 			border: 1px solid map-get($colors, border, dark);
-			border-radius: 100px;
+			border-radius: rem(100);
 			background-color: transparent;
 			transition: background-color ease-in 0.5s;
 
-			&:hover {
-				background-color: map-get($colors, background, container);
-				color: map-get($colors, text, light);
+			@media screen and (min-width: (map-get($adaptive, mobile) + 1px)) {
+				&:hover {
+					background-color: map-get($colors, background, container);
+					color: map-get($colors, text, light);
 
-				& .mobile-app-links__icon {
-					fill: map-get($colors, text, light);
+					& .mobile-app-links__icon {
+						fill: map-get($colors, text, light);
+					}
 				}
 			}
 		}
@@ -72,7 +90,7 @@
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
-			gap: 2px;
+			gap: rem(2);
 			transition: color ease-in 0.5s;
 		}
 
@@ -83,5 +101,17 @@
 		&__app-shop {
 			@extend %link-and-button;
 		}
+	}
+
+	@media screen and (max-width: 1290px) {
+		flex-direction: column;
+	}
+
+	@media screen and (max-width: 470px) {
+		gap: 10.49868vw;
+	}
+
+	@media screen and (max-width: map-get($adaptive, mobile)) {
+		gap: rem(40);
 	}
 }

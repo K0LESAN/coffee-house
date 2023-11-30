@@ -1,3 +1,9 @@
+$adaptive: (
+	desktop: 1440px,
+	tablet: 768px,
+	mobile: 380px
+);
+
 $colors: (
 	text: (
 		dark: #403f3d,
@@ -18,16 +24,34 @@ $colors: (
 %heading-1 {
 	font: {
 		family: "Inter", sans-serif;
-		size: 72px;
+		size: rem(72);
 		weight: 600;
 	}
 	line-height: 105%;
 }
 
+@mixin heading-1-mobile {
+	font: {
+		family: "Inter", sans-serif;
+		size: rem(42);
+		weight: 600;
+	}
+	line-height: 115%;
+}
+
 %heading-2 {
 	font: {
 		family: "Inter", sans-serif;
-		size: 60px;
+		size: rem(60);
+		weight: 600;
+	}
+	line-height: 125%;
+}
+
+@mixin heading-2-mobile {
+	font: {
+		family: "Inter", sans-serif;
+		size: rem(32);
 		weight: 600;
 	}
 	line-height: 125%;
@@ -36,7 +60,7 @@ $colors: (
 %heading-3 {
 	font: {
 		family: "Inter", sans-serif;
-		size: 24px;
+		size: rem(24);
 		weight: 600;
 	}
 	line-height: 125%;
@@ -45,7 +69,7 @@ $colors: (
 %medium {
 	font: {
 		family: "Inter", sans-serif;
-		size: 16px;
+		size: rem(16);
 		weight: 400;
 	}
 	line-height: 150%;
@@ -54,7 +78,7 @@ $colors: (
 %caption {
 	font: {
 		family: "Inter", sans-serif;
-		size: 10px;
+		size: rem(10);
 		weight: 600;
 	}
 	line-height: 140%;
@@ -63,7 +87,7 @@ $colors: (
 %link-and-button {
 	font: {
 		family: "Inter", sans-serif;
-		size: 16px;
+		size: rem(16);
 		weight: 600;
 	}
 	line-height: 150%;
@@ -72,7 +96,7 @@ $colors: (
 %burger {
 	font: {
 		family: "Inter", sans-serif;
-		size: 32px;
+		size: rem(32);
 		weight: 600;
 	}
 	line-height: 125%;
