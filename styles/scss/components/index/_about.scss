@@ -44,7 +44,7 @@
 
 		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
 			&:hover .about__image {
-				width: 100%;
+				transform: scale(0.909);
 			}
 		}
 	}
@@ -98,6 +98,6 @@
 		position: absolute;
 		width: 726px;
 		aspect-ratio: 1 / 1;
-		transition: width, height, ease-out, 0.5s;
+		transition: transform ease-out 0.5s;
 	}
 }
