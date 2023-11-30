@@ -61,6 +61,7 @@
 			border-color: transparent;
 			background-color: map-get($colors, background, container);
 			color: map-get($colors, text, light);
+			pointer-events: none;
 
 			> .menu__button-wrapper {
 				background-color: map-get($colors, background, body);
