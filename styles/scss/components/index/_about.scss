@@ -34,13 +34,17 @@
 	}
 
 	&__wrapper {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
 		border-radius: 20px;
 		overflow: hidden;
 
 		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
 			&:hover .about__image {
-				transform: scale(1);
+				width: 100%;
 			}
 		}
 	}
@@ -91,17 +95,9 @@
 	}
 
 	&__image {
-		width: 100%;
-		height: inherit;
-		transition: transform 0.5s ease-out;
-		transform: scale(1.1);
-
-		@media screen and (max-width: map-get($adaptive, tablet)) {
-			transform: scale(1.0552325);
-		}
-
-		@media screen and (max-width: map-get($adaptive, mobile)) {
-			transform: scale(1.23);
-		}
+		position: absolute;
+		width: 726px;
+		aspect-ratio: 1 / 1;
+		transition: width, height, ease-out, 0.5s;
 	}
 }

@@ -845,13 +845,17 @@ body {
   }
 }
 .about__wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   border-radius: 20px;
   overflow: hidden;
 }
 @media screen and (min-width: 769px) {
   .about__wrapper:hover .about__image {
-    transform: scale(1);
+    width: 100%;
   }
 }
 .about__first-column, .about__second-column {
@@ -889,20 +893,10 @@ body {
   }
 }
 .about__image {
-  width: 100%;
-  height: inherit;
-  transition: transform 0.5s ease-out;
-  transform: scale(1.1);
-}
-@media screen and (max-width: 768px) {
-  .about__image {
-    transform: scale(1.0552325);
-  }
-}
-@media screen and (max-width: 380px) {
-  .about__image {
-    transform: scale(1.23);
-  }
+  position: absolute;
+  width: 726px;
+  aspect-ratio: 1/1;
+  transition: width, height, ease-out, 0.5s;
 }
 
 .mobile-app {
