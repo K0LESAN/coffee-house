@@ -1,5 +1,4 @@
 .enjoy {
-	max-height: 644px;
 	margin-bottom: rem(100);
 
 	&__inner {
@@ -13,9 +12,9 @@
 			position: center;
 		}
 
-		@media screen and (max-width: 805px) {
-			padding-left: 11.044vw;
-			padding-right: 11.044vw;
+		@media screen and (max-width: 850px) {
+			padding-left: 7.8125vw;
+			padding-right: 7.8125vw;
 		}
 
 		@media screen and (max-width: map-get($adaptive, tablet)) {
@@ -23,9 +22,19 @@
 			padding-right: rem(60);
 		}
 
-		@media screen and (max-width: 610px) {
-			padding-left: 6vw;
-			padding-right: 6vw;
+		@media screen and (max-width: 767px) {
+			padding-left: 4.19947vw;
+			padding-right: 4.19947vw;
+		}
+
+		@media screen and (max-width: 640px) {
+			padding-top: 15.625vw;
+			padding-bottom: 15.625vw;
+		}
+
+		@media screen and (max-width: 384px) {
+			padding-top: 60px;
+			padding-bottom: 60px;
 		}
 
 		@media screen and (max-width: map-get($adaptive, mobile)) {
@@ -34,9 +43,9 @@
 	}
 
 	&__info {
+		max-width: 530px;
 		display: flex;
 		flex-direction: column;
-		max-width: 530px;
 		gap: rem(40);
 	}
 
@@ -51,6 +60,10 @@
 
 		@media screen and (max-width: map-get($adaptive, tablet)) {
 			font-size: 9.375vw;
+		}
+
+		@media screen and (max-width: 448px) {
+			font-size: 42px;
 		}
 
 		@media screen and (max-width: map-get($adaptive, mobile)) {
