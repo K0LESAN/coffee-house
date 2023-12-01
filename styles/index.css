@@ -683,7 +683,7 @@ body {
     opacity: 1;
   }
 }
-@media screen and (max-width: 768px) {
+@media (hover: none) {
   .enjoy__link .enjoy__text-menu {
     right: 14px;
   }

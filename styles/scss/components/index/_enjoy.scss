@@ -119,7 +119,7 @@
 			}
 		}
 
-		@media screen and (max-width: map-get($adaptive, tablet)) {
+		@media (hover: none) {
 			& .enjoy__text-menu {
 				right: 14px;
 			}
