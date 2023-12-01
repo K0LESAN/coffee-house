@@ -88,7 +88,7 @@
 		background-color: transparent;
 		transition: background-color, stroke, ease-out, 0.5s;
 
-		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+		@media (hover: hover) and (pointer: fine) {
 			&:hover {
 				background-color: map-get($colors, background, body);
 
@@ -146,7 +146,7 @@
 			}
 		}
 
-		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+		@media (hover: hover) and (pointer: fine) {
 			&:hover::after {
 				transform: scaleX(1);
 				opacity: 1;

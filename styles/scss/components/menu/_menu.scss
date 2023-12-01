@@ -78,7 +78,7 @@
 			}
 		}
 
-		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+		@media (hover: hover) and (pointer: fine) {
 			&:hover {
 				border-color: transparent;
 				background-color: map-get($colors, background, container);
@@ -121,7 +121,7 @@
 			}
 		}
 
-		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+		@media (hover: hover) and (pointer: fine) {
 			&:hover .menu__image {
 				width: 310px;
 				height: 310px;

@@ -107,7 +107,7 @@
 		color: map-get($colors, text, dark);
 		background-color: map-get($colors, background, body);
 
-		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+		@media (hover: hover) and (pointer: fine) {
 			&:hover {
 				& .enjoy__text-menu {
 					right: 14px;

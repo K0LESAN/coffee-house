@@ -68,7 +68,7 @@
 			background-color: transparent;
 			transition: background-color ease-in 0.5s;
 
-			@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+			@media (hover: hover) and (pointer: fine) {
 				&:hover {
 					background-color: map-get($colors, background, container);
 					color: map-get($colors, text, light);
