@@ -95,7 +95,7 @@
 			stroke: inherit;
 		}
 
-		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+		@media (hover: hover) and (pointer: fine) {
 			&:hover {
 				background-color: map-get($colors, background, container);
 				stroke: map-get($colors, text, light);

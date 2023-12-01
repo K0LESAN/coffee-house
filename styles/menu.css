@@ -443,7 +443,7 @@ body {
   transition: transform, opacity, ease-out, 0.5s;
   content: "";
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
   .header-menu:hover::after {
     transform: scaleX(1);
     opacity: 1;
@@ -456,7 +456,7 @@ body {
   transform: scaleX(1);
   opacity: 1;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
   .header-menu:hover::after {
     transform: scaleX(1);
     opacity: 1;
@@ -497,7 +497,7 @@ body {
   transition: transform, opacity, ease-out, 0.5s;
   content: "";
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
   .nav__item:hover::after {
     transform: scaleX(1);
     opacity: 1;
@@ -659,7 +659,7 @@ body {
 .menu__button:active .menu__button-wrapper {
   background-color: #e1d4c9;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
   .menu__button:hover {
     border-color: transparent;
     background-color: #665f55;
@@ -697,7 +697,7 @@ body {
     display: none;
   }
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
   .menu__item:hover .menu__image {
     width: 310px;
     height: 310px;
@@ -839,7 +839,7 @@ body {
   background-color: transparent;
   transition: background-color, stroke, ease-out, 0.5s;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
   .social-networks__link:hover {
     background-color: #e1d4c9;
   }
@@ -885,7 +885,7 @@ body {
   transition: transform, opacity, ease-out, 0.5s;
   content: "";
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
   .contacts__link:hover::after {
     transform: scaleX(1);
     opacity: 1;

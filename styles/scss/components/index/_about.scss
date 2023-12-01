@@ -42,7 +42,7 @@
 		border-radius: 20px;
 		overflow: hidden;
 
-		@media screen and (min-width: (map-get($adaptive, tablet) + 1px)) {
+		@media (hover: hover) and (pointer: fine) {
 			&:hover .about__image {
 				transform: scale(0.909);
 			}

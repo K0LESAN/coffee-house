@@ -457,7 +457,7 @@ body {
   transition: transform, opacity, ease-out, 0.5s;
   content: "";
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
   .header-menu:hover::after {
     transform: scaleX(1);
     opacity: 1;
@@ -470,7 +470,7 @@ body {
   transform: scaleX(1);
   opacity: 1;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
   .header-menu:hover::after {
     transform: scaleX(1);
     opacity: 1;
@@ -511,7 +511,7 @@ body {
   transition: transform, opacity, ease-out, 0.5s;
   content: "";
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
   .nav__item:hover::after {
     transform: scaleX(1);
     opacity: 1;
@@ -675,7 +675,7 @@ body {
   color: #403f3d;
   background-color: #e1d4c9;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
   .enjoy__link:hover .enjoy__text-menu {
     right: 14px;
   }
@@ -778,7 +778,7 @@ body {
 .slider__arrow_left, .slider__arrow_right {
   stroke: inherit;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
   .slider__arrow:hover {
     background-color: #665f55;
     stroke: #e1d4c9;
@@ -855,7 +855,7 @@ body {
   border-radius: 20px;
   overflow: hidden;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
   .about__wrapper:hover .about__image {
     transform: scale(0.909);
   }
@@ -963,7 +963,7 @@ body {
   background-color: transparent;
   transition: background-color ease-in 0.5s;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
   .mobile-app-links__item:hover {
     background-color: #665f55;
     color: #e1d4c9;
@@ -1095,7 +1095,7 @@ body {
   background-color: transparent;
   transition: background-color, stroke, ease-out, 0.5s;
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
   .social-networks__link:hover {
     background-color: #e1d4c9;
   }
@@ -1141,7 +1141,7 @@ body {
   transition: transform, opacity, ease-out, 0.5s;
   content: "";
 }
-@media screen and (min-width: 769px) {
+@media (hover: hover) and (pointer: fine) {
   .contacts__link:hover::after {
     transform: scaleX(1);
     opacity: 1;
