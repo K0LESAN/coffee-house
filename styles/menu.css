@@ -753,6 +753,10 @@ body {
   border-radius: 100px;
   background-color: transparent;
 }
+.menu__update-icon {
+  width: 24px;
+  height: 24px;
+}
 @media screen and (max-width: 1090px) {
   .menu__update {
     display: flex;
