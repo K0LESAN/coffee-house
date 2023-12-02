@@ -32,11 +32,6 @@
 		background-color: transparent;
 		transition: border-color, background-color, ease-out, 0.5s;
 
-		&-icon {
-			display: inline;
-			@extend %link-and-button;
-		}
-
 		&-wrapper {
 			display: flex;
 			justify-content: center;
@@ -49,8 +44,14 @@
 			transition: background-color ease-out 0.5s;
 		}
 
+		&-icon {
+			display: inline-block;
+			@extend %link-and-button;
+			width: 17px;
+			height: 17px;
+		}
+
 		&-text {
-			display: block;
 			@extend %link-and-button;
 			color: map-get($colors, text, dark);
 			color: inherit;

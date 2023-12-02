@@ -81,13 +81,24 @@
 		position: relative;
 		right: 0px;
 		transition: right ease-in 0.3s;
+
+		@media screen and (hover: none) and (max-width: 960px) {
+			right: 14px;
+		}
 	}
 
 	&__hidden-icon {
 		position: relative;
 		right: 6px;
+		min-width: 20px;
+		min-height: 20px;
+		stroke: map-get($colors, text, dark);
 		opacity: 0;
 		transition: opacity ease-in 0.3s;
+
+		@media screen and (hover: none) and (max-width: 960px) {
+			opacity: 1;
+		}
 	}
 
 	&__description {
@@ -107,7 +118,7 @@
 		color: map-get($colors, text, dark);
 		background-color: map-get($colors, background, body);
 
-		@media (hover: hover) and (pointer: fine) {
+		@media screen and (hover: hover) and (pointer: fine) {
 			&:hover {
 				& .enjoy__text-menu {
 					right: 14px;
@@ -116,16 +127,6 @@
 				& .enjoy__hidden-icon {
 					opacity: 1;
 				}
-			}
-		}
-
-		@media (hover: none) {
-			& .enjoy__text-menu {
-				right: 14px;
-			}
-
-			& .enjoy__hidden-icon {
-				opacity: 1;
 			}
 		}
 	}
