@@ -585,14 +585,23 @@ body {
 .enjoy {
   margin-bottom: 6.25rem;
 }
+.enjoy__video {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
 .enjoy__inner {
-  max-width: 100%;
+  position: relative;
+  max-width: 1360px;
   padding: 6.25rem;
   border-radius: 40px;
-  background-image: url("../assets/images/index/enjoy/hero_image.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  overflow: hidden;
 }
 @media screen and (max-width: 1280px) {
   .enjoy__inner {
@@ -619,10 +628,12 @@ body {
   }
 }
 .enjoy__info {
+  position: relative;
   max-width: 530px;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  z-index: 1;
 }
 .enjoy__title {
   color: #e1d4c9;

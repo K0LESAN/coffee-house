@@ -1,16 +1,24 @@
 .enjoy {
 	margin-bottom: rem(100);
 
+	&__video {
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: 100%;
+		transform: translate(-50%, -50%);
+		object-fit: cover;
+		z-index: 0;
+	}
+
 	&__inner {
-		max-width: 100%;
+		position: relative;
+		max-width: 1360px;
 		padding: rem(100);
 		border-radius: 40px;
-		background: {
-			image: url("../assets/images/index/enjoy/hero_image.jpg");
-			size: cover;
-			repeat: no-repeat;
-			position: center;
-		}
+		overflow: hidden;
 
 		@media screen and (max-width: 1280px) {
 			padding-left: 7.8125vw;
@@ -34,10 +42,12 @@
 	}
 
 	&__info {
+		position: relative;
 		max-width: 530px;
 		display: flex;
 		flex-direction: column;
 		gap: rem(40);
+		z-index: 1;
 	}
 
 	&__title {
