@@ -12,33 +12,24 @@
 			position: center;
 		}
 
-		@media screen and (max-width: 850px) {
+		@media screen and (max-width: 1280px) {
 			padding-left: 7.8125vw;
 			padding-right: 7.8125vw;
 		}
 
-		@media screen and (max-width: map-get($adaptive, tablet)) {
-			padding-left: rem(60);
-			padding-right: rem(60);
+		@media screen and (max-width: 667px) {
+			padding-top: 15vw;
+			padding-bottom: 15vw;
 		}
 
-		@media screen and (max-width: 767px) {
-			padding-left: 4.19947vw;
-			padding-right: 4.19947vw;
-		}
-
-		@media screen and (max-width: 640px) {
-			padding-top: 15.625vw;
-			padding-bottom: 15.625vw;
+		@media screen and (max-width: 400px) {
+			padding-top: rem(60);
+			padding-bottom: rem(60);
 		}
 
 		@media screen and (max-width: 384px) {
-			padding-top: 60px;
-			padding-bottom: 60px;
-		}
-
-		@media screen and (max-width: map-get($adaptive, mobile)) {
-			padding: rem(60) rem(16);
+			padding-left: rem(16);
+			padding-right: rem(16);
 		}
 	}
 
