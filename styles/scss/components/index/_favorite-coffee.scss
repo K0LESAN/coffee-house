@@ -78,7 +78,7 @@
 	padding-right: 4px;
 	padding-left: 4px;
 
-	&__arrow {
+	&__button {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -87,24 +87,28 @@
 		border: rem(1) solid map-get($colors, border, dark);
 		border-radius: 100px;
 		background-color: transparent;
-		stroke: map-get($colors, text, dark);
-		transition: stroke, background-color, ease-out, 0.5s;
-
-		&_left,
-		&_right {
-			stroke: inherit;
-		}
+		transition: background-color ease-out 0.5s;
 
 		@media (hover: hover) and (pointer: fine) {
 			&:hover {
 				background-color: map-get($colors, background, container);
-				stroke: map-get($colors, text, light);
+
+				& .slider__arrow {
+					stroke: map-get($colors, text, light);
+				}
 			}
 		}
 
 		@media screen and (max-width: (580px - 0.5px)) {
 			display: none;
 		}
+	}
+
+	&__arrow {
+		width: 24px;
+		height: 24px;
+		stroke: map-get($colors, text, dark);
+		transition: stroke ease-out 0.5s;
 	}
 
 	&-controls {

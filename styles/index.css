@@ -324,6 +324,22 @@ textarea {
   padding: 0.2em 0;
 }
 
+svg {
+  fill: none;
+  stroke: none;
+}
+
+svg path {
+  fill: inherit;
+  stroke: inherit;
+}
+
+use {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 @font-face {
   font-family: "Inter";
   font-display: fallback;
@@ -420,6 +436,10 @@ body {
   margin-top: 20px;
   margin-bottom: 1.25rem;
 }
+.header__logo {
+  width: 100px;
+  height: 60px;
+}
 .header__link {
   width: 100px;
   height: 60px;
@@ -445,6 +465,7 @@ body {
 .header-menu__icon {
   width: 20px;
   height: 20px;
+  stroke: #403f3d;
 }
 .header-menu::after {
   position: absolute;
@@ -456,12 +477,6 @@ body {
   transform: scaleX(0);
   transition: transform, opacity, ease-out, 0.5s;
   content: "";
-}
-@media (hover: hover) and (pointer: fine) {
-  .header-menu:hover::after {
-    transform: scaleX(1);
-    opacity: 1;
-  }
 }
 .header-menu_select {
   pointer-events: none;
@@ -579,39 +594,28 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1280px) {
   .enjoy__inner {
     padding-left: 7.8125vw;
     padding-right: 7.8125vw;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 667px) {
   .enjoy__inner {
-    padding-left: 3.75rem;
-    padding-right: 3.75rem;
+    padding-top: 15vw;
+    padding-bottom: 15vw;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 400px) {
   .enjoy__inner {
-    padding-left: 4.19947vw;
-    padding-right: 4.19947vw;
-  }
-}
-@media screen and (max-width: 640px) {
-  .enjoy__inner {
-    padding-top: 15.625vw;
-    padding-bottom: 15.625vw;
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
   }
 }
 @media screen and (max-width: 384px) {
   .enjoy__inner {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-}
-@media screen and (max-width: 380px) {
-  .enjoy__inner {
-    padding: 3.75rem 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 .enjoy__info {
@@ -655,11 +659,24 @@ body {
   right: 0px;
   transition: right ease-in 0.3s;
 }
+@media screen and (hover: none) and (max-width: 960px) {
+  .enjoy__text-menu {
+    right: 14px;
+  }
+}
 .enjoy__hidden-icon {
   position: relative;
   right: 6px;
+  min-width: 20px;
+  min-height: 20px;
+  stroke: #403f3d;
   opacity: 0;
   transition: opacity ease-in 0.3s;
+}
+@media screen and (hover: none) and (max-width: 960px) {
+  .enjoy__hidden-icon {
+    opacity: 1;
+  }
 }
 .enjoy__description {
   color: #e1d4c9;
@@ -675,19 +692,11 @@ body {
   color: #403f3d;
   background-color: #e1d4c9;
 }
-@media (hover: hover) and (pointer: fine) {
+@media screen and (hover: hover) and (pointer: fine) {
   .enjoy__link:hover .enjoy__text-menu {
     right: 14px;
   }
   .enjoy__link:hover .enjoy__hidden-icon {
-    opacity: 1;
-  }
-}
-@media (hover: none) {
-  .enjoy__link .enjoy__text-menu {
-    right: 14px;
-  }
-  .enjoy__link .enjoy__hidden-icon {
     opacity: 1;
   }
 }
@@ -763,7 +772,7 @@ body {
   padding-right: 4px;
   padding-left: 4px;
 }
-.slider__arrow {
+.slider__button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -772,22 +781,26 @@ body {
   border: 0.0625rem solid #665f55;
   border-radius: 100px;
   background-color: transparent;
-  stroke: #403f3d;
-  transition: stroke, background-color, ease-out, 0.5s;
-}
-.slider__arrow_left, .slider__arrow_right {
-  stroke: inherit;
+  transition: background-color ease-out 0.5s;
 }
 @media (hover: hover) and (pointer: fine) {
-  .slider__arrow:hover {
+  .slider__button:hover {
     background-color: #665f55;
+  }
+  .slider__button:hover .slider__arrow {
     stroke: #e1d4c9;
   }
 }
 @media screen and (max-width: 579.5px) {
-  .slider__arrow {
+  .slider__button {
     display: none;
   }
+}
+.slider__arrow {
+  width: 24px;
+  height: 24px;
+  stroke: #403f3d;
+  transition: stroke ease-out 0.5s;
 }
 .slider-controls {
   display: flex;
@@ -975,6 +988,7 @@ body {
 .mobile-app-links__icon {
   width: 36px;
   height: 36px;
+  fill: #403f3d;
   transition: fill ease-in 0.5s;
 }
 .mobile-app-links__text {
@@ -1093,7 +1107,7 @@ body {
   border-radius: 100px;
   border: 1px solid #c1b6ad;
   background-color: transparent;
-  transition: background-color, stroke, ease-out, 0.5s;
+  transition: background-color ease-out 0.5s;
 }
 @media (hover: hover) and (pointer: fine) {
   .social-networks__link:hover {
@@ -1107,6 +1121,7 @@ body {
   width: 24px;
   height: 24px;
   stroke: #e1d4c9;
+  transition: stroke ease-out 0.5s;
 }
 
 .contacts {

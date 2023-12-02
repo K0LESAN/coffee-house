@@ -83,6 +83,7 @@
 		&__icon {
 			width: 36px;
 			height: 36px;
+			fill: map-get($colors, text, dark);
 			transition: fill ease-in 0.5s;
 		}
 
