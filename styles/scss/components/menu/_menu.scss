@@ -180,6 +180,11 @@
 		border-radius: 100px;
 		background-color: transparent;
 
+		&-icon {
+			width: 24px;
+			height: 24px;
+		}
+
 		@media screen and (max-width: 1090px) {
 			display: flex;
 		}
