@@ -82,7 +82,7 @@
 		position: relative;
 		right: 6px;
 		min-width: 20px;
-		min-height: 20px;
+		aspect-ratio: 1 / 1;
 		stroke: map-get($colors, text, dark);
 		opacity: 0;
 		transition: opacity ease-in 0.3s;
