@@ -30,28 +30,10 @@ $colors: (
 	line-height: 105%;
 }
 
-@mixin heading-1-mobile {
-	font: {
-		family: "Inter", sans-serif;
-		size: rem(42);
-		weight: 600;
-	}
-	line-height: 115%;
-}
-
 %heading-2 {
 	font: {
 		family: "Inter", sans-serif;
 		size: rem(60);
-		weight: 600;
-	}
-	line-height: 125%;
-}
-
-@mixin heading-2-mobile {
-	font: {
-		family: "Inter", sans-serif;
-		size: rem(32);
 		weight: 600;
 	}
 	line-height: 125%;
@@ -93,7 +75,25 @@ $colors: (
 	line-height: 150%;
 }
 
-%burger {
+@mixin heading-1-mobile {
+	font: {
+		family: "Inter", sans-serif;
+		size: rem(42);
+		weight: 600;
+	}
+	line-height: 115%;
+}
+
+@mixin heading-2-mobile {
+	font: {
+		family: "Inter", sans-serif;
+		size: rem(32);
+		weight: 600;
+	}
+	line-height: 125%;
+}
+
+@mixin burger {
 	font: {
 		family: "Inter", sans-serif;
 		size: rem(32);
