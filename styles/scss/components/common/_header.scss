@@ -1,13 +1,42 @@
 .header {
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 20px;
 	margin-bottom: rem(20);
 
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 100px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		padding-top: 160px;
+		transform: translateX(100%);
+		background-color: map-get($colors, background, body);
+		transition: transform ease-in 0.5s;
+		overflow-y: hidden;
+		z-index: 2;
+
+		&_scroll {
+			overflow-y: scroll;
+		}
+
+		&_visible {
+			transform: translateX(0);
+		}
+	}
+
 	&__logo {
+		position: relative;
 		width: 100px;
 		height: 60px;
+		z-index: 3;
 	}
 
 	&__link {
@@ -20,6 +49,7 @@
 	}
 
 	&-menu {
+		display: block;
 		position: relative;
 		width: 72px;
 		height: 28px;
@@ -31,17 +61,33 @@
 			align-items: flex-start;
 			width: 100%;
 			height: 24px;
+
+			@media screen and (max-width: map-get($adaptive, tablet)) {
+				justify-content: initial;
+				gap: rem(16);
+			}
 		}
 
 		&__text {
 			@extend %link-and-button;
 			color: map-get($colors, text, dark);
+
+			@media screen and (max-width: map-get($adaptive, tablet)) {
+				& {
+					@include burger;
+				}
+			}
 		}
 
 		&__icon {
 			width: 20px;
 			height: 20px;
 			stroke: map-get($colors, text, dark);
+
+			@media screen and (max-width: map-get($adaptive, tablet)) {
+				width: 40px;
+				height: 40px;
+			}
 		}
 
 		&::after {
@@ -65,15 +111,17 @@
 			}
 		}
 
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			width: 143px;
+			height: 40px;
+			overflow: visible;
+		}
+
 		@media (hover: hover) and (pointer: fine) {
 			&:hover::after {
 				transform: scaleX(1);
 				opacity: 1;
 			}
-		}
-
-		@media screen and (max-width: map-get($adaptive, tablet)) {
-			display: none;
 		}
 	}
 }
@@ -84,18 +132,23 @@
 		justify-content: space-between;
 		align-items: center;
 		width: 456px;
-		margin-left: auto;
-		margin-right: auto;
 		gap: rem(40);
+
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			flex-direction: column;
+			justify-content: initial;
+			width: 100%;
+			gap: rem(60);
+		}
 	}
 
 	&__item {
-		display: block;
 		position: relative;
 		height: 28px;
 		overflow: hidden;
 
 		&::after {
+			display: block;
 			position: absolute;
 			width: 100%;
 			bottom: 0;
@@ -105,6 +158,14 @@
 			transform: scaleX(0);
 			transition: transform, opacity, ease-out, 0.5s;
 			content: "";
+		}
+
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			height: initial;
+
+			&::after {
+				display: none;
+			}
 		}
 
 		@media (hover: hover) and (pointer: fine) {
@@ -123,14 +184,20 @@
 		height: 24px;
 		@extend %link-and-button;
 		color: map-get($colors, text, dark);
-	}
 
-	@media screen and (max-width: map-get($adaptive, tablet)) {
-		display: none;
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			display: block;
+			height: 100%;
+
+			& {
+				@include burger;
+			}
+		}
 	}
 }
 
 .burger-menu {
+	position: relative;
 	display: none;
 	justify-content: center;
 	align-items: center;
@@ -138,8 +205,10 @@
 	height: 44px;
 	border: rem(1) solid map-get($colors, border, dark);
 	border-radius: 100px;
+	z-index: 3;
 
 	&__inner {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -154,6 +223,19 @@
 		align-items: center;
 		width: 100%;
 		height: 2px;
+		transition: transform ease-in 0.5s;
+
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			&_active {
+				&:first-child {
+					transform: translateY(4px) rotate(-45deg);
+				}
+
+				&:last-child {
+					transform: translateY(-4px) rotate(45deg);
+				}
+			}
+		}
 	}
 
 	&__line {

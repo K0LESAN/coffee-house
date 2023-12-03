@@ -386,6 +386,9 @@ html {
 body {
   background-color: #e1d4c9;
 }
+body.body_block-scroll {
+  overflow: hidden;
+}
 
 .social-networks__title, .hero__title {
   font-family: "Inter", sans-serif;
@@ -416,15 +419,41 @@ body {
 }
 
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
   margin-bottom: 1.25rem;
 }
+.header__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 160px;
+  transform: translateX(100%);
+  background-color: #e1d4c9;
+  transition: transform ease-in 0.5s;
+  overflow-y: hidden;
+  z-index: 2;
+}
+.header__wrapper_scroll {
+  overflow-y: scroll;
+}
+.header__wrapper_visible {
+  transform: translateX(0);
+}
 .header__logo {
+  position: relative;
   width: 100px;
   height: 60px;
+  z-index: 3;
 }
 .header__link {
   width: 100px;
@@ -434,6 +463,7 @@ body {
   pointer-events: none;
 }
 .header-menu {
+  display: block;
   position: relative;
   width: 72px;
   height: 28px;
@@ -446,13 +476,33 @@ body {
   width: 100%;
   height: 24px;
 }
+@media screen and (max-width: 768px) {
+  .header-menu__wrapper {
+    justify-content: initial;
+    gap: 1rem;
+  }
+}
 .header-menu__text {
   color: #403f3d;
+}
+@media screen and (max-width: 768px) {
+  .header-menu__text {
+    font-family: "Inter", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 125%;
+  }
 }
 .header-menu__icon {
   width: 20px;
   height: 20px;
   stroke: #403f3d;
+}
+@media screen and (max-width: 768px) {
+  .header-menu__icon {
+    width: 40px;
+    height: 40px;
+  }
 }
 .header-menu::after {
   position: absolute;
@@ -472,15 +522,17 @@ body {
   transform: scaleX(1);
   opacity: 1;
 }
+@media screen and (max-width: 768px) {
+  .header-menu {
+    width: 143px;
+    height: 40px;
+    overflow: visible;
+  }
+}
 @media (hover: hover) and (pointer: fine) {
   .header-menu:hover::after {
     transform: scaleX(1);
     opacity: 1;
-  }
-}
-@media screen and (max-width: 768px) {
-  .header-menu {
-    display: none;
   }
 }
 
@@ -489,17 +541,23 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 456px;
-  margin-left: auto;
-  margin-right: auto;
   gap: 2.5rem;
 }
+@media screen and (max-width: 768px) {
+  .nav__list {
+    flex-direction: column;
+    justify-content: initial;
+    width: 100%;
+    gap: 3.75rem;
+  }
+}
 .nav__item {
-  display: block;
   position: relative;
   height: 28px;
   overflow: hidden;
 }
 .nav__item::after {
+  display: block;
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -509,6 +567,14 @@ body {
   transform: scaleX(0);
   transition: transform, opacity, ease-out, 0.5s;
   content: "";
+}
+@media screen and (max-width: 768px) {
+  .nav__item {
+    height: initial;
+  }
+  .nav__item::after {
+    display: none;
+  }
 }
 @media (hover: hover) and (pointer: fine) {
   .nav__item:hover::after {
@@ -525,12 +591,20 @@ body {
   color: #403f3d;
 }
 @media screen and (max-width: 768px) {
-  .nav {
-    display: none;
+  .nav__link {
+    display: block;
+    height: 100%;
+  }
+  .nav__link {
+    font-family: "Inter", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 125%;
   }
 }
 
 .burger-menu {
+  position: relative;
   display: none;
   justify-content: center;
   align-items: center;
@@ -538,8 +612,10 @@ body {
   height: 44px;
   border: 0.0625rem solid #665f55;
   border-radius: 100px;
+  z-index: 3;
 }
 .burger-menu__inner {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -553,6 +629,15 @@ body {
   align-items: center;
   width: 100%;
   height: 2px;
+  transition: transform ease-in 0.5s;
+}
+@media screen and (max-width: 768px) {
+  .burger-menu__wrapper_active:first-child {
+    transform: translateY(4px) rotate(-45deg);
+  }
+  .burger-menu__wrapper_active:last-child {
+    transform: translateY(-4px) rotate(45deg);
+  }
 }
 .burger-menu__line {
   width: 18px;

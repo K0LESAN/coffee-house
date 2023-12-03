@@ -18,4 +18,8 @@ html {
 
 body {
 	background-color: #e1d4c9;
+
+	&.body_block-scroll {
+		overflow: hidden;
+	}
 }
