@@ -28,7 +28,7 @@
 		width: 100%;
 		gap: rem(40);
 
-		@media screen and (max-width: map-get($adaptive, tablet)) {
+		@media screen and (max-width: 1000px) {
 			flex-direction: column;
 		}
 	}
@@ -41,6 +41,10 @@
 		width: 100%;
 		border-radius: 20px;
 		overflow: hidden;
+
+		@media screen and (max-width: 1000px) {
+			max-width: 710px;
+		}
 
 		@media (hover: hover) and (pointer: fine) {
 			&:hover .about__image {
@@ -57,7 +61,7 @@
 		gap: rem(40);
 		width: 50%;
 
-		@media screen and (max-width: map-get($adaptive, tablet)) {
+		@media screen and (max-width: 1000px) {
 			width: 100%;
 		}
 	}
@@ -71,7 +75,7 @@
 			height: 430px;
 		}
 
-		@media screen and (max-width: map-get($adaptive, tablet)) {
+		@media screen and (max-width: 1000px) {
 			.about__wrapper:nth-child(2) {
 				display: none;
 			}
@@ -87,7 +91,7 @@
 			height: 590px;
 		}
 
-		@media screen and (max-width: map-get($adaptive, tablet)) {
+		@media screen and (max-width: 1000px) {
 			.about__wrapper:nth-child(1) {
 				display: none;
 			}
