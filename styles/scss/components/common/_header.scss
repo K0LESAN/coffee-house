@@ -7,28 +7,36 @@
 	margin-bottom: rem(20);
 
 	&__wrapper {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 100px;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-		padding-top: 160px;
-		transform: translateX(100%);
-		background-color: map-get($colors, background, body);
-		transition: transform ease-in 0.5s;
-		overflow-y: hidden;
+		display: grid;
+		position: relative;
+		justify-items: center;
+		grid-template-columns: 1fr 72px;
+		flex: 1 0 0;
 		z-index: 2;
+
+		@media screen and (max-width: map-get($adaptive, tablet)) {
+			display: flex;
+			position: fixed;
+			align-items: center;
+			flex-direction: column;
+			width: 100vw;
+			height: calc(100vh - 100px);
+			top: 100px;
+			left: 100%;
+			gap: 100px;
+			padding: rem(60) rem(40);
+			transform: translateX(0);
+			transition: transform ease-in 0.5s;
+			background-color: map-get($colors, background, body);
+			overflow-y: hidden;
+		}
 
 		&_scroll {
 			overflow-y: scroll;
 		}
 
 		&_visible {
-			transform: translateX(0);
+			transform: translateX(-100%);
 		}
 	}
 
@@ -44,7 +52,7 @@
 		height: 60px;
 
 		&_unselect {
-			pointer-events: none;
+			cursor: initial;
 		}
 	}
 
@@ -102,19 +110,21 @@
 			content: "";
 		}
 
-		&_select {
-			pointer-events: none;
+		@media screen and not (max-width: map-get($adaptive, tablet)) {
+			&_unselect {
+				cursor: initial;
 
-			&::after {
-				transform: scaleX(1);
-				opacity: 1;
+				&::after {
+					transform: scaleX(1);
+					opacity: 1;
+				}
 			}
 		}
 
 		@media screen and (max-width: map-get($adaptive, tablet)) {
 			width: 143px;
-			height: 40px;
-			overflow: visible;
+			min-height: 40px;
+			overflow: auto;
 		}
 
 		@media (hover: hover) and (pointer: fine) {
@@ -225,15 +235,13 @@
 		height: 2px;
 		transition: transform ease-in 0.5s;
 
-		@media screen and (max-width: map-get($adaptive, tablet)) {
-			&_active {
-				&:first-child {
-					transform: translateY(4px) rotate(-45deg);
-				}
+		&_active {
+			&:first-child {
+				transform: translateY(4px) rotate(-45deg);
+			}
 
-				&:last-child {
-					transform: translateY(-4px) rotate(45deg);
-				}
+			&:last-child {
+				transform: translateY(-4px) rotate(45deg);
 			}
 		}
 	}
