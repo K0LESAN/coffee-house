@@ -30,6 +30,7 @@
 		padding: rem(8) rem(16) rem(8) rem(8);
 		background-color: transparent;
 		transition: border-color, background-color, ease-out, 0.5s;
+		user-select: none;
 
 		&-wrapper {
 			display: flex;

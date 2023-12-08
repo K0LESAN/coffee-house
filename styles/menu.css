@@ -722,6 +722,7 @@ body.body_block-scroll {
   padding: 0.5rem 1rem 0.5rem 0.5rem;
   background-color: transparent;
   transition: border-color, background-color, ease-out, 0.5s;
+  user-select: none;
 }
 .menu__button-wrapper {
   display: flex;
