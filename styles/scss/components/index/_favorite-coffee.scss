@@ -39,13 +39,14 @@
 			margin-left: auto;
 			margin-right: auto;
 			transform: translateX(0);
-			transition: transform ease 0.5s;
+			transition: transform ease 1s;
 		}
 
 		&__item {
 			flex: 0 0 100%;
 			max-width: 100%;
 			text-align: center;
+			user-select: none;
 		}
 
 		&__text {
@@ -92,7 +93,7 @@
 		transition: background-color ease-out 0.5s;
 
 		@media (hover: hover) and (pointer: fine) {
-			&:hover {
+			&:not([disabled]):hover {
 				background-color: map-get($colors, background, container);
 
 				& .slider__arrow {
@@ -127,7 +128,7 @@
 			background-color: map-get($colors, border, light);
 			overflow: hidden;
 			--animate: 0;
-			--duration: 5s;
+			--duration: transform ease 5s;
 
 			&::after {
 				display: block;
@@ -137,7 +138,7 @@
 				left: -100%;
 				background-color: map-get($colors, border, dark);
 				transform: translateX(var(--animate));
-				transition: transform ease var(--duration);
+				transition: var(--duration);
 				content: "";
 			}
 		}

@@ -244,11 +244,6 @@ input[type=submit] {
   *overflow: visible;
 }
 
-button[disabled],
-html input[disabled] {
-  cursor: default;
-}
-
 input[type=checkbox],
 input[type=radio] {
   box-sizing: border-box;
@@ -843,12 +838,13 @@ body.body_block-scroll {
   margin-left: auto;
   margin-right: auto;
   transform: translateX(0);
-  transition: transform ease 0.5s;
+  transition: transform ease 1s;
 }
 .favorite-coffee-info__item {
   flex: 0 0 100%;
   max-width: 100%;
   text-align: center;
+  user-select: none;
 }
 .favorite-coffee-info__text {
   display: flex;
@@ -888,10 +884,10 @@ body.body_block-scroll {
   transition: background-color ease-out 0.5s;
 }
 @media (hover: hover) and (pointer: fine) {
-  .slider__button:hover {
+  .slider__button:not([disabled]):hover {
     background-color: #665f55;
   }
-  .slider__button:hover .slider__arrow {
+  .slider__button:not([disabled]):hover .slider__arrow {
     stroke: #e1d4c9;
   }
 }
@@ -920,7 +916,7 @@ body.body_block-scroll {
   background-color: #c1b6ad;
   overflow: hidden;
   --animate: 0;
-  --duration: 5s;
+  --duration: transform ease 5s;
 }
 .slider-controls__item::after {
   display: block;
@@ -930,7 +926,7 @@ body.body_block-scroll {
   left: -100%;
   background-color: #665f55;
   transform: translateX(var(--animate));
-  transition: transform ease var(--duration);
+  transition: var(--duration);
   content: "";
 }
 @media screen and (max-width: 768px) {
