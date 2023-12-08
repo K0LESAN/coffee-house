@@ -842,6 +842,8 @@ body.body_block-scroll {
   max-height: 640px;
   margin-left: auto;
   margin-right: auto;
+  transform: translateX(0);
+  transition: transform ease 0.5s;
 }
 .favorite-coffee-info__item {
   flex: 0 0 100%;
@@ -911,13 +913,25 @@ body.body_block-scroll {
   gap: 0.75rem;
 }
 .slider-controls__item {
+  position: relative;
   width: 40px;
   height: 4px;
   border-radius: 100px;
   background-color: #c1b6ad;
+  overflow: hidden;
+  --animate: 0;
+  --duration: 5s;
 }
-.slider-controls__item_select {
+.slider-controls__item::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -100%;
   background-color: #665f55;
+  transform: translateX(var(--animate));
+  transition: transform ease var(--duration);
+  content: "";
 }
 @media screen and (max-width: 768px) {
   .slider {

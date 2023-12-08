@@ -89,7 +89,7 @@
         <span class="favorite-coffee__title_taupe">favorite</span> coffee
       </h2>
       <div class="slider">
-        <button class="slider__button">
+        <button class="slider__button" data-direction="left">
           <svg class="slider__arrow">
             <use xlink:href="assets/images/index/favourite_coffee/arrow_left.svg#arrow-left"></use>
           </svg>
@@ -133,14 +133,14 @@
             </div>
           </div>
         </div>
-        <button class="slider__button">
+        <button class="slider__button" data-direction="right">
           <svg class="slider__arrow">
             <use xlink:href="assets/images/index/favourite_coffee/arrow_right.svg#arrow-right"></use>
           </svg>
         </button>
       </div>
       <div class="slider-controls">
-        <div class="slider-controls__item slider-controls__item_select"></div>
+        <div class="slider-controls__item"></div>
         <div class="slider-controls__item"></div>
         <div class="slider-controls__item"></div>
       </div>
@@ -260,6 +260,7 @@
     </div>
   </footer>
   <script src="js/common/burger-menu.js" defer></script>
+  <script src="js/index/slider.js" defer></script>
 </body>
 
 </html>
