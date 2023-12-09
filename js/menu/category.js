@@ -1,12 +1,45 @@
 import products from '../data/products.json' assert { type: 'json' };
 
 const menu = document.querySelector('.menu__grid'),
-  buttons = document.querySelector('.menu__buttons');
+  buttons = document.querySelector('.menu__buttons'),
+  buttonUpdate = document.querySelector('.menu__update');
+
+let selectButton = buttons.children[0];
+
+function appendProductItem(data) {
+  const productElement = document.createElement('div'),
+    pathToImage = data.name.toLowerCase().replace(/\s/g, '-');
+
+  productElement.classList.add('menu__item');
+
+  productElement.innerHTML = `
+    <div class="menu__inner">
+      <img src="assets/images/menu/menu/${pathToImage}.jpg" alt="${data.name}" class="menu__image">
+    </div>
+    <div class="menu__info">
+      <div class="menu__text">
+        <h2 class="menu__title">${data.name}</h2>
+        <p class="menu__description">
+          ${data.description}
+        </p>
+      </div>
+      <p class="menu__price">$${data.price}</p>
+    </div>
+  `;
+
+  menu.append(productElement);
+}
 
 function toggleCategory(event) {
   const element = event.target.closest('.menu__button');
-
-  if (!element || element.classList.contains('menu__button_select')) {
+  console.log(
+    element.classList.contains('menu__button_select'),
+    !event.isTrusted
+  );
+  if (
+    !element ||
+    (element.classList.contains('menu__button_select') && event.isTrusted)
+  ) {
     return;
   }
 
@@ -19,34 +52,59 @@ function toggleCategory(event) {
     count++;
   }
 
-  element.classList.add('menu__button_select');
+  selectButton = element;
 
-  const selectCategory = element.getAttribute('data-category'),
-    data = products.filter((product) => product.category === selectCategory);
+  selectButton.classList.add('menu__button_select');
 
-  data.forEach((product) => {
-    const productElement = document.createElement('div'),
-      pathToImage = product.name.toLowerCase().replace(/\s/g, '-');
+  const data = products.filter(
+      (product) =>
+        product.category === selectButton.getAttribute('data-category')
+    ),
+    length = window.innerWidth > 1089 ? data.length : 4;
 
-    productElement.classList.add('menu__item');
+  for (let index = 0; index < length; index++) {
+    appendProductItem(data[index]);
+  }
 
-    productElement.innerHTML = `
-		<div class="menu__inner">
-		<img src="assets/images/menu/menu/${pathToImage}.jpg" alt="${product.name}" class="menu__image">
-		</div>
-		<div class="menu__info">
-			<div class="menu__text">
-				<h2 class="menu__title">${product.name}</h2>
-				<p class="menu__description">
-					${product.description}
-				</p>
-			</div>
-			<p class="menu__price">$${product.price}</p>
-		</div>
-		`;
+  if (data.length <= 4) {
+    buttonUpdate.remove();
+  } else {
+    menu.after(buttonUpdate);
+  }
+}
 
-    menu.append(productElement);
-  });
+function loadProducts(event) {
+  const button = event.target.closest('.menu__update'),
+    data = products.filter(
+      (product) =>
+        product.category === selectButton.getAttribute('data-category')
+    ),
+    length = data.length;
+
+  button.remove();
+
+  for (let index = menu.childElementCount - 1; index < length; index++) {
+    appendProductItem(data[index]);
+  }
+}
+
+function correctMenu(event) {
+  if (event.target.innerWidth <= 1089) {
+    if (menu.childElementCount > 4) {
+      menu.after(buttonUpdate);
+    }
+
+    while (menu.childElementCount > 4) {
+      menu.removeChild(menu.lastElementChild);
+    }
+  } else {
+    menu.innerHTML = '';
+    selectButton.click();
+  }
 }
 
 buttons.addEventListener('click', toggleCategory);
+
+selectButton.click();
+buttonUpdate.addEventListener('click', loadProducts);
+window.addEventListener('resize', correctMenu);

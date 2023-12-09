@@ -98,12 +98,6 @@
 		align-items: center;
 		flex-wrap: wrap;
 		gap: rem(40);
-
-		@media screen and (max-width: 1090px) {
-			&:nth-child(n + 5) {
-				display: none;
-			}
-		}
 	}
 
 	&__item {
@@ -113,14 +107,6 @@
 		border-radius: 40px;
 		color: map-get($colors, text, dark);
 		cursor: pointer;
-
-		@media screen and (max-width: 1090px) {
-			grid-template-columns: repeat(2, 1fr);
-
-			&:nth-child(n + 5) {
-				display: none;
-			}
-		}
 
 		@media (hover: hover) and (pointer: fine) {
 			&:hover .menu__image {

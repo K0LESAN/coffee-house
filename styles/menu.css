@@ -779,11 +779,6 @@ body.body_block-scroll {
   flex-wrap: wrap;
   gap: 2.5rem;
 }
-@media screen and (max-width: 1090px) {
-  .menu__grid:nth-child(n+5) {
-    display: none;
-  }
-}
 .menu__item {
   width: 310px;
   height: 506px;
@@ -791,14 +786,6 @@ body.body_block-scroll {
   border-radius: 40px;
   color: #403f3d;
   cursor: pointer;
-}
-@media screen and (max-width: 1090px) {
-  .menu__item {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .menu__item:nth-child(n+5) {
-    display: none;
-  }
 }
 @media (hover: hover) and (pointer: fine) {
   .menu__item:hover .menu__image {
