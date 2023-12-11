@@ -28,7 +28,7 @@ function nextCoffee(event) {
     element.disabled = true;
   });
 
-  setTransition('0', 'transform ease 1s');
+  setTransition('0', 'transform 1s ease');
 
   if (arrow?.getAttribute('data-direction') === 'left') {
     control = control.previousElementSibling || sliderControls.lastElementChild;
@@ -47,7 +47,7 @@ function nextCoffee(event) {
       element.disabled = false;
     });
 
-    setTransition('100%', `transform ease 5s`);
+    setTransition('100%', `transform 5s ease`);
   }, 1000);
 }
 
@@ -65,7 +65,7 @@ function stopTransition(event) {
   }
 
   if (['touchcancel', 'mouseout'].includes(event.type)) {
-    setTransition('100%', `transform ease ${durationTransition}s`);
+    setTransition('100%', `transform ${durationTransition}s ease`);
   }
 }
 
