@@ -27,8 +27,7 @@ function openModal(event) {
 
   document.body.style.overflow = 'hidden';
 
-  const length = products.length,
-    searchProduct = products.find(({ name }) => name === productName);
+  const searchProduct = products.find(({ name }) => name === productName);
 
   if (!searchProduct) {
     return;
@@ -60,6 +59,10 @@ function openModal(event) {
   );
 
   modal.classList.add('modal_open');
+
+  setTimeout(() => {
+    modal.style.opacity = 1;
+  }, 5);
 }
 
 function closeModal(event) {
@@ -70,9 +73,19 @@ function closeModal(event) {
     return;
   }
 
-  document.body.style.overflow = 'auto';
+  modal.style.opacity = 0;
 
-  modal.classList.remove('modal_open');
+  modal.addEventListener(
+    'transitionend',
+    () => {
+      document.body.style.overflow = 'auto';
+      modal.classList.remove('modal_open');
+    },
+    {
+      once: true,
+      passive: true,
+    }
+  );
 }
 
 function toggleSize(event) {
