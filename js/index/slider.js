@@ -86,8 +86,6 @@ function scrollCoffee(event) {
   startClickPosition = 0;
 }
 
-control.style.setProperty('--animate', '100%');
-
 sliderControls.addEventListener('transitioncancel', setDurationTransition, {
   passive: true,
 });
@@ -120,3 +118,5 @@ favoriteCoffeeBlock.addEventListener('touchend', scrollCoffee, {
 
 slider.addEventListener('click', nextCoffee, { passive: true });
 sliderControls.addEventListener('transitionend', nextCoffee, { passive: true });
+
+control.style.setProperty('--animate', '100%');
