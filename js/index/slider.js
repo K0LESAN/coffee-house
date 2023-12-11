@@ -60,11 +60,21 @@ function stopTransition(event) {
     .transform.split(', ')
     .at(-2);
 
-  if (['touchstart', 'mouseover'].includes(event.type)) {
+  if (event.type === 'touchstart') {
     setTransition(`${xCoordinate}px`, 'none');
   }
 
-  if (['touchend', 'mouseout'].includes(event.type)) {
+  if (event.type === 'touchend') {
+    setTimeout(() => {
+      setTransition('100%', `transform ${durationTransition}s ease`);
+    }, 5);
+  }
+
+  if (event.type === 'mouseover') {
+    setTransition(`${xCoordinate}px`, 'none');
+  }
+
+  if (event.type === 'mouseout') {
     setTransition('100%', `transform ${durationTransition}s ease`);
   }
 }
