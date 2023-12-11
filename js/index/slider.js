@@ -70,32 +70,53 @@ function stopTransition(event) {
 }
 
 function getStartClick(event) {
-  startClickPosition = event.screenX;
+  startClickPosition = event.screenX ?? event.touches?.[0]?.screenX;
 }
 
 function scrollCoffee(event) {
-  const betweenDistance = startClickPosition - event.screenX;
+  const endClickPosition = event.screenX ?? event.changedTouches?.[0]?.screenX,
+    betweenDistance = startClickPosition - endClickPosition;
 
-  if (Math.abs(betweenDistance) < 100) {
+  if (Math.abs(betweenDistance) < 174) {
     return;
   }
 
-  arrows[Number(betweenDistance >= 0)].click();
+  arrows[Number(startClickPosition > endClickPosition)].click();
 
   startClickPosition = 0;
 }
 
 control.style.setProperty('--animate', '100%');
 
-sliderControls.addEventListener('transitioncancel', setDurationTransition);
+sliderControls.addEventListener('transitioncancel', setDurationTransition, {
+  passive: true,
+});
 
-favoriteCoffeeBlock.addEventListener('touchstart', stopTransition);
-favoriteCoffeeBlock.addEventListener('mouseover', stopTransition);
-favoriteCoffeeBlock.addEventListener('touchcancel', stopTransition);
-favoriteCoffeeBlock.addEventListener('mouseout', stopTransition);
+favoriteCoffeeBlock.addEventListener('mouseover', stopTransition, {
+  passive: true,
+});
+favoriteCoffeeBlock.addEventListener('mouseout', stopTransition, {
+  passive: true,
+});
+favoriteCoffeeBlock.addEventListener('touchstart', stopTransition, {
+  passive: true,
+});
+favoriteCoffeeBlock.addEventListener('touchend', stopTransition, {
+  passive: true,
+});
 
-favoriteCoffeeBlock.addEventListener('mousedown', getStartClick);
-favoriteCoffeeBlock.addEventListener('mouseup', scrollCoffee);
+favoriteCoffeeBlock.addEventListener('mousedown', getStartClick, {
+  passive: true,
+});
+favoriteCoffeeBlock.addEventListener('mouseup', scrollCoffee, {
+  passive: true,
+});
+favoriteCoffeeBlock.addEventListener('touchstart', getStartClick, {
+  passive: true,
+});
+favoriteCoffeeBlock.addEventListener('touchend', scrollCoffee, {
+  passive: true,
+});
 
-slider.addEventListener('click', nextCoffee);
-sliderControls.addEventListener('transitionend', nextCoffee);
+slider.addEventListener('click', nextCoffee, { passive: true });
+sliderControls.addEventListener('transitionend', nextCoffee, { passive: true });
