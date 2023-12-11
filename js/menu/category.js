@@ -12,6 +12,8 @@ function appendProductItem(data) {
 
   productElement.classList.add('menu__item');
 
+  productElement.setAttribute('data-product-name', data.name);
+
   productElement.innerHTML = `
     <div class="menu__inner">
       <img src="assets/images/menu/menu/${pathToImage}.jpg" alt="${data.name}" class="menu__image">
@@ -32,10 +34,7 @@ function appendProductItem(data) {
 
 function toggleCategory(event) {
   const element = event.target.closest('.menu__button');
-  console.log(
-    element.classList.contains('menu__button_select'),
-    !event.isTrusted
-  );
+
   if (
     !element ||
     (element.classList.contains('menu__button_select') && event.isTrusted)
