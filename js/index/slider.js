@@ -64,7 +64,7 @@ function stopTransition(event) {
     setTransition(`${xCoordinate}px`, 'none');
   }
 
-  if (['touchcancel', 'mouseout'].includes(event.type)) {
+  if (['touchend', 'mouseout'].includes(event.type)) {
     setTransition('100%', `transform ${durationTransition}s ease`);
   }
 }
