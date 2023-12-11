@@ -213,6 +213,10 @@
 		padding: 16px;
 		border-radius: 40px;
 		background-color: map-get($colors, background, body);
+		transition-property: transform;
+		transition-timing-function: ease-in-out;
+		transition-duration: 0.2s;
+		transform: scale(0);
 
 		&-inner {
 			display: flex;

@@ -62,6 +62,7 @@ function openModal(event) {
 
   setTimeout(() => {
     modal.style.opacity = 1;
+    modal.firstElementChild.style.transform = 'scale(1)';
   }, 5);
 }
 
@@ -74,6 +75,7 @@ function closeModal(event) {
   }
 
   modal.style.opacity = 0;
+  modal.firstElementChild.style.transform = 'scale(0)';
 
   setTimeout(() => {
     document.body.style.overflow = 'auto';
