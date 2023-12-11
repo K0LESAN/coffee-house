@@ -51,8 +51,10 @@
 		width: 100px;
 		height: 60px;
 
-		&_unselect {
-			cursor: initial;
+		@media (hover: hover) and (pointer: fine) {
+			&_unselect {
+				cursor: initial;
+			}
 		}
 	}
 
@@ -62,6 +64,7 @@
 		width: 72px;
 		height: 28px;
 		overflow: hidden;
+		cursor: none;
 
 		&__wrapper {
 			display: flex;
@@ -110,13 +113,17 @@
 			content: "";
 		}
 
-		@media screen and not (max-width: map-get($adaptive, tablet)) {
-			&_unselect {
-				cursor: initial;
+		@media (hover: hover) and (pointer: fine) {
+			cursor: pointer;
 
-				&::after {
-					transform: scaleX(1);
-					opacity: 1;
+			@media screen and not (max-width: map-get($adaptive, tablet)) {
+				&_unselect {
+					cursor: initial;
+
+					&::after {
+						transform: scaleX(1);
+						opacity: 1;
+					}
 				}
 			}
 		}

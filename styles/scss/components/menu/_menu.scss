@@ -106,13 +106,14 @@
 		border: rem(1) solid map-get($colors, border, light);
 		border-radius: 40px;
 		color: map-get($colors, text, dark);
-		cursor: pointer;
 
 		@media (hover: hover) and (pointer: fine) {
 			&:hover .menu__image {
 				width: 310px;
 				height: 310px;
 			}
+
+			cursor: pointer;
 		}
 	}
 
@@ -179,7 +180,7 @@
 }
 
 .modal {
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
 	position: fixed;
@@ -190,6 +191,10 @@
 	background-color: rgba(64, 63, 61, 0.8);
 	overflow: hidden;
 	z-index: 4;
+
+	&_open {
+		display: flex;
+	}
 
 	&__block {
 		max-width: 800px;
