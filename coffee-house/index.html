@@ -14,36 +14,38 @@
 
 <body>
   <header class="header container">
-    <a href="index.html" class="header__link header__link_unselect">
+    <a href="#" class="header__link header__link_unselect">
       <svg class="header__logo">
         <use xlink:href="assets/images/common/header/logo.svg#logo"></use>
       </svg>
     </a>
-    <nav class="nav">
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a href="#favorite-coffee" class="nav__link">Favorite coffee</a>
-        </li>
-        <li class="nav__item">
-          <a href="#about" class="nav__link">About</a>
-        </li>
-        <li class="nav__item">
-          <a href="#mobile-app" class="nav__link">Mobile app</a>
-        </li>
-        <li class="nav__item">
-          <a href="#contact-us" class="nav__link">Contact us</a>
-        </li>
-      </ul>
-    </nav>
-    <a href="menu.html" class="header-menu">
-      <div class="header-menu__wrapper">
-        <span class="header-menu__text">Menu</span>
-        <svg class="header-menu__icon">
-          <use xlink:href="assets/images/common/header/menu.svg#menu"></use>
-        </svg>
-      </div>
-    </a>
-    <div class="burger-menu">
+    <div class="header__wrapper">
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#favorite-coffee" class="nav__link">Favorite coffee</a>
+          </li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="#mobile-app" class="nav__link">Mobile app</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contact-us" class="nav__link">Contact us</a>
+          </li>
+        </ul>
+      </nav>
+      <a href="menu.html" class="header-menu">
+        <div class="header-menu__wrapper">
+          <span class="header-menu__text">Menu</span>
+          <svg class="header-menu__icon">
+            <use xlink:href="assets/images/common/header/menu.svg#menu"></use>
+          </svg>
+        </div>
+      </a>
+    </div>
+    <div class="burger-menu" id="burger-menu">
       <div class="burger-menu__inner">
         <div class="burger-menu__wrapper">
           <div class="burger-menu__line"></div>
@@ -55,8 +57,12 @@
     </div>
   </header>
   <main class="main">
-    <div class="enjoy container">
+    <section class="enjoy container">
       <div class="enjoy__inner">
+        <video poster="assets/images/index/enjoy/hero-image.jpg" autoplay muted loop class="enjoy__video">
+          <source src="assets/videos/index/present.webm" type="video/webm" />
+          <source src="assets/videos/index/present.mp4" type="video/mp4" />
+        </video>
         <div class="enjoy__info">
           <h1 class="enjoy__title">
             <span class="enjoy__title_taupe">Enjoy</span> premium coffee at
@@ -76,22 +82,22 @@
           </a>
         </div>
       </div>
-    </div>
-    <div class="favorite-coffee container" id="favorite-coffee">
+    </section>
+    <section class="favorite-coffee container" id="favorite-coffee">
       <h2 class="favorite-coffee__title">
         Choose your
         <span class="favorite-coffee__title_taupe">favorite</span> coffee
       </h2>
       <div class="slider">
-        <button class="slider__button">
+        <button class="slider__button" data-direction="left">
           <svg class="slider__arrow">
-            <use xlink:href="assets/images/index/favourite_coffee/arrow_left.svg#arrow-left"></use>
+            <use xlink:href="assets/images/index/favourite-coffee/arrow-left.svg#arrow-left"></use>
           </svg>
         </button>
         <div class="favorite-coffee-info">
           <div class="favorite-coffee-info__wrapper">
             <div class="favorite-coffee-info__item">
-              <img src="assets/images/index/favourite_coffee/smores_frappuccino.png" alt=""
+              <img src="assets/images/index/favourite-coffee/smores-frappuccino.png" alt=""
                 class="favorite-coffee-info__image">
               <div class="favorite-coffee-info__text">
                 <h3 class="favorite-coffee-info__title">S’mores Frappuccino</h3>
@@ -103,7 +109,7 @@
               </div>
             </div>
             <div class="favorite-coffee-info__item">
-              <img src="assets/images/index/favourite_coffee/caramel_macchiato.png" alt=""
+              <img src="assets/images/index/favourite-coffee/caramel-macchiato.png" alt=""
                 class="favorite-coffee-info__image">
               <div class="favorite-coffee-info__text">
                 <h3 class="favorite-coffee-info__title">Caramel Macchiato</h3>
@@ -115,7 +121,7 @@
               </div>
             </div>
             <div class="favorite-coffee-info__item">
-              <img src="assets/images/index/favourite_coffee/ice_coffee.png" alt="" class="favorite-coffee-info__image">
+              <img src="assets/images/index/favourite-coffee/ice-coffee.png" alt="" class="favorite-coffee-info__image">
               <div class="favorite-coffee-info__text">
                 <h3 class="favorite-coffee-info__title">Ice coffee</h3>
                 <p class="favorite-coffee-info__description">
@@ -127,19 +133,19 @@
             </div>
           </div>
         </div>
-        <button class="slider__button">
+        <button class="slider__button" data-direction="right">
           <svg class="slider__arrow">
-            <use xlink:href="assets/images/index/favourite_coffee/arrow_right.svg#arrow-right"></use>
+            <use xlink:href="assets/images/index/favourite-coffee/arrow-right.svg#arrow-right"></use>
           </svg>
         </button>
       </div>
       <div class="slider-controls">
-        <div class="slider-controls__item slider-controls__item_select"></div>
-        <div class="slider-controls__item"></div>
-        <div class="slider-controls__item"></div>
+        <div class="slider-controls__item" data-position="0"></div>
+        <div class="slider-controls__item" data-position="1"></div>
+        <div class="slider-controls__item" data-position="2"></div>
       </div>
-    </div>
-    <div class="about container" id="about">
+    </section>
+    <section class="about container" id="about">
       <h2 class="about__title">
         Resource is
         <span class="about__title_taupe">the perfect and cozy place</span>
@@ -149,23 +155,23 @@
       <div class="about__gallery">
         <div class="about__first-column">
           <div class="about__wrapper">
-            <img src="assets/images/index/about/first_photo.jpg" alt="" class="about__image">
+            <img src="assets/images/index/about/first-photo.jpg" alt="" class="about__image">
           </div>
           <div class="about__wrapper">
-            <img src="assets/images/index/about/third_photo.jpg" alt="" class="about__image">
+            <img src="assets/images/index/about/third-photo.jpg" alt="" class="about__image">
           </div>
         </div>
         <div class="about__second-column">
           <div class="about__wrapper">
-            <img src="assets/images/index/about/second_photo.jpg" alt="" class="about__image">
+            <img src="assets/images/index/about/second-photo.jpg" alt="" class="about__image">
           </div>
           <div class="about__wrapper">
-            <img src="assets/images/index/about/fourth_photo.jpg" alt="" class="about__image">
+            <img src="assets/images/index/about/fourth-photo.jpg" alt="" class="about__image">
           </div>
         </div>
       </div>
-    </div>
-    <div class="mobile-app container" id="mobile-app">
+    </section>
+    <section class="mobile-app container" id="mobile-app">
       <div class="mobile-app__info">
         <h2 class="mobile-app__title">
           <span class="mobile-app__title_taupe">Download</span> our apps to
@@ -178,7 +184,7 @@
         <div class="mobile-app-links mobile-app__buttons">
           <button class="mobile-app-links__item">
             <svg class="mobile-app-links__icon">
-              <use xlink:href="assets/images/index/mobile-app/apple_store.svg#apple-store"></use>
+              <use xlink:href="assets/images/index/mobile-app/apple-store.svg#apple-store"></use>
             </svg>
             <span class="mobile-app-links__text">
               <span class="mobile-app-links__avaliable">Available on the</span>
@@ -187,7 +193,7 @@
           </button>
           <button class="mobile-app-links__item">
             <svg class="mobile-app-links__icon">
-              <use xlink:href="assets/images/index/mobile-app/google_play.svg#google-play"></use>
+              <use xlink:href="assets/images/index/mobile-app/google-play.svg#google-play"></use>
             </svg>
             <span class="mobile-app-links__text">
               <span class="mobile-app-links__avaliable">Available on</span>
@@ -196,8 +202,8 @@
           </button>
         </div>
       </div>
-      <img src="assets/images/index/mobile-app/mobile_apps.png" alt="" class="mobile-app__image">
-    </div>
+      <img src="assets/images/index/mobile-app/mobile-apps.png" alt="" class="mobile-app__image">
+    </section>
   </main>
   <footer class="footer container" id="contact-us">
     <div class="footer__inner">
@@ -245,7 +251,7 @@
           </div>
           <div class="contacts__item">
             <svg class="contacts__icon">
-              <use xlink:href="assets/images/common/footer/work_time.svg#work-time"></use>
+              <use xlink:href="assets/images/common/footer/work-time.svg#work-time"></use>
             </svg>
             <p class="contacts__description">Mon-Sat: 9:00 AM – 23:00 PM</p>
           </div>
@@ -253,6 +259,8 @@
       </div>
     </div>
   </footer>
+  <script src="js/common/burger-menu.js" defer></script>
+  <script src="js/index/slider.js" defer></script>
 </body>
 
 </html>
