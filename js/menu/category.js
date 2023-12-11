@@ -102,8 +102,15 @@ function correctMenu(event) {
   }
 }
 
-buttons.addEventListener('click', toggleCategory);
+buttons.addEventListener('click', toggleCategory, {
+  passive: true,
+});
 
 selectButton.click();
-buttonUpdate.addEventListener('click', loadProducts);
-window.addEventListener('resize', correctMenu);
+
+buttonUpdate.addEventListener('click', loadProducts, {
+  passive: true,
+});
+window.addEventListener('resize', correctMenu, {
+  passive: true,
+});
