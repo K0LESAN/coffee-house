@@ -100,6 +100,12 @@ video {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  a {
+    cursor: pointer;
+  }
 }
 
 article,
@@ -240,8 +246,15 @@ button,
 html input[type=button],
 input[type=reset],
 input[type=submit] {
-  cursor: pointer;
   *overflow: visible;
+}
+@media (hover: hover) and (pointer: fine) {
+  button,
+  html input[type=button],
+  input[type=reset],
+  input[type=submit] {
+    cursor: pointer;
+  }
 }
 
 input[type=checkbox],
@@ -449,7 +462,9 @@ body.body_block-scroll {
     gap: 100px;
     padding: 3.75rem 2.5rem;
     transform: translateX(0);
-    transition: transform ease-in 0.5s;
+    transition-property: transform;
+    transition-timing-function: ease-in;
+    transition-duration: 0.5s;
     background-color: #e1d4c9;
     overflow-y: hidden;
   }
@@ -470,8 +485,10 @@ body.body_block-scroll {
   width: 100px;
   height: 60px;
 }
-.header__link_unselect {
-  cursor: initial;
+@media (hover: hover) and (pointer: fine) {
+  .header__link_unselect {
+    cursor: initial;
+  }
 }
 .header-menu {
   display: block;
@@ -479,6 +496,7 @@ body.body_block-scroll {
   width: 72px;
   height: 28px;
   overflow: hidden;
+  cursor: none;
 }
 .header-menu__wrapper {
   display: flex;
@@ -523,10 +541,17 @@ body.body_block-scroll {
   background-color: #403f3d;
   opacity: 0;
   transform: scaleX(0);
-  transition: transform, opacity, ease-out, 0.5s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
   content: "";
 }
-@media screen and not (max-width: 768px) {
+@media (hover: hover) and (pointer: fine) {
+  .header-menu {
+    cursor: pointer;
+  }
+}
+@media screen and (hover: hover) and (pointer: fine) and (not (max-width: 768px)) {
   .header-menu_unselect {
     cursor: initial;
   }
@@ -578,7 +603,9 @@ body.body_block-scroll {
   background-color: #403f3d;
   opacity: 0;
   transform: scaleX(0);
-  transition: transform, opacity, ease-out, 0.5s;
+  transition-property: transform, opacity;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
   content: "";
 }
 @media screen and (max-width: 768px) {
@@ -642,7 +669,9 @@ body.body_block-scroll {
   align-items: center;
   width: 100%;
   height: 2px;
-  transition: transform ease-in 0.5s;
+  transition-property: transform;
+  transition-timing-function: ease-in;
+  transition-duration: 0.5s;
 }
 .burger-menu__wrapper_active:first-child {
   transform: translateY(4px) rotate(-45deg);
@@ -728,7 +757,9 @@ body.body_block-scroll {
   border-radius: 100px;
   padding: 0.5rem 1rem 0.5rem 0.5rem;
   background-color: transparent;
-  transition: border-color, background-color, ease-out, 0.5s;
+  transition-property: border-color, background-color;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
   user-select: none;
 }
 .menu__button-wrapper {
@@ -740,7 +771,9 @@ body.body_block-scroll {
   padding: 0.1875rem 0.4375rem;
   border-radius: 100px;
   background-color: #c1b6ad;
-  transition: background-color ease-out 0.5s;
+  transition-property: background-color;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
 }
 .menu__button-icon {
   display: inline-block;
@@ -750,7 +783,9 @@ body.body_block-scroll {
 .menu__button-text {
   color: #403f3d;
   color: inherit;
-  transition: color ease-out 0.5s;
+  transition-property: color;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
 }
 .menu__button_select {
   border-color: transparent;
@@ -792,9 +827,11 @@ body.body_block-scroll {
   border: 0.0625rem solid #c1b6ad;
   border-radius: 40px;
   color: #403f3d;
-  cursor: pointer;
 }
 @media (hover: hover) and (pointer: fine) {
+  .menu__item {
+    cursor: pointer;
+  }
   .menu__item:hover .menu__image {
     width: 310px;
     height: 310px;
@@ -803,7 +840,9 @@ body.body_block-scroll {
 .menu__image {
   width: 340px;
   height: 340px;
-  transition: width, height ease-out, 0.5s;
+  transition-property: width, height;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
 }
 .menu__info {
   display: flex;
@@ -846,7 +885,7 @@ body.body_block-scroll {
 }
 
 .modal {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -855,8 +894,15 @@ body.body_block-scroll {
   width: 100vw;
   height: 100vh;
   background-color: rgba(64, 63, 61, 0.8);
+  opacity: 0;
   overflow: hidden;
   z-index: 4;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+.modal_open {
+  display: flex;
 }
 .modal__block {
   max-width: 800px;
@@ -866,6 +912,10 @@ body.body_block-scroll {
   padding: 16px;
   border-radius: 40px;
   background-color: #e1d4c9;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+  transform: scale(0);
 }
 .modal__block-inner {
   display: flex;
@@ -896,7 +946,9 @@ body.body_block-scroll {
 .modal__image {
   width: 340px;
   height: 340px;
-  transition: width, height ease-out, 0.5s;
+  transition-property: width, height;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
 }
 .modal__info {
   display: flex;
@@ -941,6 +993,9 @@ body.body_block-scroll {
   border-radius: 100px;
   background: none;
   color: #403f3d;
+  transition-property: color, border-color, background-color;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
   --background-index: #c1b6ad;
 }
 .modal__sizes-and-additives-item-index {
@@ -952,6 +1007,9 @@ body.body_block-scroll {
   border-radius: 100px;
   color: #403f3d;
   background-color: var(--background-index);
+  transition-property: background-color;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
 }
 .modal__sizes-and-additives-item_active {
   color: #e1d4c9;
@@ -992,7 +1050,16 @@ body.body_block-scroll {
   border: 1px solid #665f55;
   border-radius: 100px;
   color: #403f3d;
+  transition-property: color, background-color;
+  transition-timing-function: ease-in;
+  transition-duration: 0.3s;
   background: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .modal__button:hover {
+    color: #e1d4c9;
+    background-color: #665f55;
+  }
 }
 
 .footer {
@@ -1088,7 +1155,9 @@ body.body_block-scroll {
   border-radius: 100px;
   border: 1px solid #c1b6ad;
   background-color: transparent;
-  transition: background-color ease-out 0.5s;
+  transition-property: background-color;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
 }
 @media (hover: hover) and (pointer: fine) {
   .social-networks__link:hover {
@@ -1102,7 +1171,9 @@ body.body_block-scroll {
   width: 24px;
   height: 24px;
   stroke: #e1d4c9;
-  transition: stroke ease-out 0.5s;
+  transition-property: stroke;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
 }
 
 .contacts {
@@ -1134,7 +1205,9 @@ body.body_block-scroll {
   background-color: #e1d4c9;
   opacity: 0;
   transform: scaleX(0);
-  transition: transform, opacity, ease-out, 0.5s;
+  transition-property: transform, opacity;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
   content: "";
 }
 @media (hover: hover) and (pointer: fine) {
