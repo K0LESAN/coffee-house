@@ -1,5 +1,0 @@
-{
-  "scripts": {
-    "scss": "sass -s expanded --no-source-map  styles\\scss\\pages:styles "
-  }
-}
