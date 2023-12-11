@@ -82,7 +82,7 @@ function loadProducts(event) {
 
   button.remove();
 
-  for (let index = menu.childElementCount - 1; index < length; index++) {
+  for (let index = menu.childElementCount; index < length; index++) {
     appendProductItem(data[index]);
   }
 }
