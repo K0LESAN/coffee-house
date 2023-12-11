@@ -134,7 +134,7 @@
 			background-color: map-get($colors, border, light);
 			overflow: hidden;
 			--animate: 0;
-			--duration: transform 5s ease;
+			--duration: transform 5s linear;
 
 			&::after {
 				display: block;
