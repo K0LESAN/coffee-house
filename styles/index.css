@@ -100,6 +100,12 @@ video {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  a {
+    cursor: pointer;
+  }
 }
 
 article,
@@ -240,13 +246,15 @@ button,
 html input[type=button],
 input[type=reset],
 input[type=submit] {
-  cursor: pointer;
   *overflow: visible;
 }
-
-button[disabled],
-html input[disabled] {
-  cursor: default;
+@media (hover: hover) and (pointer: fine) {
+  button,
+  html input[type=button],
+  input[type=reset],
+  input[type=submit] {
+    cursor: pointer;
+  }
 }
 
 input[type=checkbox],
@@ -345,24 +353,24 @@ use {
   font-display: fallback;
   font-style: normal;
   font-weight: 400;
-  src: url("../assets/fonts/Inter/Regular/Inter-Regular.eot");
-  src: local("Inter Regular"), local("Inter-Regular"), url("../assets/fonts/Inter/Regular/Inter-Regular.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Inter/Regular/Inter-Regular.woff2") format("woff2"), url("../assets/fonts/Inter/Regular/Inter-Regular.woff") format("woff"), url("../assets/fonts/Inter/Regular/Inter-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/inter/regular/inter-regular.eot");
+  src: local("Inter Regular"), local("Inter-Regular"), url("../assets/fonts/inter/regular/inter-regular.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/inter/regular/inter-regular.woff2") format("woff2"), url("../assets/fonts/inter/regular/inter-regular.woff") format("woff"), url("../assets/fonts/inter/regular/inter-regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Inter";
   font-display: swap;
   font-style: normal;
   font-weight: 600;
-  src: url("../assets/fonts/Inter/SemiBold/Inter-SemiBold.eot");
-  src: local("Inter Semi Bold"), local("Inter-SemiBold"), url("../assets/fonts/Inter/SemiBold/Inter-SemiBold.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Inter/SemiBold/Inter-SemiBold.woff2") format("woff2"), url("../assets/fonts/Inter/SemiBold/Inter-SemiBold.woff") format("woff"), url("../assets/fonts/Inter/SemiBold/Inter-SemiBold.ttf") format("truetype");
+  src: url("../assets/fonts/inter/semi-bold/inter-semi-bold.eot");
+  src: local("Inter Semi Bold"), local("Inter-SemiBold"), url("../assets/fonts/inter/semi-bold/inter-semi-bold.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/inter/semi-bold/inter-semi-bold.woff2") format("woff2"), url("../assets/fonts/inter/semi-bold/inter-semi-bold.woff") format("woff"), url("../assets/fonts/inter/semi-bold/inter-semi-bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Inter";
   font-display: swap;
   font-style: italic;
   font-weight: 600;
-  src: url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot");
-  src: local("Inter Semi Bold Italic"), local("Inter-SemiBoldItalic"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff2") format("woff2"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.woff") format("woff"), url("../assets/fonts/Inter/SemiBoldItalic/Inter-SemiBoldItalic.truetype") format("truetype");
+  src: url("../assets/fonts/inter/semi-bold-italic/inter-semi-bold-italic.eot");
+  src: local("Inter Semi Bold Italic"), local("Inter-SemiBoldItalic"), url("../assets/fonts/inter/semi-bold-italic/inter-semi-bold-italic.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/inter/semi-bold-italic/inter-semi-bold-italic.woff2") format("woff2"), url("../assets/fonts/inter/semi-bold-italic/inter-semi-bold-italic.woff") format("woff"), url("../assets/fonts/inter/semi-bold-italic/inter-semi-bold-italic.truetype") format("truetype");
 }
 html {
   font-size: 16px;
@@ -385,6 +393,9 @@ html {
 
 body {
   background-color: #e1d4c9;
+}
+body.body_block-scroll {
+  overflow: hidden;
 }
 
 .enjoy__title {
@@ -430,42 +441,104 @@ body {
 }
 
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
   margin-bottom: 1.25rem;
 }
+.header__wrapper {
+  display: grid;
+  position: relative;
+  justify-items: center;
+  grid-template-columns: 1fr 72px;
+  flex: 1 0 0;
+  z-index: 2;
+}
+@media screen and (max-width: 768px) {
+  .header__wrapper {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: calc(100vh - 100px);
+    top: 100px;
+    left: 100%;
+    gap: 100px;
+    padding: 3.75rem 2.5rem;
+    transform: translateX(0);
+    transition-property: transform;
+    transition-timing-function: ease-in;
+    transition-duration: 0.5s;
+    background-color: #e1d4c9;
+    overflow-y: hidden;
+  }
+}
+.header__wrapper_scroll {
+  overflow-y: scroll;
+}
+.header__wrapper_visible {
+  transform: translateX(-100%);
+}
 .header__logo {
+  position: relative;
   width: 100px;
   height: 60px;
+  z-index: 3;
 }
 .header__link {
   width: 100px;
   height: 60px;
 }
-.header__link_unselect {
-  pointer-events: none;
+@media (hover: hover) and (pointer: fine) {
+  .header__link_unselect {
+    cursor: initial;
+  }
 }
 .header-menu {
+  display: block;
   position: relative;
+  width: 72px;
   height: 28px;
   overflow: hidden;
+  cursor: none;
 }
 .header-menu__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 72px;
+  width: 100%;
   height: 24px;
+}
+@media screen and (max-width: 768px) {
+  .header-menu__wrapper {
+    justify-content: initial;
+    gap: 1rem;
+  }
 }
 .header-menu__text {
   color: #403f3d;
+}
+@media screen and (max-width: 768px) {
+  .header-menu__text {
+    font-family: "Inter", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 125%;
+  }
 }
 .header-menu__icon {
   width: 20px;
   height: 20px;
   stroke: #403f3d;
+}
+@media screen and (max-width: 768px) {
+  .header-menu__icon {
+    width: 40px;
+    height: 40px;
+  }
 }
 .header-menu::after {
   position: absolute;
@@ -475,15 +548,31 @@ body {
   background-color: #403f3d;
   opacity: 0;
   transform: scaleX(0);
-  transition: transform, opacity, ease-out, 0.5s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
   content: "";
 }
-.header-menu_select {
-  pointer-events: none;
+@media (hover: hover) and (pointer: fine) {
+  .header-menu {
+    cursor: pointer;
+  }
 }
-.header-menu_select::after {
-  transform: scaleX(1);
-  opacity: 1;
+@media screen and (hover: hover) and (pointer: fine) and (not (max-width: 768px)) {
+  .header-menu_unselect {
+    cursor: initial;
+  }
+  .header-menu_unselect::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header-menu {
+    width: 143px;
+    min-height: 40px;
+    overflow: auto;
+  }
 }
 @media (hover: hover) and (pointer: fine) {
   .header-menu:hover::after {
@@ -491,31 +580,29 @@ body {
     opacity: 1;
   }
 }
-@media screen and (max-width: 768px) {
-  .header-menu {
-    display: none;
-  }
-}
 
-.nav {
-  flex: 1 0 0;
-}
 .nav__list {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 456px;
-  margin-left: auto;
-  margin-right: auto;
   gap: 2.5rem;
 }
+@media screen and (max-width: 768px) {
+  .nav__list {
+    flex-direction: column;
+    justify-content: initial;
+    width: 100%;
+    gap: 3.75rem;
+  }
+}
 .nav__item {
-  display: block;
   position: relative;
   height: 28px;
   overflow: hidden;
 }
 .nav__item::after {
+  display: block;
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -523,8 +610,18 @@ body {
   background-color: #403f3d;
   opacity: 0;
   transform: scaleX(0);
-  transition: transform, opacity, ease-out, 0.5s;
+  transition-property: transform, opacity;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
   content: "";
+}
+@media screen and (max-width: 768px) {
+  .nav__item {
+    height: initial;
+  }
+  .nav__item::after {
+    display: none;
+  }
 }
 @media (hover: hover) and (pointer: fine) {
   .nav__item:hover::after {
@@ -541,12 +638,20 @@ body {
   color: #403f3d;
 }
 @media screen and (max-width: 768px) {
-  .nav {
-    display: none;
+  .nav__link {
+    display: block;
+    height: 100%;
+  }
+  .nav__link {
+    font-family: "Inter", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 125%;
   }
 }
 
 .burger-menu {
+  position: relative;
   display: none;
   justify-content: center;
   align-items: center;
@@ -554,8 +659,10 @@ body {
   height: 44px;
   border: 0.0625rem solid #665f55;
   border-radius: 100px;
+  z-index: 3;
 }
 .burger-menu__inner {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -569,6 +676,15 @@ body {
   align-items: center;
   width: 100%;
   height: 2px;
+  transition-property: transform;
+  transition-timing-function: ease-in;
+  transition-duration: 0.5s;
+}
+.burger-menu__wrapper_active:first-child {
+  transform: translateY(4px) rotate(-45deg);
+}
+.burger-menu__wrapper_active:last-child {
+  transform: translateY(-4px) rotate(45deg);
 }
 .burger-menu__line {
   width: 18px;
@@ -585,14 +701,22 @@ body {
 .enjoy {
   margin-bottom: 6.25rem;
 }
+.enjoy__video {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
 .enjoy__inner {
-  max-width: 100%;
+  position: relative;
+  max-width: 1360px;
   padding: 6.25rem;
   border-radius: 40px;
-  background-image: url("../assets/images/index/enjoy/hero_image.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  overflow: hidden;
 }
 @media screen and (max-width: 1280px) {
   .enjoy__inner {
@@ -619,10 +743,12 @@ body {
   }
 }
 .enjoy__info {
+  position: relative;
   max-width: 530px;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  z-index: 1;
 }
 .enjoy__title {
   color: #e1d4c9;
@@ -657,7 +783,9 @@ body {
 .enjoy__text-menu {
   position: relative;
   right: 0px;
-  transition: right ease-in 0.3s;
+  transition-property: right;
+  transition-timing-function: ease-in;
+  transition-duration: 0.3s;
 }
 @media screen and (hover: none) and (max-width: 960px) {
   .enjoy__text-menu {
@@ -671,7 +799,9 @@ body {
   aspect-ratio: 1/1;
   stroke: #403f3d;
   opacity: 0;
-  transition: opacity ease-in 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease-in;
+  transition-duration: 0.3s;
 }
 @media screen and (hover: none) and (max-width: 960px) {
   .enjoy__hidden-icon {
@@ -740,11 +870,16 @@ body {
   max-height: 640px;
   margin-left: auto;
   margin-right: auto;
+  transform: translateX(0);
+  transition-property: transform;
+  transition-timing-function: ease;
+  transition-duration: 1s;
 }
 .favorite-coffee-info__item {
   flex: 0 0 100%;
   max-width: 100%;
   text-align: center;
+  user-select: none;
 }
 .favorite-coffee-info__text {
   display: flex;
@@ -781,13 +916,15 @@ body {
   border: 0.0625rem solid #665f55;
   border-radius: 100px;
   background-color: transparent;
-  transition: background-color ease-out 0.5s;
+  transition-property: background-color;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
 }
 @media (hover: hover) and (pointer: fine) {
-  .slider__button:hover {
+  .slider__button:not([disabled]):hover {
     background-color: #665f55;
   }
-  .slider__button:hover .slider__arrow {
+  .slider__button:not([disabled]):hover .slider__arrow {
     stroke: #e1d4c9;
   }
 }
@@ -800,7 +937,9 @@ body {
   width: 24px;
   height: 24px;
   stroke: #403f3d;
-  transition: stroke ease-out 0.5s;
+  transition-property: stroke;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
 }
 .slider-controls {
   display: flex;
@@ -809,13 +948,25 @@ body {
   gap: 0.75rem;
 }
 .slider-controls__item {
+  position: relative;
   width: 40px;
   height: 4px;
   border-radius: 100px;
   background-color: #c1b6ad;
+  overflow: hidden;
+  --animate: 0;
+  --duration: transform 5s linear;
 }
-.slider-controls__item_select {
+.slider-controls__item::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -100%;
   background-color: #665f55;
+  transform: translateX(var(--animate));
+  transition: var(--duration);
+  content: "";
 }
 @media screen and (max-width: 768px) {
   .slider {
@@ -916,7 +1067,9 @@ body {
   position: absolute;
   width: 726px;
   aspect-ratio: 1/1;
-  transition: transform ease-out 0.5s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
 }
 
 .mobile-app {
@@ -979,7 +1132,9 @@ body {
   border: 1px solid #665f55;
   border-radius: 100px;
   background-color: transparent;
-  transition: background-color ease-in 0.5s;
+  transition-property: background-color;
+  transition-timing-function: ease-in;
+  transition-duration: 0.5s;
 }
 @media (hover: hover) and (pointer: fine) {
   .mobile-app-links__item:hover {
@@ -994,14 +1149,18 @@ body {
   width: 36px;
   height: 36px;
   fill: #403f3d;
-  transition: fill ease-in 0.5s;
+  transition-property: fill;
+  transition-timing-function: ease-in;
+  transition-duration: 0.5s;
 }
 .mobile-app-links__text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.125rem;
-  transition: color ease-in 0.5s;
+  transition-property: color;
+  transition-timing-function: ease-in;
+  transition-duration: 0.5s;
 }
 @media screen and (max-width: 1290px) {
   .mobile-app {
@@ -1112,7 +1271,9 @@ body {
   border-radius: 100px;
   border: 1px solid #c1b6ad;
   background-color: transparent;
-  transition: background-color ease-out 0.5s;
+  transition-property: background-color;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
 }
 @media (hover: hover) and (pointer: fine) {
   .social-networks__link:hover {
@@ -1126,7 +1287,9 @@ body {
   width: 24px;
   height: 24px;
   stroke: #e1d4c9;
-  transition: stroke ease-out 0.5s;
+  transition-property: stroke;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
 }
 
 .contacts {
@@ -1158,7 +1321,9 @@ body {
   background-color: #e1d4c9;
   opacity: 0;
   transform: scaleX(0);
-  transition: transform, opacity, ease-out, 0.5s;
+  transition-property: transform, opacity;
+  transition-timing-function: ease-out;
+  transition-duration: 0.5s;
   content: "";
 }
 @media (hover: hover) and (pointer: fine) {

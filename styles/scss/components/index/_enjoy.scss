@@ -1,16 +1,23 @@
 .enjoy {
 	margin-bottom: rem(100);
 
+	&__video {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 0;
+	}
+
 	&__inner {
-		max-width: 100%;
+		position: relative;
+		max-width: 1360px;
 		padding: rem(100);
 		border-radius: 40px;
-		background: {
-			image: url("../assets/images/index/enjoy/hero_image.jpg");
-			size: cover;
-			repeat: no-repeat;
-			position: center;
-		}
+		overflow: hidden;
 
 		@media screen and (max-width: 1280px) {
 			padding-left: 7.8125vw;
@@ -34,10 +41,12 @@
 	}
 
 	&__info {
+		position: relative;
 		max-width: 530px;
 		display: flex;
 		flex-direction: column;
 		gap: rem(40);
+		z-index: 1;
 	}
 
 	&__title {
@@ -71,7 +80,9 @@
 	&__text-menu {
 		position: relative;
 		right: 0px;
-		transition: right ease-in 0.3s;
+		transition-property: right;
+		transition-timing-function: ease-in;
+		transition-duration: 0.3s;
 
 		@media screen and (hover: none) and (max-width: 960px) {
 			right: 14px;
@@ -85,7 +96,9 @@
 		aspect-ratio: 1 / 1;
 		stroke: map-get($colors, text, dark);
 		opacity: 0;
-		transition: opacity ease-in 0.3s;
+		transition-property: opacity;
+		transition-timing-function: ease-in;
+		transition-duration: 0.3s;
 
 		@media screen and (hover: none) and (max-width: 960px) {
 			opacity: 1;
