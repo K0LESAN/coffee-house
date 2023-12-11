@@ -39,7 +39,9 @@
 			margin-left: auto;
 			margin-right: auto;
 			transform: translateX(0);
-			transition: transform ease 1s;
+			transition-property: transform;
+			transition-timing-function: ease;
+			transition-duration: 1s;
 		}
 
 		&__item {
@@ -90,7 +92,9 @@
 		border: rem(1) solid map-get($colors, border, dark);
 		border-radius: 100px;
 		background-color: transparent;
-		transition: background-color ease-out 0.5s;
+		transition-property: background-color;
+		transition-timing-function: ease-out;
+		transition-duration: 0.5s;
 
 		@media (hover: hover) and (pointer: fine) {
 			&:not([disabled]):hover {
@@ -111,7 +115,9 @@
 		width: 24px;
 		height: 24px;
 		stroke: map-get($colors, text, dark);
-		transition: stroke ease-out 0.5s;
+		transition-property: stroke;
+		transition-timing-function: ease-out;
+		transition-duration: 0.5s;
 	}
 
 	&-controls {
@@ -128,7 +134,7 @@
 			background-color: map-get($colors, border, light);
 			overflow: hidden;
 			--animate: 0;
-			--duration: transform ease 5s;
+			--duration: transform 5s ease;
 
 			&::after {
 				display: block;

@@ -80,7 +80,9 @@
 	&__text-menu {
 		position: relative;
 		right: 0px;
-		transition: right ease-in 0.3s;
+		transition-property: right;
+		transition-timing-function: ease-in;
+		transition-duration: 0.3s;
 
 		@media screen and (hover: none) and (max-width: 960px) {
 			right: 14px;
@@ -94,7 +96,9 @@
 		aspect-ratio: 1 / 1;
 		stroke: map-get($colors, text, dark);
 		opacity: 0;
-		transition: opacity ease-in 0.3s;
+		transition-property: opacity;
+		transition-timing-function: ease-in;
+		transition-duration: 0.3s;
 
 		@media screen and (hover: none) and (max-width: 960px) {
 			opacity: 1;

@@ -29,7 +29,9 @@
 		border-radius: 100px;
 		padding: rem(8) rem(16) rem(8) rem(8);
 		background-color: transparent;
-		transition: border-color, background-color, ease-out, 0.5s;
+		transition-property: border-color, background-color;
+		transition-timing-function: ease-out;
+		transition-duration: 0.5s;
 		user-select: none;
 
 		&-wrapper {
@@ -41,7 +43,9 @@
 			padding: rem(3) rem(7);
 			border-radius: 100px;
 			background-color: map-get($colors, border, light);
-			transition: background-color ease-out 0.5s;
+			transition-property: background-color;
+			transition-timing-function: ease-out;
+			transition-duration: 0.5s;
 		}
 
 		&-icon {
@@ -55,7 +59,9 @@
 			@extend %link-and-button;
 			color: map-get($colors, text, dark);
 			color: inherit;
-			transition: color ease-out 0.5s;
+			transition-property: color;
+			transition-timing-function: ease-out;
+			transition-duration: 0.5s;
 		}
 
 		&_select {
@@ -120,10 +126,9 @@
 	&__image {
 		width: 340px;
 		height: 340px;
-		transition:
-			width,
-			height ease-out,
-			0.5s;
+		transition-property: width, height;
+		transition-timing-function: ease-out;
+		transition-duration: 0.5s;
 	}
 
 	&__info {
@@ -192,7 +197,9 @@
 	opacity: 0;
 	overflow: hidden;
 	z-index: 4;
-	transition: opacity 0.2s ease-in-out;
+	transition-property: opacity;
+	transition-timing-function: ease-in-out;
+	transition-duration: 0.2s;
 
 	&_open {
 		display: flex;
@@ -235,10 +242,9 @@
 	&__image {
 		width: 340px;
 		height: 340px;
-		transition:
-			width,
-			height ease-out,
-			0.5s;
+		transition-property: width, height;
+		transition-timing-function: ease-out;
+		transition-duration: 0.5s;
 	}
 
 	&__info {
