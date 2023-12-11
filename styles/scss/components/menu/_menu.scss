@@ -189,8 +189,10 @@
 	width: 100vw;
 	height: 100vh;
 	background-color: rgba(64, 63, 61, 0.8);
+	opacity: 0;
 	overflow: hidden;
 	z-index: 4;
+	transition: opacity 0.2s ease-in-out;
 
 	&_open {
 		display: flex;
@@ -292,6 +294,9 @@
 			background: none;
 			@extend %link-and-button;
 			color: map-get($colors, text, dark);
+			transition-property: color, border-color, background-color;
+			transition-timing-function: ease-out;
+			transition-duration: 0.5s;
 			--background-index: #c1b6ad;
 
 			&-index {
@@ -303,6 +308,9 @@
 				border-radius: 100px;
 				color: map-get($colors, text, dark);
 				background-color: var(--background-index);
+				transition-property: background-color;
+				transition-timing-function: ease-out;
+				transition-duration: 0.5s;
 			}
 
 			&_active {
@@ -355,6 +363,16 @@
 		border-radius: 100px;
 		@extend %link-and-button;
 		color: map-get($colors, text, dark);
+		transition-property: color, background-color;
+		transition-timing-function: ease-in;
+		transition-duration: 0.3s;
 		background: none;
+
+		@media (hover: hover) and (pointer: fine) {
+			&:hover {
+				color: map-get($colors, text, light);
+				background-color: map-get($colors, background, container);
+			}
+		}
 	}
 }
