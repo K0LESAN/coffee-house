@@ -100,7 +100,7 @@ function toggleSize(event) {
   const totalPrice = Number.parseFloat(modalPrice.textContent.slice(1)),
     addPrice = Number.parseFloat(button.getAttribute('data-add-price'));
 
-  modalPrice.textContent = `$${totalPrice + addPrice - prevPrice}`;
+  modalPrice.textContent = `$${(totalPrice + addPrice - prevPrice).toFixed(2)}`;
 }
 
 function addAdditives(event) {
@@ -115,12 +115,12 @@ function addAdditives(event) {
   const totalPrice = Number.parseFloat(modalPrice.textContent.slice(1)),
     addPrice = Number.parseFloat(button.getAttribute('data-add-price'));
 
-  modalPrice.textContent = `$${
+  modalPrice.textContent = `$${(
     totalPrice +
     addPrice *
       (button.classList.contains('modal__sizes-and-additives-item_active') ||
         -1)
-  }`;
+  ).toFixed(2)}`;
 }
 
 menuGrid.addEventListener('click', openModal, { passive: true });
