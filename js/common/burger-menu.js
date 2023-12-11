@@ -73,6 +73,6 @@ function followingALink(event) {
   }, delay);
 }
 
-window.addEventListener('resize', hideBurgerMenu);
-header.addEventListener('click', followingALink);
-burgerMenu.addEventListener('click', toggleMenu);
+window.addEventListener('resize', hideBurgerMenu, { passive: true });
+header.addEventListener('click', followingALink, { passive: false });
+burgerMenu.addEventListener('click', toggleMenu, { passive: true });
