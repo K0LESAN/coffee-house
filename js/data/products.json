@@ -4,20 +4,20 @@
     "description": "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
     "price": "7.00",
     "category": "coffee",
-    "sizes": {
-      "s": {
+    "sizes": [
+      {
         "size": "200 ml",
         "add-price": "0.00"
       },
-      "m": {
+      {
         "size": "300 ml",
         "add-price": "0.50"
       },
-      "l": {
+      {
         "size": "400 ml",
         "add-price": "1.00"
       }
-    },
+    ],
     "additives": [
       {
         "name": "Sugar",
