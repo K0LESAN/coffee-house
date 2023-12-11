@@ -75,17 +75,10 @@ function closeModal(event) {
 
   modal.style.opacity = 0;
 
-  modal.addEventListener(
-    'transitionend',
-    () => {
-      document.body.style.overflow = 'auto';
-      modal.classList.remove('modal_open');
-    },
-    {
-      once: true,
-      passive: true,
-    }
-  );
+  setTimeout(() => {
+    document.body.style.overflow = 'auto';
+    modal.classList.remove('modal_open');
+  }, 200);
 }
 
 function toggleSize(event) {
