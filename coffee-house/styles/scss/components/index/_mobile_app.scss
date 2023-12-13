@@ -65,12 +65,14 @@
 			padding: 12px 20px;
 			border: 1px solid map-get($colors, border, dark);
 			border-radius: 100px;
+			@extend %link-and-button;
+			color: map-get($colors, text, dark);
 			background-color: transparent;
 			transition-property: background-color;
 			transition-timing-function: ease-in;
 			transition-duration: 0.5s;
 
-			@media (hover: hover) and (pointer: fine) {
+			@media screen and (hover: hover) and (pointer: fine) {
 				&:hover {
 					background-color: map-get($colors, background, container);
 					color: map-get($colors, text, light);
@@ -83,6 +85,7 @@
 		}
 
 		&__icon {
+			display: block;
 			width: 36px;
 			height: 36px;
 			fill: map-get($colors, text, dark);

@@ -53,7 +53,7 @@
 		width: 100px;
 		height: 60px;
 
-		@media (hover: hover) and (pointer: fine) {
+		@media screen and (hover: hover) and (pointer: fine) {
 			&_unselect {
 				cursor: initial;
 			}
@@ -66,7 +66,6 @@
 		width: 72px;
 		height: 28px;
 		overflow: hidden;
-		cursor: none;
 
 		&__wrapper {
 			display: flex;
@@ -111,14 +110,17 @@
 			background-color: map-get($colors, text, dark);
 			opacity: 0;
 			transform: scaleX(0);
-			transition-property: transform;
+			transition-property: transform, opacity;
 			transition-timing-function: ease-out;
 			transition-duration: 0.5s;
 			content: "";
 		}
 
-		@media (hover: hover) and (pointer: fine) {
-			cursor: pointer;
+		@media screen and (hover: hover) and (pointer: fine) {
+			&:hover::after {
+				transform: scaleX(1);
+				opacity: 1;
+			}
 
 			@media screen and not (max-width: map-get($adaptive, tablet)) {
 				&_unselect {
@@ -136,13 +138,6 @@
 			width: 143px;
 			min-height: 40px;
 			overflow: auto;
-		}
-
-		@media (hover: hover) and (pointer: fine) {
-			&:hover::after {
-				transform: scaleX(1);
-				opacity: 1;
-			}
 		}
 	}
 }
@@ -191,7 +186,7 @@
 			}
 		}
 
-		@media (hover: hover) and (pointer: fine) {
+		@media screen and (hover: hover) and (pointer: fine) {
 			&:hover::after {
 				transform: scaleX(1);
 				opacity: 1;

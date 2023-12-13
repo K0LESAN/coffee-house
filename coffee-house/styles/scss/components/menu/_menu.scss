@@ -28,6 +28,7 @@
 		border: 1px solid map-get($colors, border, light);
 		border-radius: 100px;
 		padding: rem(8) rem(16) rem(8) rem(8);
+		color: map-get($colors, text, dark);
 		background-color: transparent;
 		transition-property: border-color, background-color;
 		transition-timing-function: ease-out;
@@ -57,7 +58,6 @@
 
 		&-text {
 			@extend %link-and-button;
-			color: map-get($colors, text, dark);
 			color: inherit;
 			transition-property: color;
 			transition-timing-function: ease-out;
@@ -85,7 +85,7 @@
 			}
 		}
 
-		@media (hover: hover) and (pointer: fine) {
+		@media screen and (hover: hover) and (pointer: fine) {
 			&:hover {
 				border-color: transparent;
 				background-color: map-get($colors, background, container);
@@ -113,13 +113,13 @@
 		border-radius: 40px;
 		color: map-get($colors, text, dark);
 
-		@media (hover: hover) and (pointer: fine) {
+		@media screen and (hover: hover) and (pointer: fine) {
+			cursor: pointer;
+
 			&:hover .menu__image {
 				width: 310px;
 				height: 310px;
 			}
-
-			cursor: pointer;
 		}
 	}
 
@@ -246,9 +246,6 @@
 	&__image {
 		width: 340px;
 		height: 340px;
-		transition-property: width, height;
-		transition-timing-function: ease-out;
-		transition-duration: 0.5s;
 	}
 
 	&__info {
@@ -304,7 +301,7 @@
 			background: none;
 			@extend %link-and-button;
 			color: map-get($colors, text, dark);
-			transition-property: color, border-color, background-color;
+			transition-property: border-color, background-color;
 			transition-timing-function: ease-out;
 			transition-duration: 0.5s;
 			--background-index: #c1b6ad;
@@ -319,6 +316,12 @@
 				color: map-get($colors, text, dark);
 				background-color: var(--background-index);
 				transition-property: background-color;
+				transition-timing-function: ease-out;
+				transition-duration: 0.5s;
+			}
+
+			&-size {
+				transition-property: color;
 				transition-timing-function: ease-out;
 				transition-duration: 0.5s;
 			}
@@ -378,7 +381,7 @@
 		transition-duration: 0.3s;
 		background: none;
 
-		@media (hover: hover) and (pointer: fine) {
+		@media screen and (hover: hover) and (pointer: fine) {
 			&:hover {
 				color: map-get($colors, text, light);
 				background-color: map-get($colors, background, container);

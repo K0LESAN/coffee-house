@@ -1,10 +1,33 @@
+@font-face {
+  font-family: "Inter";
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/inter/regular/inter-regular.eot");
+  src: local("Inter Regular"), local("Inter-Regular"), url("../assets/fonts/inter/regular/inter-regular.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/inter/regular/inter-regular.woff2") format("woff2"), url("../assets/fonts/inter/regular/inter-regular.woff") format("woff"), url("../assets/fonts/inter/regular/inter-regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+  src: url("../assets/fonts/inter/semi-bold/inter-semi-bold.eot");
+  src: local("Inter Semi Bold"), local("Inter-SemiBold"), url("../assets/fonts/inter/semi-bold/inter-semi-bold.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/inter/semi-bold/inter-semi-bold.woff2") format("woff2"), url("../assets/fonts/inter/semi-bold/inter-semi-bold.woff") format("woff"), url("../assets/fonts/inter/semi-bold/inter-semi-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  font-style: italic;
+  font-weight: 600;
+  src: url("../assets/fonts/inter/semi-bold-italic/inter-semi-bold-italic.eot");
+  src: local("Inter Semi Bold Italic"), local("Inter-SemiBoldItalic"), url("../assets/fonts/inter/semi-bold-italic/inter-semi-bold-italic.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/inter/semi-bold-italic/inter-semi-bold-italic.woff2") format("woff2"), url("../assets/fonts/inter/semi-bold-italic/inter-semi-bold-italic.woff") format("woff"), url("../assets/fonts/inter/semi-bold-italic/inter-semi-bold-italic.truetype") format("truetype");
+}
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-html,
 body,
 div,
 span,
@@ -180,7 +203,13 @@ audio:not([controls]) {
 }
 
 html {
-  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  font-size: 16px;
+  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -247,6 +276,7 @@ html input[type=button],
 input[type=reset],
 input[type=submit] {
   *overflow: visible;
+  cursor: none;
 }
 @media (hover: hover) and (pointer: fine) {
   button,
@@ -333,11 +363,13 @@ textarea {
 }
 
 svg {
+  display: block;
   fill: none;
   stroke: none;
 }
 
 svg path {
+  display: block;
   fill: inherit;
   stroke: inherit;
 }
@@ -346,35 +378,6 @@ use {
   display: block;
   width: 100%;
   height: 100%;
-}
-
-@font-face {
-  font-family: "Inter";
-  font-display: fallback;
-  font-style: normal;
-  font-weight: 400;
-  src: url("../assets/fonts/inter/regular/inter-regular.eot");
-  src: local("Inter Regular"), local("Inter-Regular"), url("../assets/fonts/inter/regular/inter-regular.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/inter/regular/inter-regular.woff2") format("woff2"), url("../assets/fonts/inter/regular/inter-regular.woff") format("woff"), url("../assets/fonts/inter/regular/inter-regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inter";
-  font-display: swap;
-  font-style: normal;
-  font-weight: 600;
-  src: url("../assets/fonts/inter/semi-bold/inter-semi-bold.eot");
-  src: local("Inter Semi Bold"), local("Inter-SemiBold"), url("../assets/fonts/inter/semi-bold/inter-semi-bold.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/inter/semi-bold/inter-semi-bold.woff2") format("woff2"), url("../assets/fonts/inter/semi-bold/inter-semi-bold.woff") format("woff"), url("../assets/fonts/inter/semi-bold/inter-semi-bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Inter";
-  font-display: swap;
-  font-style: italic;
-  font-weight: 600;
-  src: url("../assets/fonts/inter/semi-bold-italic/inter-semi-bold-italic.eot");
-  src: local("Inter Semi Bold Italic"), local("Inter-SemiBoldItalic"), url("../assets/fonts/inter/semi-bold-italic/inter-semi-bold-italic.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/inter/semi-bold-italic/inter-semi-bold-italic.woff2") format("woff2"), url("../assets/fonts/inter/semi-bold-italic/inter-semi-bold-italic.woff") format("woff"), url("../assets/fonts/inter/semi-bold-italic/inter-semi-bold-italic.truetype") format("truetype");
-}
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
 }
 
 .container {
@@ -433,7 +436,7 @@ body.body_block-scroll {
   line-height: 140%;
 }
 
-.contacts__wrapper, .mobile-app-links__app-shop, .enjoy__link, .nav__link, .header-menu__text {
+.contacts__wrapper, .mobile-app-links__app-shop, .mobile-app-links__item, .enjoy__link, .nav__link, .header-menu__text {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -492,7 +495,7 @@ body.body_block-scroll {
   width: 100px;
   height: 60px;
 }
-@media (hover: hover) and (pointer: fine) {
+@media screen and (hover: hover) and (pointer: fine) {
   .header__link_unselect {
     cursor: initial;
   }
@@ -503,7 +506,6 @@ body.body_block-scroll {
   width: 72px;
   height: 28px;
   overflow: hidden;
-  cursor: none;
 }
 .header-menu__wrapper {
   display: flex;
@@ -548,14 +550,15 @@ body.body_block-scroll {
   background-color: #403f3d;
   opacity: 0;
   transform: scaleX(0);
-  transition-property: transform;
+  transition-property: transform, opacity;
   transition-timing-function: ease-out;
   transition-duration: 0.5s;
   content: "";
 }
-@media (hover: hover) and (pointer: fine) {
-  .header-menu {
-    cursor: pointer;
+@media screen and (hover: hover) and (pointer: fine) {
+  .header-menu:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
   }
 }
 @media screen and (hover: hover) and (pointer: fine) and (not (max-width: 768px)) {
@@ -572,12 +575,6 @@ body.body_block-scroll {
     width: 143px;
     min-height: 40px;
     overflow: auto;
-  }
-}
-@media (hover: hover) and (pointer: fine) {
-  .header-menu:hover::after {
-    transform: scaleX(1);
-    opacity: 1;
   }
 }
 
@@ -623,7 +620,7 @@ body.body_block-scroll {
     display: none;
   }
 }
-@media (hover: hover) and (pointer: fine) {
+@media screen and (hover: hover) and (pointer: fine) {
   .nav__item:hover::after {
     transform: scaleX(1);
     opacity: 1;
@@ -920,7 +917,7 @@ body.body_block-scroll {
   transition-timing-function: ease-out;
   transition-duration: 0.5s;
 }
-@media (hover: hover) and (pointer: fine) {
+@media screen and (hover: hover) and (pointer: fine) {
   .slider__button:not([disabled]):hover {
     background-color: #665f55;
   }
@@ -1024,7 +1021,7 @@ body.body_block-scroll {
     max-width: 710px;
   }
 }
-@media (hover: hover) and (pointer: fine) {
+@media screen and (hover: hover) and (pointer: fine) {
   .about__wrapper:hover .about__image {
     transform: scale(0.909);
   }
@@ -1131,12 +1128,13 @@ body.body_block-scroll {
   padding: 12px 20px;
   border: 1px solid #665f55;
   border-radius: 100px;
+  color: #403f3d;
   background-color: transparent;
   transition-property: background-color;
   transition-timing-function: ease-in;
   transition-duration: 0.5s;
 }
-@media (hover: hover) and (pointer: fine) {
+@media screen and (hover: hover) and (pointer: fine) {
   .mobile-app-links__item:hover {
     background-color: #665f55;
     color: #e1d4c9;
@@ -1146,6 +1144,7 @@ body.body_block-scroll {
   }
 }
 .mobile-app-links__icon {
+  display: block;
   width: 36px;
   height: 36px;
   fill: #403f3d;
@@ -1275,7 +1274,7 @@ body.body_block-scroll {
   transition-timing-function: ease-out;
   transition-duration: 0.5s;
 }
-@media (hover: hover) and (pointer: fine) {
+@media screen and (hover: hover) and (pointer: fine) {
   .social-networks__link:hover {
     background-color: #e1d4c9;
   }
@@ -1326,7 +1325,7 @@ body.body_block-scroll {
   transition-duration: 0.5s;
   content: "";
 }
-@media (hover: hover) and (pointer: fine) {
+@media screen and (hover: hover) and (pointer: fine) {
   .contacts__link:hover::after {
     transform: scaleX(1);
     opacity: 1;

@@ -96,7 +96,7 @@
 		transition-timing-function: ease-out;
 		transition-duration: 0.5s;
 
-		@media (hover: hover) and (pointer: fine) {
+		@media screen and (hover: hover) and (pointer: fine) {
 			&:not([disabled]):hover {
 				background-color: map-get($colors, background, container);
 
