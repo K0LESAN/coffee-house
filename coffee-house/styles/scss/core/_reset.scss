@@ -4,7 +4,6 @@
 	box-sizing: border-box;
 }
 
-html,
 body,
 div,
 span,
@@ -179,7 +178,13 @@ audio:not([controls]) {
 }
 
 html {
-	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+	font-size: #{$root-element}px;
+	scroll-behavior: smooth;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 }
@@ -246,6 +251,7 @@ html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	*overflow: visible;
+	cursor: none;
 
 	@media (hover: hover) and (pointer: fine) {
 		cursor: pointer;
@@ -328,11 +334,13 @@ textarea {
 }
 
 svg {
+	display: block;
 	fill: none;
 	stroke: none;
 }
 
 svg path {
+	display: block;
 	fill: inherit;
 	stroke: inherit;
 }

@@ -46,7 +46,7 @@
 			max-width: 710px;
 		}
 
-		@media (hover: hover) and (pointer: fine) {
+		@media screen and (hover: hover) and (pointer: fine) {
 			&:hover .about__image {
 				transform: scale(0.909);
 			}

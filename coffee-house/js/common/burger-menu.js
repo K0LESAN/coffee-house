@@ -58,6 +58,10 @@ function followingALink(event) {
       ? 550
       : 0;
 
+  if (!element) {
+    return;
+  }
+
   event.preventDefault();
 
   if (element && headerWrapper.classList.contains('header__wrapper_visible')) {

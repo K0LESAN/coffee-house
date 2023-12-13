@@ -73,8 +73,13 @@ function toggleCategory(event) {
 }
 
 function loadProducts(event) {
-  const button = event.target.closest('.menu__update'),
-    data = products.filter(
+  const button = event.target.closest('.menu__update');
+
+  if (!button) {
+    return;
+  }
+
+  const data = products.filter(
       (product) =>
         product.category === selectButton.getAttribute('data-category')
     ),
