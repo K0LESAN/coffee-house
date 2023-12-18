@@ -1,0 +1,127 @@
+.mobile-app {
+	display: flex;
+	align-items: center;
+	gap: 100px;
+	margin-bottom: rem(100);
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		gap: rem(40);
+		color: map-get($colors, text, dark);
+	}
+
+	&__title {
+		@extend %heading-2;
+
+		&_taupe {
+			font-style: italic;
+			color: map-get($colors, text, accent);
+		}
+
+		@media screen and (max-width: 600px) {
+			font-size: 8.39895vw;
+		}
+
+		@media screen and (max-width: map-get($adaptive, mobile)) {
+			& {
+				@include heading-2-mobile;
+			}
+		}
+
+		@media screen and (max-width: 330px) {
+			font-size: 30.5px;
+		}
+	}
+
+	&__description {
+		@extend %medium;
+	}
+
+	&__image {
+		max-width: 100%;
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: rem(20);
+
+		@media screen and (max-width: 460px) {
+			flex-direction: column;
+		}
+	}
+
+	&-links {
+		&__item {
+			display: flex;
+			align-items: center;
+			gap: rem(8);
+			width: 200px;
+			height: 64px;
+			padding: 12px 20px;
+			border: 1px solid map-get($colors, border, dark);
+			border-radius: 100px;
+			@extend %link-and-button;
+			color: map-get($colors, text, dark);
+			background-color: transparent;
+			transition-property: background-color;
+			transition-timing-function: ease-in;
+			transition-duration: 0.5s;
+
+			@media screen and (hover: hover) and (pointer: fine) {
+				&:hover {
+					background-color: map-get($colors, background, container);
+					color: map-get($colors, text, light);
+
+					& .mobile-app-links__icon {
+						fill: map-get($colors, text, light);
+					}
+				}
+			}
+		}
+
+		&__icon {
+			display: block;
+			width: 36px;
+			height: 36px;
+			fill: map-get($colors, text, dark);
+			transition-property: fill;
+			transition-timing-function: ease-in;
+			transition-duration: 0.5s;
+		}
+
+		&__text {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: rem(2);
+			transition-property: color;
+			transition-timing-function: ease-in;
+			transition-duration: 0.5s;
+		}
+
+		&__avaliable {
+			@extend %caption;
+		}
+
+		&__app-shop {
+			@extend %link-and-button;
+		}
+	}
+
+	@media screen and (max-width: 1290px) {
+		flex-direction: column;
+	}
+
+	@media screen and (max-width: 470px) {
+		gap: 10.49868vw;
+	}
+
+	@media screen and (max-width: map-get($adaptive, mobile)) {
+		gap: rem(40);
+	}
+}
