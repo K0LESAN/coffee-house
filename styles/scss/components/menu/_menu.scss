@@ -1,0 +1,192 @@
+.menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: rem(40);
+	margin-bottom: rem(100);
+
+	&__buttons {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: rem(16);
+
+		@media screen and (max-width: 700px) {
+			gap: 2.11vw;
+		}
+
+		@media screen and (max-width: map-get($adaptive, mobile)) {
+			gap: rem(8);
+		}
+	}
+
+	&__button {
+		display: flex;
+		align-items: center;
+		gap: rem(8);
+		height: 46px;
+		border: 1px solid map-get($colors, border, light);
+		border-radius: 100px;
+		padding: rem(8) rem(16) rem(8) rem(8);
+		background-color: transparent;
+		transition: border-color, background-color, ease-out, 0.5s;
+
+		&-wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 30px;
+			height: 30px;
+			padding: rem(3) rem(7);
+			border-radius: 100px;
+			background-color: map-get($colors, border, light);
+			transition: background-color ease-out 0.5s;
+		}
+
+		&-icon {
+			display: inline-block;
+			@extend %link-and-button;
+			width: 17px;
+			height: 17px;
+		}
+
+		&-text {
+			@extend %link-and-button;
+			color: map-get($colors, text, dark);
+			color: inherit;
+			transition: color ease-out 0.5s;
+		}
+
+		&_select {
+			border-color: transparent;
+			background-color: map-get($colors, background, container);
+			color: map-get($colors, text, light);
+			pointer-events: none;
+
+			> .menu__button-wrapper {
+				background-color: map-get($colors, background, body);
+			}
+		}
+
+		&:active {
+			border-color: transparent;
+			background-color: map-get($colors, background, container);
+			color: map-get($colors, text, light);
+
+			& .menu__button-wrapper {
+				background-color: map-get($colors, background, body);
+			}
+		}
+
+		@media (hover: hover) and (pointer: fine) {
+			&:hover {
+				border-color: transparent;
+				background-color: map-get($colors, background, container);
+				color: map-get($colors, text, light);
+
+				& .menu__button-wrapper {
+					background-color: map-get($colors, background, body);
+				}
+			}
+		}
+	}
+
+	&__grid {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: rem(40);
+
+		@media screen and (max-width: 1090px) {
+			&:nth-child(n + 5) {
+				display: none;
+			}
+		}
+	}
+
+	&__item {
+		width: 310px;
+		height: 506px;
+		border: rem(1) solid map-get($colors, border, light);
+		border-radius: 40px;
+		color: map-get($colors, text, dark);
+		cursor: pointer;
+
+		@media screen and (max-width: 1090px) {
+			grid-template-columns: repeat(2, 1fr);
+
+			&:nth-child(n + 5) {
+				display: none;
+			}
+		}
+
+		@media (hover: hover) and (pointer: fine) {
+			&:hover .menu__image {
+				width: 310px;
+				height: 310px;
+			}
+		}
+	}
+
+	&__image {
+		width: 340px;
+		height: 340px;
+		transition:
+			width,
+			height ease-out,
+			0.5s;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%;
+		height: 196px;
+		padding: rem(20);
+	}
+
+	&__inner {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 310px;
+		border-radius: 40px;
+		overflow: hidden;
+	}
+
+	&__title {
+		@extend %heading-3;
+		margin-bottom: rem(12);
+	}
+
+	&__description {
+		@extend %medium;
+	}
+
+	&__price {
+		@extend %heading-3;
+	}
+
+	&__update {
+		display: none;
+		justify-content: center;
+		align-items: center;
+		width: 60px;
+		height: 60px;
+		border: 1px solid map-get($colors, border, dark);
+		border-radius: 100px;
+		background-color: transparent;
+
+		&-icon {
+			width: 24px;
+			height: 24px;
+		}
+
+		@media screen and (max-width: 1090px) {
+			display: flex;
+		}
+	}
+}

@@ -1,0 +1,11 @@
+$root-element: 16;
+
+@import "../core/functions";
+@import "../core/reset";
+@import "../core/fonts";
+@import "../core/common_selectors";
+@import "../core/variables";
+
+@import "../components/common/header";
+@import "../components/index/main";
+@import "../components/common/footer";
